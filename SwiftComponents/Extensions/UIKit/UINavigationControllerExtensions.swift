@@ -7,7 +7,7 @@
 //
 
 import UIKit
-extension UINavigationController {
+public extension UINavigationController {
     func getvc<T: UIViewController>(_ aClass: T.Type) -> T? {
         return viewControllers.filter{ $0.isMember(of: aClass) }.first as? T
     }
@@ -28,7 +28,7 @@ extension UINavigationController {
         return viewControllers[viewControllers.count - 1 - stackIndex]
     }
     
-    @objc func push(_ toVC: UIViewController, popMiddle beforeVC: UIViewController, before: Int = 0, animation: Bool = true) {
+    func push(_ toVC: UIViewController, popMiddle beforeVC: UIViewController, before: Int = 0, animation: Bool = true) {
         pushViewController(toVC, animated: animation)
         
         if let i = viewControllers.firstIndex(where: { $0 == beforeVC }) {

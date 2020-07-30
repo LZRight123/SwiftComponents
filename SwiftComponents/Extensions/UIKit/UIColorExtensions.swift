@@ -98,6 +98,7 @@ public extension UIColor
     static let hex11B688 = UIColor(hex: "11B688")
     static let hexFC0000 = UIColor(hex: "FC0000")
     static let hex181818 = UIColor(hex: "181818")
+    static let hexFBE7E8 = UIColor(hex: "FBE7E8")
     
     
     //MARK:- 常用色

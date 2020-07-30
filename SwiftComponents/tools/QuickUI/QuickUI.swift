@@ -232,7 +232,7 @@ open class GradientView: UIView {
     public var grLayer = CAGradientLayer()
     
     
-    public convenience init(colors: [UIColor], locations: [CGFloat]? = nil, startPoint: CGPoint, endPoint: CGPoint, type: CAGradientLayerType = .axial) {
+    public convenience init(colors: [UIColor], locations: [CGFloat]? = nil, startPoint: CGPoint = .zero, endPoint: CGPoint = .init(x: 1, y: 1), type: CAGradientLayerType = .axial) {
         self.init()
 
         grLayer.colors =  colors.map { $0.cgColor }

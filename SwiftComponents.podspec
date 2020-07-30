@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   # 一级目录（pod库中根目录所含文件）
   
   # 每次都参与编译方便修改时
-   s.static_framework = true
+  s.static_framework = true
   # 二级目录（根目录是s，使用s.subspec设置子目录，这里设置子目录为ss）
   s.subspec 'Extensions' do |ss|
     ss.source_files = 'SwiftComponents/Extensions/**/*.swift'
@@ -48,18 +48,6 @@ Pod::Spec.new do |s|
     # ss.resources  = 'SwiftComponents/SwiftComponents/SwiftComponents.bundle'
     # ss.subspec 'CoreGraphics' do |sss|
     #   sss.source_files = 'SwiftComponents/Extensions/CoreGraphics/*.swift'
-    # end
-
-    # ss.subspec 'UIKit' do |sss|
-    #   sss.source_files = 'SwiftComponents/Extensions/UIKit/*.swift'
-    # end
-
-    # ss.subspec 'Foundation' do |sss|
-    #   sss.source_files = 'SwiftComponents/Extensions/Foundation/*.swift'
-    # end
-
-    # ss.subspec 'SwiftStdlib' do |sss|
-    #   sss.source_files = 'SwiftComponents/Extensions/SwiftStdlib/*.swift'
     # end
   end
 

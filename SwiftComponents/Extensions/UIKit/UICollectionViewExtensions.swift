@@ -22,6 +22,8 @@ public extension UICollectionView {
         isUserInteractionEnabled = userInteractionEnabled
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
+        alwaysBounceVertical = true
+
         self.backgroundColor = backgroundColor
     }
     
