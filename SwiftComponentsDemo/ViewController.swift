@@ -7,30 +7,10 @@
 //
 
 import UIKit
-import SwiftComponents
 import SnapKit
 
 
 
-class AutoLayoutCollectionView: UICollectionView {
- 
-    private var shouldInvalidateLayout = false
- 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if shouldInvalidateLayout {
-            collectionViewLayout.invalidateLayout()
-            shouldInvalidateLayout = false
-        }
-    }
- 
-    override func reloadData() {
-        shouldInvalidateLayout = true
-        collectionViewLayout.invalidateLayout()
-
-        super.reloadData()
-    }
-}
 
 private let margin: CGFloat = 16
 class ViewController: UIViewController {

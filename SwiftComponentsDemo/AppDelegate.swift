@@ -7,7 +7,6 @@
 //
 
 import UIKit
-@_exported import SwiftComponents
 
 
 

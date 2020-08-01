@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftComponents
 private let margin: CGFloat = 16
 
 class ScoreActivitiyItemCCell: UICollectionViewCell {

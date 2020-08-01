@@ -9,22 +9,15 @@ PODS:
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - SnapKit (5.0.1)
-  - SwiftComponents (1.0.0):
-    - SwiftComponents/Extensions (= 1.0.0)
-    - SwiftComponents/service (= 1.0.0)
-    - SwiftComponents/tools (= 1.0.0)
-  - SwiftComponents/Extensions (1.0.0)
-  - SwiftComponents/service (1.0.0):
-    - KakaJSON
-    - Moya
-    - SwiftyJSON
-  - SwiftComponents/tools (1.0.0):
-    - Kingfisher
-    - SnapKit
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - SwiftComponents (from `./`)
+  - Alamofire
+  - KakaJSON
+  - Kingfisher
+  - Moya
+  - SnapKit
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -35,19 +28,14 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  SwiftComponents:
-    :path: "./"
-
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftComponents: ca44a6bad5340dca4ceed9cca93bf3fbee6ca0c1
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 53ce2cebc2fcb2bdb5aa5a0c3cbbcd36f82cc187
+PODFILE CHECKSUM: 963fcf0519027e15455b41302042c2461c06ca55
 
 COCOAPODS: 1.9.1

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftComponents
 
 class ProductDetailScoreCell: LZCollectionViewCell {
     let stack = UIStackView(arrangedSubviews: [], spacing: 10, alignment: .top, distribution: .fill)

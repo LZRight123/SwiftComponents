@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 import ObjectiveC
@@ -129,11 +130,13 @@ open class LZTableViewCell: UITableViewCell {
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        selectionStyle = .none
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
+        selectionStyle = .none
     }
     
     open func setupUI() {
@@ -204,7 +207,7 @@ open class LZCollectionReusableView: UICollectionReusableView {
 
 
 //MARK: - fix ios12 bug https://blog.csdn.net/weixin_33939380/article/details/88016446
-
+// 不用这个
 open class AutoLayoutCollectionView: UICollectionView {
     
     private var shouldInvalidateLayout = false

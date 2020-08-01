@@ -8,8 +8,8 @@
 
 import UIKit
 
-public class LZButton: UIButton {
-    var responseSize = CGSize(width: 44, height: 44)
+open class LZButton: UIButton {
+    public var responseSize = CGSize(width: 44, height: 44)
     
     public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         var bounds = self.bounds
@@ -25,7 +25,7 @@ public class LZButton: UIButton {
         setupUI()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
     }

@@ -6,6 +6,13 @@ target 'SwiftComponentsDemo' do
   use_frameworks!
 
   # Pods for SwiftComponentsDemo
-  pod 'SwiftComponents', :path => './'
+#  pod 'SwiftComponents', :path => './'
 
+  pod 'Alamofire'
+  pod 'KakaJSON'
+  pod 'Kingfisher'
+  pod 'Moya'
+  pod 'SnapKit'
+#  pod 'SwiftComponents'
+  pod 'SwiftyJSON'
 end

@@ -1,6 +1,0 @@
-framework module SwiftComponents {
-  umbrella header "SwiftComponents-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -9,28 +9,31 @@
 import UIKit
 
 
-protocol InfoProtocol {
+public protocol InfoProtocol {
     var key: String { get set }
     var value: String { get set }
 }
 
-struct InfoModel: InfoProtocol {
-    var key = ""
-    var value = ""
+public struct InfoModel: InfoProtocol {
+    public var key = ""
+    public var value = ""
+    
+    public init(key: String = "", value: String = " ") {
+        self.key = key
+        self.value = value
+    }
 }
 
 
-
-
-class InfoCell: LZTableViewCell {
-    let stack = UIStackView(arrangedSubviews: [], spacing: 10, alignment: .leading, distribution: .fill, axis: .vertical)
-    private let lineView = UIView(color: .line1)
+open class InfoCell: LZTableViewCell {
+    public let stack = UIStackView(arrangedSubviews: [], spacing: 10, alignment: .fill, distribution: .fill, axis: .vertical)
+    public let lineView = UIView(color: .line1)
     
-    override func setupUI() {
+    open override func setupUI() {
         contentView.add(stack).snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.left.equalToSuperview().offset(116)
-            $0.top.equalToSuperview().offset(16)
+            $0.left.equalToSuperview().offset(16)
+            $0.top.equalToSuperview().offset(13)
         }
         
         contentView.add(lineView).snp.makeConstraints {
@@ -42,23 +45,22 @@ class InfoCell: LZTableViewCell {
         showLine(false)
     }
     
-    func showLine(_ isShow: Bool) {
+    public func showLine(_ isShow: Bool) {
         lineView.isHidden = !isShow
     }
     
-    func addInfos(_ infos: [InfoProtocol]) {
+    open func addInfos(_ infos: [InfoProtocol]) {
         stack.removeArrangedSubviews()
         stack.removeSubviews()
         
         let subViews = infos.map { info -> TitleSubtitleLabel in
             let itemView = TitleSubtitleLabel()
             itemView.titleLabel.textColor = .hex999999
-            itemView.titleLabel.font = .font12
+            itemView.titleLabel.font = .font13
             itemView.subtitleLabel.textColor = .hex333333
-            itemView.subtitleLabel.font = .font12
+            itemView.subtitleLabel.font = .font13
             itemView.titleLabel.snp.remakeConstraints {
-                $0.left.top.equalToSuperview()
-                $0.width.equalTo(60)
+                $0.width.greaterThanOrEqualTo(70)
             }
             
             
