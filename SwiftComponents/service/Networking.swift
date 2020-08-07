@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import Moya
-import Alamofire
-import KakaJSON
-
+@_exported import Moya
+@_exported import Alamofire
+@_exported import KakaJSON
 
 public let networkActivityPlugin = NetworkActivityPlugin{ (changeType: NetworkActivityChangeType, targetType: TargetType) in
     DispatchQueue.main.async {

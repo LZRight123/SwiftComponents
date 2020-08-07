@@ -89,7 +89,7 @@ public extension Result where Result.Success == Moya.Response {
 //    }
     
     var code: Int {
-        return json?["code"].intValue ?? -1
+        return json?["code"].intValue ?? -1000
     }
     
     var message: String {

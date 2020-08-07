@@ -98,6 +98,7 @@
 		DFBF15A824C7BF3000EF02A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15A724C7BF3000EF02A6 /* Assets.xcassets */; };
 		DFBF15AB24C7BF3000EF02A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15A924C7BF3000EF02A6 /* LaunchScreen.storyboard */; };
 		DFBF15B324C7BFEF00EF02A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15B224C7BFEF00EF02A6 /* README.md */; };
+		DFD73D6324DCEFD60073B5B7 /* RXComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */; };
 		DFEFFE3124D3AC4500E20BE9 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFFE3024D3AC4500E20BE9 /* BackgroundTimer.swift */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +197,7 @@
 		DFBF15AA24C7BF3000EF02A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFBF15AC24C7BF3000EF02A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBF15B224C7BFEF00EF02A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXComponent.swift; sourceTree = "<group>"; };
 		DFEFFE3024D3AC4500E20BE9 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FC9771D17CCE8F8C97DC255C /* Pods-SwiftComponentsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComponentsDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftComponentsDemo/Pods-SwiftComponentsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 		DF19C64024D2F700000ABBE8 /* SwiftComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DFD73D6124DCEFB30073B5B7 /* RxComponents */,
 				DF19C64124D2F700000ABBE8 /* tools */,
 				DF19C65A24D2F700000ABBE8 /* Extensions */,
 				DF19C69324D2F700000ABBE8 /* service */,
@@ -442,6 +445,14 @@
 			path = SwiftComponentsDemo;
 			sourceTree = "<group>";
 		};
+		DFD73D6124DCEFB30073B5B7 /* RxComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */,
+			);
+			path = RxComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -576,6 +587,7 @@
 				DF19C6C124D2F700000ABBE8 /* UIImageExtensions.swift in Sources */,
 				DF19C6A724D2F700000ABBE8 /* LZToolBar.swift in Sources */,
 				DF19C6DD24D2F700000ABBE8 /* DictionaryExtensions.swift in Sources */,
+				DFD73D6324DCEFD60073B5B7 /* RXComponent.swift in Sources */,
 				DF19C6A224D2F700000ABBE8 /* Log.swift in Sources */,
 				DF19C6B324D2F700000ABBE8 /* CGSizeExtensions.swift in Sources */,
 				DF19C6D824D2F700000ABBE8 /* ComparableExtensions.swift in Sources */,

@@ -84,6 +84,7 @@ class IBUICollectionViewCell: UICollectionViewCell {
 
 
 //MARK: - 直接出setupUI
+@IBDesignable
 open class LZView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -157,6 +158,8 @@ public extension UICollectionViewCell {
 }
 
 open class LZCollectionViewCell: UICollectionViewCell {
+    public let lineView = UIView(color: .line1)
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupSelfSizingForiOS12()
@@ -171,6 +174,10 @@ open class LZCollectionViewCell: UICollectionViewCell {
     
     open func setupUI() {
            
+    }
+    
+    open func showLine(_ isShow: Bool) {
+        lineView.isHidden = !isShow
     }
 }
 

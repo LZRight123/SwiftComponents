@@ -101,6 +101,10 @@ public extension Optional where Wrapped: Collection {
         guard let collection = self else { return true }
         return collection.isEmpty
     }
+    
+    var hasValue: Bool {
+        isNilOrEmpty == false 
+    }
 
     /// SwifterSwift: Returns the collection only if it is not nill and not empty.
     var nonEmpty: Wrapped? {

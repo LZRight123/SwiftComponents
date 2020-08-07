@@ -68,6 +68,18 @@ Pod::Spec.new do |s|
     ss.dependency "SnapKit"
     ss.dependency "Kingfisher"
   end
+  
+  # RX套件
+  s.subspec 'rxcomponents' do |ss|
+    ss.source_files = 'SwiftComponents/RxComponents/**/*.swift'
+    
+    ss.dependency "RxSwift"
+    ss.dependency "RxCocoa"
+    ss.dependency "RxWebKit"
+    ss.dependency "RxDataSources"
+    ss.dependency "RxOptional"
+    ss.dependency "RxViewController"
+  end
 
 
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//@_exported import
 
 public extension UIColor
 {
@@ -66,7 +65,7 @@ public extension UIColor
     static let border1 = UIColor.hex04BDE7
 
     /// 分割线 1 = DADADA
-    static let line1 = UIColor.grey1
+    static let line1 = UIColor.hexE5E5E5
     
     /// 警告色 1 = FF3707
     static let alert1 = UIColor.hexFDEADE
@@ -99,6 +98,7 @@ public extension UIColor
     static let hexFC0000 = UIColor(hex: "FC0000")
     static let hex181818 = UIColor(hex: "181818")
     static let hexFBE7E8 = UIColor(hex: "FBE7E8")
+    static let hexF5F5F5 = UIColor(hex: "F5F5F5")
     
     
     //MARK:- 常用色

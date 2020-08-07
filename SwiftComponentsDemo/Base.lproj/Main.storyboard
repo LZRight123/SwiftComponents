@@ -56,10 +56,45 @@
                                     <constraint firstItem="SOS-gn-S3s" firstAttribute="height" relation="greaterThanOrEqual" secondItem="QSE-Jm-uwa" secondAttribute="height" id="rvJ-1d-L2P"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9IF-7a-c5c">
+                                <rect key="frame" x="0.0" y="617" width="414" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-wq-cVg">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="40"/>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="105" id="6Pp-j9-mP1"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3R-D2-j4j">
+                                        <rect key="frame" x="154.5" y="0.0" width="105" height="40"/>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="105" id="hSH-sc-OPK"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfp-yH-cMM">
+                                        <rect key="frame" x="309" y="0.0" width="105" height="40"/>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="105" id="PrO-13-vpB"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="a0l-OR-jPc"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7CA-Ro-xsp" firstAttribute="centerX" secondItem="FqO-XO-geZ" secondAttribute="centerX" id="8w1-hZ-AqO"/>
+                            <constraint firstItem="trL-ha-6ej" firstAttribute="trailing" secondItem="9IF-7a-c5c" secondAttribute="trailing" id="APq-0F-WGn"/>
+                            <constraint firstItem="9IF-7a-c5c" firstAttribute="leading" secondItem="trL-ha-6ej" secondAttribute="leading" id="Gey-l4-rpv"/>
+                            <constraint firstItem="trL-ha-6ej" firstAttribute="bottom" secondItem="9IF-7a-c5c" secondAttribute="bottom" constant="205" id="aI5-O2-udm"/>
                             <constraint firstItem="7CA-Ro-xsp" firstAttribute="leading" secondItem="trL-ha-6ej" secondAttribute="leading" constant="13" id="fxx-HL-Ph2"/>
                             <constraint firstItem="7CA-Ro-xsp" firstAttribute="centerY" secondItem="FqO-XO-geZ" secondAttribute="centerY" id="oBc-iJ-WCh"/>
                         </constraints>
@@ -68,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBz-Gm-HFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="35"/>
+            <point key="canvasLocation" x="886.95652173913049" y="34.821428571428569"/>
         </scene>
     </scenes>
 </document>

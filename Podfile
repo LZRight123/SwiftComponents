@@ -15,4 +15,12 @@ target 'SwiftComponentsDemo' do
   pod 'SnapKit'
 #  pod 'SwiftComponents'
   pod 'SwiftyJSON'
+  
+  # RX套件
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxWebKit'
+  pod 'RxDataSources'
+  pod 'RxOptional'
+  pod 'RxViewController'
 end
