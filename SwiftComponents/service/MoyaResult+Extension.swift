@@ -60,12 +60,12 @@ public extension Result {
 //MARK: - Result 扩展
 //Result<Moya.Response, MoyaError>
 public extension Result where Result.Success == Moya.Response {
-    var value: Success? {
-        switch self {
-        case let .success(value): return value
-        default: return nil
-        }
-    }
+//    var value: Success? {
+//        switch self {
+//        case let .success(value): return value
+//        default: return nil
+//        }
+//    }
     
     var rawReponse: Moya.Response? { //原始的 Response
         switch self {

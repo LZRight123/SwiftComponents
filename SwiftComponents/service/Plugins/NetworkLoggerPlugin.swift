@@ -36,7 +36,7 @@ public class CustomNetworkLoggerPlugin: PluginType {
         let requestDate = Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
         
         lzprint("================================请求日志==============================", level: .high)
-        if let url = result.value?.request?.url?.absoluteString {
+        if let url = result.rawReponse?.request?.url?.absoluteString {
            lzprint("URL : \(url)", level: .high)
         } else {
            lzprint("URL : \(target.baseURL)\(target.path)", level: .high)
@@ -44,7 +44,7 @@ public class CustomNetworkLoggerPlugin: PluginType {
         lzprint("请求方式：\(target.method.rawValue)", level: .high)
         lzprint("请求时间 : \(String(format: "%.1f", requestDate))s", level: .high)
         lzprint("请求头：\(target.headers ?? [:])", level: .high)
-        if let request = result.value?.request {
+        if let request = result.rawReponse?.request {
             switch target.task {
             case .requestPlain, .uploadMultipart: break
             case let .requestParameters(parameters, _), let .uploadCompositeMultipart(_, parameters):

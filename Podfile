@@ -23,4 +23,6 @@ target 'SwiftComponentsDemo' do
   pod 'RxDataSources'
   pod 'RxOptional'
   pod 'RxViewController'
+  pod 'MJRefresh'
+  pod 'MBProgressHUD'
 end

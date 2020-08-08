@@ -67,6 +67,7 @@ Pod::Spec.new do |s|
 
     ss.dependency "SnapKit"
     ss.dependency "Kingfisher"
+    ss.dependency "MBProgressHUD"
   end
   
   # RX套件
@@ -79,6 +80,7 @@ Pod::Spec.new do |s|
     ss.dependency "RxDataSources"
     ss.dependency "RxOptional"
     ss.dependency "RxViewController"
+    ss.dependency "MJRefresh"
   end
 
 

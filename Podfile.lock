@@ -5,6 +5,8 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.4.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -35,6 +37,8 @@ DEPENDENCIES:
   - Alamofire
   - KakaJSON
   - Kingfisher
+  - MBProgressHUD
+  - MJRefresh
   - Moya
   - RxCocoa
   - RxDataSources
@@ -51,6 +55,8 @@ SPEC REPOS:
     - Differentiator
     - KakaJSON
     - Kingfisher
+    - MBProgressHUD
+    - MJRefresh
     - Moya
     - RxCocoa
     - RxDataSources
@@ -67,6 +73,8 @@ SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
@@ -78,6 +86,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: a1898985253a1ab1d3f039942611cb5e46443765
+PODFILE CHECKSUM: 14a9843218efa2dcd58520e44c23816572b5f3d6
 
 COCOAPODS: 1.9.1

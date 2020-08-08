@@ -8,12 +8,14 @@
 
 import UIKit
 import SnapKit
-
+import RxSwift
+import RxCocoa
 
 
 
 private let margin: CGFloat = 16
 class ViewController: UIViewController {
+    let disposeBag = DisposeBag()
     let topView = TopView()
     private lazy var collectionView = AutoLayoutCollectionView(scrollDirection: .vertical).then {
 //        if let layout = $0.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -35,11 +37,39 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let btn1 = UIButton(color: .random)
         
-        title = "积分活动"
-        navigationController?.navigationBar.setBackgroundImage(UIImage.init(color:  .random, size: CGSize.init(width: 10, height: 10)), for: .default)
+        let btn2 = UIButton(color: .random)
+        
+        let btn3 = UIButton(color: .random)
 
-        initiaUI()
+        
+        [btn1, btn2, btn3].forEach { $0.snp.makeConstraints { $0.height.equalTo(50) } }
+        
+        let stack = UIStackView(arrangedSubviews: [btn1, btn2, btn3], spacing: 10, alignment: .fill, distribution: .fill)
+        
+        view.add(stack).snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(74)
+            $0.leading.equalToSuperview().offset(50)
+        }
+        
+        btn1.rx.tap.subscribe { [unowned self] _ in
+            self.view.showText("click btn1", afterDelay: 3)
+        }.disposed(by: disposeBag)
+        
+        btn2.rx.tap.subscribe { [unowned self] _ in
+            self.view.showLoading()
+        }.disposed(by: disposeBag)
+        
+        btn3.rx.tap.subscribe { [unowned self] _ in
+            self.view.hud?.hide(animated: true)
+        }.disposed(by: disposeBag)
+        
+//        title = "积分活动"
+//        navigationController?.navigationBar.setBackgroundImage(UIImage.init(color:  .random, size: CGSize.init(width: 10, height: 10)), for: .default)
+//
+//        initiaUI()
 //        self.collectionView.reloadData()
         // Do any additional setup after loading the view.
     }
