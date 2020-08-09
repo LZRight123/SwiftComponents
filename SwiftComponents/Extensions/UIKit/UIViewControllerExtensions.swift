@@ -30,53 +30,12 @@ public extension UIViewController {
     static var identifier: String { return String(describing: self) }
     
     static var nibName: String { return String(describing: self) }
-    /// SwifterSwift: Check if ViewController is onscreen and not hidden.
-    var isVisible: Bool {
-        // http://stackoverflow.com/questions/2777438/how-to-tell-if-uiviewcontrollers-view-is-visible
-        return isViewLoaded && view.window != nil
-    }
-
 }
 
 // MARK: - Methods
 public extension UIViewController {
 
-    /// SwifterSwift: Assign as listener to notification.
-    ///
-    /// - Parameters:
-    ///   - name: notification name.
-    ///   - selector: selector to run with notified.
-    func addNotificationObserver(name: Notification.Name, selector: Selector) {
-        NotificationCenter.default.addObserver(self, selector: selector, name: name, object: nil)
-    }
-
-    /// SwifterSwift: Unassign as listener to notification.
-    ///
-    /// - Parameter name: notification name.
-    func removeNotificationObserver(name: Notification.Name) {
-        NotificationCenter.default.removeObserver(self, name: name, object: nil)
-    }
-
-    /// SwifterSwift: Unassign as listener from all notifications.
-    func removeNotificationsObserver() {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-//    func addKeyboardWillChangeFrameNotification() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameChange(_:)), name:UIResponder.keyboardWillChangeFrameNotification, object: nil)
-//    }
     
-//    @objc private func keyboardFrameChange(_ notification: Notification) {
-//        let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
-//        let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
-//        let endY = frame?.origin.y ?? ScreenHeight
-//        let offset = max(0, ScreenHeight - endY - SafeBottomArea)
-//        keyboardWillChangeFrame(-offset, duration: duration ?? 0.25)
-//    }
-    
-    @objc func keyboardWillChangeFrame(_ offsetY: CGFloat, duration: TimeInterval) {
-        
-    }
     
     //EZSE: Makes the UIViewController register tap events and hides keyboard when clicked somewhere in the ViewController.
     func hideKeyboardWhenTappedAround(cancelTouches: Bool = false) {
@@ -159,29 +118,6 @@ public extension UIViewController {
             return topViewController(presented)
         }
         return base
-    }
-    
-    @discardableResult
-    func showAlert(title: String?, message: String?, buttonTitles: [String]? = nil, highlightedButtonIndex: Int? = nil, completion: ((Int) -> Void)? = nil) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        var allButtons = buttonTitles ?? [String]()
-        if allButtons.count == 0 {
-            allButtons.append("OK")
-        }
-
-        for index in 0..<allButtons.count {
-            let buttonTitle = allButtons[index]
-            let action = UIAlertAction(title: buttonTitle, style: .default, handler: { (_) in
-                completion?(index)
-            })
-            alertController.addAction(action)
-            // Check which button to highlight
-            if let highlightedButtonIndex = highlightedButtonIndex, index == highlightedButtonIndex {
-                alertController.preferredAction = action
-            }
-        }
-        present(alertController, animated: true, completion: nil)
-        return alertController
     }
 }
 

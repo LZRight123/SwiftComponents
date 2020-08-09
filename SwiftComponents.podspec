@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
     # ss.resources  = 'SwiftComponents/SwiftComponents/SwiftComponents.bundle'
     # ss.subspec 'CoreGraphics' do |sss|
     #   sss.source_files = 'SwiftComponents/Extensions/CoreGraphics/*.swift'
-    # end
+    ss.dependency "SwifterSwift"
   end
 
   # 网络请求 数据解析

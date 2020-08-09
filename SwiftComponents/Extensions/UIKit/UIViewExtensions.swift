@@ -8,54 +8,6 @@
 
 import UIKit
 
-// MARK: - enums
-public extension UIView {
-
-    /// SwifterSwift: Shake directions of a view.
-    ///
-    /// - horizontal: Shake left and right.
-    /// - vertical: Shake up and down.
-    enum ShakeDirection {
-        /// SwifterSwift: Shake left and right.
-        case horizontal
-
-        /// SwifterSwift: Shake up and down.
-        case vertical
-    }
-
-    /// SwifterSwift: Angle units.
-    ///
-    /// - degrees: degrees.
-    /// - radians: radians.
-    enum AngleUnit {
-        /// SwifterSwift: degrees.
-        case degrees
-
-        /// SwifterSwift: radians.
-        case radians
-    }
-
-    /// SwifterSwift: Shake animations types.
-    ///
-    /// - linear: linear animation.
-    /// - easeIn: easeIn animation.
-    /// - easeOut: easeOut animation.
-    /// - easeInOut: easeInOut animation.
-    enum ShakeAnimationType {
-        /// SwifterSwift: linear animation.
-        case linear
-
-        /// SwifterSwift: easeIn animation.
-        case easeIn
-
-        /// SwifterSwift: easeOut animation.
-        case easeOut
-
-        /// SwifterSwift: easeInOut animation.
-        case easeInOut
-    }
-
-}
 
 // MARK: - Initializers
 public extension UIView {
@@ -253,29 +205,7 @@ public extension UIView {
         addMotionEffect(effect)
     }
     
-    /// SwifterSwift: Take screenshot of view (if applicable).
-    var screenshot: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
-        defer {
-            UIGraphicsEndImageContext()
-        }
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        layer.render(in: context)
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-    
-    // SwifterSwift: Get view's parent view controller
-    var parentViewController: UIViewController? {
-        weak var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
-    }
-    
+
     var selfViewController: UIViewController? {
         var next = self.next
         while next != nil {
@@ -285,60 +215,6 @@ public extension UIView {
             next = next?.next
         }
         return nil
-    }
-    
-    /// SwifterSwift: Width of view.
-    var width: CGFloat {
-        get {
-            return frame.size.width
-        }
-        set {
-            frame.size.width = newValue
-        }
-    }
-    
-    /// SwifterSwift: Height of view.
-    var height: CGFloat {
-        get {
-            return frame.size.height
-        }
-        set {
-            frame.size.height = newValue
-        }
-    }
-    
-    // swiftlint:disable identifier_name
-    /// SwifterSwift: x origin of view.
-    var x: CGFloat {
-        get {
-            return frame.origin.x
-        }
-        set {
-            frame.origin.x = newValue
-        }
-    }
-    // swiftlint:enable identifier_name
-    
-    // swiftlint:disable identifier_name
-    /// SwifterSwift: y origin of view.
-    var y: CGFloat {
-        get {
-            return frame.origin.y
-        }
-        set {
-            frame.origin.y = newValue
-        }
-    }
-    
-    /// SwifterSwift: Size of view.
-    var size: CGSize {
-        get {
-            return frame.size
-        }
-        set {
-            width = newValue.width
-            height = newValue.height
-        }
     }
     
 }
@@ -353,62 +229,8 @@ public extension UIView {
     func addSubviews(_ subviews: [UIView]) {
         subviews.forEach { addSubview($0) }
     }
-    
-    /// SwifterSwift: Rotate view by angle on relative axis.
-     ///
-     /// - Parameters:
-     ///   - angle: angle to rotate view by.
-     ///   - type: type of the rotation angle.
-     ///   - animated: set true to animate rotation (default is true).
-     ///   - duration: animation duration in seconds (default is 1 second).
-     ///   - completion: optional completion handler to run with animation finishes (default is nil).
-     func rotate(byAngle angle: CGFloat, ofType type: AngleUnit, animated: Bool = false, duration: TimeInterval = 1, completion: ((Bool) -> Void)? = nil) {
-         let angleWithType = (type == .degrees) ? .pi * angle / 180.0 : angle
-         let aDuration = animated ? duration : 0
-         UIView.animate(withDuration: aDuration, delay: 0, options: .curveLinear, animations: { () -> Void in
-             self.transform = self.transform.rotated(by: angleWithType)
-         }, completion: completion)
-     }
-
-     /// SwifterSwift: Rotate view to angle on fixed axis.
-     ///
-     /// - Parameters:
-     ///   - angle: angle to rotate view to.
-     ///   - type: type of the rotation angle.
-     ///   - animated: set true to animate rotation (default is false).
-     ///   - duration: animation duration in seconds (default is 1 second).
-     ///   - completion: optional completion handler to run with animation finishes (default is nil).
-     func rotate(toAngle angle: CGFloat, ofType type: AngleUnit, animated: Bool = false, duration: TimeInterval = 1, completion: ((Bool) -> Void)? = nil) {
-         let angleWithType = (type == .degrees) ? .pi * angle / 180.0 : angle
-         let aDuration = animated ? duration : 0
-         UIView.animate(withDuration: aDuration, animations: {
-             self.transform = self.transform.concatenating(CGAffineTransform(rotationAngle: angleWithType))
-         }, completion: completion)
-     }
-    /// SwifterSwift: Set some or all corners radiuses of view.
-      ///
-      /// - Parameters:
-      ///   - corners: array of corners to change (example: [.bottomLeft, .topRight]).
-      ///   - radius: radius for selected corners.
-      func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
-          let maskPath = UIBezierPath(
-              roundedRect: bounds,
-              byRoundingCorners: corners,
-              cornerRadii: CGSize(width: radius, height: radius))
-
-          let shape = CAShapeLayer()
-          shape.path = maskPath.cgPath
-          layer.mask = shape
-      }
-    
-    func addShadow(ofColor color: UIColor = UIColor(red: 0.07, green: 0.47, blue: 0.57, alpha: 1.0), radius: CGFloat = 3, offset: CGSize = .zero, opacity: Float = 0.5) {
-           layer.shadowColor = color.cgColor
-           layer.shadowOffset = offset
-           layer.shadowRadius = radius
-           layer.shadowOpacity = opacity
-           layer.masksToBounds = false
-       }
-    
+   
+ 
     @discardableResult
     func add<T: UIView>(_ subview: T) -> T {
         addSubview(subview)
@@ -503,29 +325,7 @@ public extension UIView {
             self.layer.addSublayer(border)
         }
     }
-    
-    /// SwifterSwift: Remove all subviews in view.
-    func removeSubviews() {
-        subviews.forEach({ $0.removeFromSuperview() })
-    }
-    
-    /// SwifterSwift: Remove all gesture recognizers from view.
-    func removeGestureRecognizers() {
-        gestureRecognizers?.forEach(removeGestureRecognizer)
-    }
-    
-    /// SwifterSwift: Attaches gesture recognizers to the view.
-    ///
-    /// Attaching gesture recognizers to a view defines the scope of the represented
-    /// gesture, causing it to receive touches hit-tested to that view and all of its
-    /// subviews. The view establishes a strong reference to the gesture recognizers.
-    ///
-    /// - Parameter gestureRecognizers: The array of gesture recognizers to be added to the view.
-    func addGestureRecognizers(_ gestureRecognizers: [UIGestureRecognizer]) {
-        for recognizer in gestureRecognizers {
-            addGestureRecognizer(recognizer)
-        }
-    }
+ 
     
     func maskCorner() {
         masksToBounds = true

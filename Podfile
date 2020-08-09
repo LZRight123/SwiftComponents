@@ -25,4 +25,7 @@ target 'SwiftComponentsDemo' do
   pod 'RxViewController'
   pod 'MJRefresh'
   pod 'MBProgressHUD'
+  
+#  pod 'EZSwiftExtensions'
+  pod 'SwifterSwift'
 end

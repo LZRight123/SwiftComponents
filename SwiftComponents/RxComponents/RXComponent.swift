@@ -25,3 +25,10 @@ import Foundation
 //Swift - RxSwift的使用详解61（sendMessage和methodInvoked的区别）
 // sendMessage 在原方法调用前
 // methodInvoked 在原方法调用后
+
+
+public extension SectionModel {
+    subscript(_ index: Int) -> ItemType {
+        return items[index]
+    }
+}

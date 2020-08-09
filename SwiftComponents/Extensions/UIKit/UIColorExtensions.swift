@@ -10,8 +10,8 @@ import UIKit
 
 public extension UIColor
 {
-    /// 主色 main1_00D5BB main2_03F4B3 main3_A8E2DB main4_94EBD4 main1_00D5BB
-    static let main = UIColor.hex32C8B1
+    /// 主色 
+    static let main = UIColor.hex01CE95
     static let hex25E5C7 = UIColor(hex: "25E5C7")
     static let hex32C8B1 = #colorLiteral(red: 0.1960784314, green: 0.7843137255, blue: 0.6941176471, alpha: 1)
     static let hex6A6A6A = #colorLiteral(red: 0.4156862745, green: 0.4156862745, blue: 0.4156862745, alpha: 1)
@@ -76,6 +76,7 @@ public extension UIColor
     static let imageBackgroundColor = UIColor.hexF5F7FA
     
     //MARK: - 多宝色
+    static let hex01CE95 = UIColor(hex: "01CE95")
     static let hexF5F7FA = #colorLiteral(red: 0.9607843137, green: 0.968627451, blue: 0.9803921569, alpha: 1)
     static let hex1AB1FC = #colorLiteral(red: 0.1019607843, green: 0.6941176471, blue: 0.9882352941, alpha: 1)
     static let hex1B93CE = UIColor(hex: "1B93CE")

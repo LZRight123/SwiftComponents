@@ -24,28 +24,6 @@ public extension UIFont {
     }
     
     
-    /// SwifterSwift: Font as bold font
-    public var bold: UIFont {
-        return UIFont(descriptor: fontDescriptor.withSymbolicTraits(.traitBold)!, size: pointSize)
-    }
-    
-    /// SwifterSwift: Font as italic font
-    var italic: UIFont {
-        return UIFont(descriptor: fontDescriptor.withSymbolicTraits(.traitItalic)!, size: pointSize)
-    }
-    
-    /// SwifterSwift: Font as monospaced font
-    ///
-    ///     UIFont.preferredFont(forTextStyle: .body).monospaced
-    ///
-    var monospaced: UIFont {
-        let settings = [[UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType, UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector]]
-        
-        let attributes = [UIFontDescriptor.AttributeName.featureSettings: settings]
-        let newDescriptor = fontDescriptor.addingAttributes(attributes)
-        return UIFont(descriptor: newDescriptor, size: pointSize)
-    }
-    
     static let font7 = UIFont.normalFont.withSize(7).autoScaled()
     static let font8 = UIFont.normalFont.withSize(8).autoScaled()
     static let font9 = UIFont.normalFont.withSize(9).autoScaled()
