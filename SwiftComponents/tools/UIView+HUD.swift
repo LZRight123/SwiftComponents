@@ -11,6 +11,10 @@ import Foundation
 
 private var hudKey: Void?
 public extension UIView {
+    enum ToastPosition {
+        case center
+        case bottom
+    }
     ///假定同一时间 一个view上只显示一个 HUD
     var hud: MBProgressHUD? {
         set {
@@ -23,7 +27,7 @@ public extension UIView {
     
     //显示等待消息
     @discardableResult
-    func showText(_ title: String, afterDelay delay: TimeInterval = 0.5) -> MBProgressHUD {
+    func showText(_ title: String?, afterDelay delay: TimeInterval = 1.5, position: ToastPosition = .center) -> MBProgressHUD {
         hud?.removeFromSuperview()
         hud = MBProgressHUD.showAdded(to: self, animated: true)
         hud?.mode = .text
@@ -36,9 +40,19 @@ public extension UIView {
         hud?.margin = 10
         hud?.removeFromSuperViewOnHide = true
         hud?.hide(animated: true, afterDelay: delay)
-//        hud?.isUserInteractionEnabled = false
+        if title.isNilOrEmpty {
+            hud?.removeFromSuperview()
+        }
+        switch position {
+        case .center: break
+        case .bottom:
+            let h = height > 0 ? height : ScreenHeight
+            hud?.offset = .init(x: 0, y: h * 0.5 - SafeBottomArea - TabbarHeight - 50)
+        }
         return hud!
     }
+    
+    
     
     @discardableResult
     func showLoading(_ title: String? = nil) -> MBProgressHUD {

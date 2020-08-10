@@ -78,6 +78,7 @@
 		DF57FFE424DD4150008C3FD1 /* UIView+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57FFE324DD4150008C3FD1 /* UIView+HUD.swift */; };
 		DF91024424DE4D0F004485DB /* ExtensionsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91024324DE4D0F004485DB /* ExtensionsComponent.swift */; };
 		DF91024624DE4E02004485DB /* SwiftComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DF91024524DE4E02004485DB /* SwiftComponents.podspec */; };
+		DF95D25524E0C866007B4D1C /* HUD+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25424E0C866007B4D1C /* HUD+RX.swift */; };
 		DFB1B39024CFB7970058E317 /* ProductDetailScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */; };
 		DFBF159F24C7BF2F00EF02A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */; };
 		DFBF15A324C7BF2F00EF02A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF15A224C7BF2F00EF02A6 /* ViewController.swift */; };
@@ -162,6 +163,7 @@
 		DF57FFE324DD4150008C3FD1 /* UIView+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+HUD.swift"; sourceTree = "<group>"; };
 		DF91024324DE4D0F004485DB /* ExtensionsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsComponent.swift; sourceTree = "<group>"; };
 		DF91024524DE4E02004485DB /* SwiftComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftComponents.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DF95D25424E0C866007B4D1C /* HUD+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HUD+RX.swift"; sourceTree = "<group>"; };
 		DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailScoreCell.swift; sourceTree = "<group>"; };
 		DFBF159B24C7BF2F00EF02A6 /* SwiftComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			children = (
 				DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */,
 				DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */,
+				DF95D25424E0C866007B4D1C /* HUD+RX.swift */,
 			);
 			path = RxComponents;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				DF19C6C724D2F700000ABBE8 /* UIButtonExtensions.swift in Sources */,
 				DF19C69D24D2F700000ABBE8 /* AppPermissionService.swift in Sources */,
 				DFBF159F24C7BF2F00EF02A6 /* AppDelegate.swift in Sources */,
+				DF95D25524E0C866007B4D1C /* HUD+RX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

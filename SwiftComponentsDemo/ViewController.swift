@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         $0.delegate = self
     }
 
+    
+    let showLoadingRelay = PublishRelay<Bool>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,17 +57,21 @@ class ViewController: UIViewController {
             $0.leading.equalToSuperview().offset(50)
         }
         
-        btn1.rx.tap.subscribe { [unowned self] _ in
-            self.view.showText("click btn1", afterDelay: 3)
-        }.disposed(by: disposeBag)
         
-        btn2.rx.tap.subscribe { [unowned self] _ in
-            self.view.showLoading()
-        }.disposed(by: disposeBag)
+     
+        btn1.rx.tap.map{ _ in "click rx btn1" }.bind(to: UIViewController.topViewController()!.rx.toast).disposed(by: disposeBag)
         
-        btn3.rx.tap.subscribe { [unowned self] _ in
-            self.view.hud?.hide(animated: true)
-        }.disposed(by: disposeBag)
+//        btn2.rx.tap.subscribe { [unowned self] _ in
+//            self.view.showLoading()
+//        }.disposed(by: disposeBag)
+        
+        btn2.rx.tap.map { _ in true }.bind(to: showLoadingRelay).disposed(by: disposeBag)
+        
+        btn2.rx.tap.delay(.seconds(2), scheduler: MainScheduler.instance).map { _ in false }.bind(to: showLoadingRelay).disposed(by: disposeBag)
+        
+        showLoadingRelay.bind(to: rx.isShowLoading).disposed(by: disposeBag)
+        
+        btn3.rx.tap.map  { _ in "click rx btn at bottom \n bottom" }.bind(to: rx.toastAtBottom).disposed(by: disposeBag)
         
 //        title = "积分活动"
 //        navigationController?.navigationBar.setBackgroundImage(UIImage.init(color:  .random, size: CGSize.init(width: 10, height: 10)), for: .default)
