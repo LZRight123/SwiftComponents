@@ -39,8 +39,8 @@ Pod::Spec.new do |s|
   # s.source_files  = "SwiftComponents/**/*.swift"
   # 一级目录（pod库中根目录所含文件）
   
-  # 每次都参与编译方便修改时
-  s.static_framework = true
+  # 每次都参与编译方便修改时 在子工程里写
+#  s.static_framework = true
   # 二级目录（根目录是s，使用s.subspec设置子目录，这里设置子目录为ss）
   s.subspec 'Extensions' do |ss|
     ss.source_files = 'SwiftComponents/Extensions/**/*.swift'
@@ -53,6 +53,7 @@ Pod::Spec.new do |s|
 
   # 网络请求 数据解析
   s.subspec 'service' do |ss|
+#    ss.static_framework = true
     ss.source_files = 'SwiftComponents/service/**/*.swift'
 
     ss.dependency "Moya"#, "~> 13.0.0"
@@ -63,6 +64,7 @@ Pod::Spec.new do |s|
 
   # 工具类
   s.subspec 'tools' do |ss|
+#    ss.static_framework = true
     ss.source_files = 'SwiftComponents/tools/**/*.swift'
 
     ss.dependency "SnapKit"
@@ -71,13 +73,15 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'router' do |ss|
-      ss.source_files = 'SwiftComponents/router/*.swift'
-      
-      ss.dependency "URLNavigator"
+#    ss.static_framework = true
+    ss.source_files = 'SwiftComponents/router/*.swift'
+    
+    ss.dependency "URLNavigator"
   end
   
   # RX套件
   s.subspec 'rxcomponents' do |ss|
+#    ss.static_framework = true
     ss.source_files = 'SwiftComponents/RxComponents/**/*.swift'
     
     ss.dependency "RxSwift"
@@ -88,12 +92,14 @@ Pod::Spec.new do |s|
     ss.dependency "RxViewController"
     ss.dependency "MJRefresh"
     ss.dependency "MBProgressHUD"
-#    pod 'RxKeyboard'
-#RxKingfisher
-#RxBiBinding 双向绑定
-#https://github.com/RxSwiftCommunity?q=&type=&language=swift    组件
   end
 
+  # 鹿管家公用组件
+#  s.subspec 'LGJPublic' do |ss|
+#    ss.static_framework = true
+#    ss.source_files = 'SwiftComponents/LGJPublic/**/*.swift'
+#
+#  end
 
 
   # 框架要求ARC环境下使用
