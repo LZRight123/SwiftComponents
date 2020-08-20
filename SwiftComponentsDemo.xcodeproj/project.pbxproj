@@ -228,6 +228,7 @@
 		DF19C64124D2F700000ABBE8 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				DF19C66524D2F700000ABBE8 /* BadgeView.swift */,
 				DF95D25624E0DF0C007B4D1C /* ListModel.swift */,
 				DF19C64224D2F700000ABBE8 /* mc.swift */,
 				DF19C64324D2F700000ABBE8 /* AppPermissionService.swift */,
@@ -302,7 +303,6 @@
 				DF19C66124D2F700000ABBE8 /* UIScrollViewExtensions.swift */,
 				DF19C66224D2F700000ABBE8 /* UISearchBarExtension.swift */,
 				DF19C66424D2F700000ABBE8 /* UITextFieldExtensions.swift */,
-				DF19C66524D2F700000ABBE8 /* BadgeView.swift */,
 				DF19C66624D2F700000ABBE8 /* UIStackViewExtensions.swift */,
 				DF19C66724D2F700000ABBE8 /* UICollectionViewExtensions.swift */,
 				DF19C66824D2F700000ABBE8 /* UITextViewExtensions.swift */,
