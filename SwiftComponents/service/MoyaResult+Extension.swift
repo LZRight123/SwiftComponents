@@ -133,7 +133,7 @@ extension Result where Result.Success == Moya.Response {
 public extension Result where Result.Success == Moya.Response {
     func mapObject<T: Convertible>(_ type: T.Type, atKeyPath keyPath: String? = nil) -> T? {
         if let keyPath = keyPath {
-            guard let originDic = (json?.dictionaryObject as NSDictionary?)?.value(forKey: keyPath) else {
+            guard let originDic = (json?.dictionaryObject as? NSDictionary)?.value(forKeyPath: keyPath) else {
                 return nil
             }
             
@@ -145,7 +145,7 @@ public extension Result where Result.Success == Moya.Response {
     
     func mapArray<T: Convertible>(_ type: T.Type, atKeyPath keyPath: String? = nil) -> [T]? {
         if let keyPath = keyPath {
-            guard let originDic = (json?.dictionaryObject as NSDictionary?)?.value(forKey: keyPath) else {
+            guard let originDic = (json?.dictionaryObject as? NSDictionary)?.value(forKeyPath: keyPath) else {
                 return nil
             }
             

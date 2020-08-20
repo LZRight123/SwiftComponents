@@ -10,6 +10,7 @@ import Foundation
 @_exported import Moya
 @_exported import Alamofire
 @_exported import KakaJSON
+@_exported import SwiftyJSON
 
 public let networkActivityPlugin = NetworkActivityPlugin{ (changeType: NetworkActivityChangeType, targetType: TargetType) in
     DispatchQueue.main.async {
@@ -100,12 +101,12 @@ public struct CGI {
     }
     
     @discardableResult
-    public static func requestObject<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String? = nil, completion: @escaping (MoyaResult, T?) -> Void ) -> Cancellable {
+    public static func requestObject<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String? = "data", completion: @escaping (MoyaResult, T?) -> Void ) -> Cancellable {
         return defaultProvider.requestObject(.init(target), modeType: modeType, completion: completion)
     }
     
     @discardableResult
-    public static func requestArray<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String? = nil, completion: @escaping (MoyaResult, [T]?) -> Void ) -> Cancellable {
+    public static func requestArray<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String?  = "data", completion: @escaping (MoyaResult, [T]?) -> Void ) -> Cancellable {
         return defaultProvider.requestArray(.init(target), modeType: modeType, completion: completion)
     }
     

@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: - Methods
 public extension UIScrollView {
-    func scrollToBottom(animated: Bool = true) {
-        var off = contentOffset
-        off.y = contentSize.height - bounds.height + contentInset.bottom
-        setContentOffset(off, animated: animated)
-    }
+//    func scrollToBottom(animated: Bool = true) {
+//        var off = contentOffset
+//        off.y = contentSize.height - bounds.height + contentInset.bottom
+//        setContentOffset(off, animated: animated)
+//    }
 }
 
 #endif

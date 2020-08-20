@@ -15,7 +15,6 @@
 		DF19C6A024D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64724D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift */; };
 		DF19C6A124D2F700000ABBE8 /* LZTransitioningAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64824D2F700000ABBE8 /* LZTransitioningAnimate.swift */; };
 		DF19C6A224D2F700000ABBE8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64924D2F700000ABBE8 /* Log.swift */; };
-		DF19C6A324D2F700000ABBE8 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64A24D2F700000ABBE8 /* URLHandler.swift */; };
 		DF19C6A424D2F700000ABBE8 /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64B24D2F700000ABBE8 /* Notification.Name+Extension.swift */; };
 		DF19C6A524D2F700000ABBE8 /* KeyChainUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64C24D2F700000ABBE8 /* KeyChainUUID.swift */; };
 		DF19C6A624D2F700000ABBE8 /* LZNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64E24D2F700000ABBE8 /* LZNavView.swift */; };
@@ -79,13 +78,17 @@
 		DF91024424DE4D0F004485DB /* ExtensionsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91024324DE4D0F004485DB /* ExtensionsComponent.swift */; };
 		DF91024624DE4E02004485DB /* SwiftComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DF91024524DE4E02004485DB /* SwiftComponents.podspec */; };
 		DF95D25524E0C866007B4D1C /* HUD+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25424E0C866007B4D1C /* HUD+RX.swift */; };
+		DF95D25724E0DF0C007B4D1C /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25624E0DF0C007B4D1C /* ListModel.swift */; };
+		DF95D25924E0E2E4007B4D1C /* PageRequest+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */; };
 		DFB1B39024CFB7970058E317 /* ProductDetailScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */; };
+		DFB29C4324E6605D00A4D939 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB29C4224E6605D00A4D939 /* Router.swift */; };
 		DFBF159F24C7BF2F00EF02A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */; };
 		DFBF15A324C7BF2F00EF02A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF15A224C7BF2F00EF02A6 /* ViewController.swift */; };
 		DFBF15A624C7BF2F00EF02A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15A424C7BF2F00EF02A6 /* Main.storyboard */; };
 		DFBF15A824C7BF3000EF02A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15A724C7BF3000EF02A6 /* Assets.xcassets */; };
 		DFBF15AB24C7BF3000EF02A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15A924C7BF3000EF02A6 /* LaunchScreen.storyboard */; };
 		DFBF15B324C7BFEF00EF02A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15B224C7BFEF00EF02A6 /* README.md */; };
+		DFD573D024E27AB000FF45D3 /* LineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD573CF24E27AB000FF45D3 /* LineCell.swift */; };
 		DFD73D6324DCEFD60073B5B7 /* RXComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */; };
 		DFEFFE3124D3AC4500E20BE9 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFFE3024D3AC4500E20BE9 /* BackgroundTimer.swift */; };
 /* End PBXBuildFile section */
@@ -100,7 +103,6 @@
 		DF19C64724D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZPopupTransitioningAnimate.swift; sourceTree = "<group>"; };
 		DF19C64824D2F700000ABBE8 /* LZTransitioningAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZTransitioningAnimate.swift; sourceTree = "<group>"; };
 		DF19C64924D2F700000ABBE8 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		DF19C64A24D2F700000ABBE8 /* URLHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
 		DF19C64B24D2F700000ABBE8 /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
 		DF19C64C24D2F700000ABBE8 /* KeyChainUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainUUID.swift; sourceTree = "<group>"; };
 		DF19C64E24D2F700000ABBE8 /* LZNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZNavView.swift; sourceTree = "<group>"; };
@@ -164,7 +166,10 @@
 		DF91024324DE4D0F004485DB /* ExtensionsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsComponent.swift; sourceTree = "<group>"; };
 		DF91024524DE4E02004485DB /* SwiftComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftComponents.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DF95D25424E0C866007B4D1C /* HUD+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HUD+RX.swift"; sourceTree = "<group>"; };
+		DF95D25624E0DF0C007B4D1C /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageRequest+RX.swift"; sourceTree = "<group>"; };
 		DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailScoreCell.swift; sourceTree = "<group>"; };
+		DFB29C4224E6605D00A4D939 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DFBF159B24C7BF2F00EF02A6 /* SwiftComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFBF15A224C7BF2F00EF02A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +178,7 @@
 		DFBF15AA24C7BF3000EF02A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFBF15AC24C7BF3000EF02A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBF15B224C7BFEF00EF02A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DFD573CF24E27AB000FF45D3 /* LineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCell.swift; sourceTree = "<group>"; };
 		DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXComponent.swift; sourceTree = "<group>"; };
 		DFEFFE3024D3AC4500E20BE9 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FC9771D17CCE8F8C97DC255C /* Pods-SwiftComponentsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComponentsDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftComponentsDemo/Pods-SwiftComponentsDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 		DF19C64024D2F700000ABBE8 /* SwiftComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DFB29C4124E6603700A4D939 /* router */,
 				DFD73D6124DCEFB30073B5B7 /* RxComponents */,
 				DF19C64124D2F700000ABBE8 /* tools */,
 				DF19C65A24D2F700000ABBE8 /* Extensions */,
@@ -221,11 +228,11 @@
 		DF19C64124D2F700000ABBE8 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				DF95D25624E0DF0C007B4D1C /* ListModel.swift */,
 				DF19C64224D2F700000ABBE8 /* mc.swift */,
 				DF19C64324D2F700000ABBE8 /* AppPermissionService.swift */,
 				DF19C64424D2F700000ABBE8 /* TransitioningAnimate */,
 				DF19C64924D2F700000ABBE8 /* Log.swift */,
-				DF19C64A24D2F700000ABBE8 /* URLHandler.swift */,
 				DF19C64B24D2F700000ABBE8 /* Notification.Name+Extension.swift */,
 				DF19C64C24D2F700000ABBE8 /* KeyChainUUID.swift */,
 				DF19C64D24D2F700000ABBE8 /* QuickUI */,
@@ -261,6 +268,7 @@
 				DF19C65124D2F700000ABBE8 /* QuickUI.swift */,
 				DF19C65224D2F700000ABBE8 /* InfoCell.swift */,
 				DF19C65324D2F700000ABBE8 /* LZButton.swift */,
+				DFD573CF24E27AB000FF45D3 /* LineCell.swift */,
 			);
 			path = QuickUI;
 			sourceTree = "<group>";
@@ -372,6 +380,14 @@
 			path = scoreActivitiy;
 			sourceTree = "<group>";
 		};
+		DFB29C4124E6603700A4D939 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				DFB29C4224E6605D00A4D939 /* Router.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		DFBF159224C7BF2F00EF02A6 = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +429,7 @@
 				DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */,
 				DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */,
 				DF95D25424E0C866007B4D1C /* HUD+RX.swift */,
+				DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */,
 			);
 			path = RxComponents;
 			sourceTree = "<group>";
@@ -559,11 +576,13 @@
 				DF19C69C24D2F700000ABBE8 /* mc.swift in Sources */,
 				DF19C6AA24D2F700000ABBE8 /* InfoCell.swift in Sources */,
 				DF19C6C624D2F700000ABBE8 /* UILabelExtensions.swift in Sources */,
+				DF95D25724E0DF0C007B4D1C /* ListModel.swift in Sources */,
 				DF19C6A924D2F700000ABBE8 /* QuickUI.swift in Sources */,
 				DF19C6AB24D2F700000ABBE8 /* LZButton.swift in Sources */,
 				DF57FFE024DD392B008C3FD1 /* MJRefresh+RX.swift in Sources */,
 				DF19C6CB24D2F700000ABBE8 /* UIResponderExtensions.swift in Sources */,
 				DF19C6E024D2F700000ABBE8 /* DoubleExtensions.swift in Sources */,
+				DF95D25924E0E2E4007B4D1C /* PageRequest+RX.swift in Sources */,
 				DF19C6BC24D2F700000ABBE8 /* UICollectionViewExtensions.swift in Sources */,
 				DF19C6E824D2F700000ABBE8 /* AuthorizationHeaderPlugin.swift in Sources */,
 				DF19C6B924D2F700000ABBE8 /* UITextFieldExtensions.swift in Sources */,
@@ -580,11 +599,11 @@
 				DF19C6B524D2F700000ABBE8 /* UITableViewExtensions.swift in Sources */,
 				DF19C6AC24D2F700000ABBE8 /* Then.swift in Sources */,
 				DF19C69F24D2F700000ABBE8 /* LZPresentationControlller.swift in Sources */,
+				DFD573D024E27AB000FF45D3 /* LineCell.swift in Sources */,
 				DFBF15A324C7BF2F00EF02A6 /* ViewController.swift in Sources */,
 				DF19C6A024D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift in Sources */,
 				DF19C6E724D2F700000ABBE8 /* MoyaResult+Extension.swift in Sources */,
 				DF19C6DE24D2F700000ABBE8 /* StringExtensions.swift in Sources */,
-				DF19C6A324D2F700000ABBE8 /* URLHandler.swift in Sources */,
 				DF19C6CE24D2F700000ABBE8 /* UIColorExtensions.swift in Sources */,
 				DF19C6C024D2F700000ABBE8 /* UIViewControllerExtensions.swift in Sources */,
 				DF19C6AE24D2F700000ABBE8 /* GlobalParameter.swift in Sources */,
@@ -599,6 +618,7 @@
 				DF19C6AF24D2F700000ABBE8 /* SnapKitExtensions.swift in Sources */,
 				DF19C6B724D2F700000ABBE8 /* UISearchBarExtension.swift in Sources */,
 				DF19C6AD24D2F700000ABBE8 /* DiskCache.swift in Sources */,
+				DFB29C4324E6605D00A4D939 /* Router.swift in Sources */,
 				DF19C6E624D2F700000ABBE8 /* TargetType+Extension.swift in Sources */,
 				DF19C6D424D2F700000ABBE8 /* NSAttributedStringExtensions.swift in Sources */,
 				DF19C6B424D2F700000ABBE8 /* CALayerExtensions.swift in Sources */,

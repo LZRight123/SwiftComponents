@@ -27,7 +27,10 @@ class ScoreActivitiyItemCCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalTo(ScreenWidth - 2 * margin)
+        }
         backgroundColor = .white
         lineWidth.constant = ScreenWidth - margin * 2 - 13 - 7.5
 //        contentView.removeConstraint(lineWidth)

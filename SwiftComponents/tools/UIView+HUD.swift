@@ -27,14 +27,14 @@ public extension UIView {
     
     //显示等待消息
     @discardableResult
-    func showText(_ title: String?, afterDelay delay: TimeInterval = 1.5, position: ToastPosition = .center) -> MBProgressHUD {
+    func showText(_ title: String?, afterDelay delay: TimeInterval = 2.5, position: ToastPosition = .center) -> MBProgressHUD {
         hud?.removeFromSuperview()
         hud = MBProgressHUD.showAdded(to: self, animated: true)
         hud?.mode = .text
         hud?.label.text = title
+        hud?.label.font = .font16
         hud?.contentColor = .white
-        //        hud?.label.textColor = .white
-        hud?.bezelView.color = UIColor.black.withAlphaComponent(0.6)
+        hud?.bezelView.color = UIColor.black.withAlphaComponent(0.7)
         hud?.bezelView.style = .solidColor
         hud?.bezelView.layer.cornerRadius = 6
         hud?.margin = 10
@@ -59,15 +59,37 @@ public extension UIView {
         hud?.removeFromSuperview()
         hud = MBProgressHUD.showAdded(to: self, animated: true)
         hud?.label.text = title
-        hud?.bezelView.color = UIColor.black.withAlphaComponent(0.6)
+        hud?.bezelView.color = UIColor.black.withAlphaComponent(0.7)
         hud?.bezelView.style = .solidColor
         hud?.contentColor = .white
         hud?.removeFromSuperViewOnHide = true
 //        hud?.isUserInteractionEnabled = false
         return hud!
     }
+    
+    func hiddeLoading() {
+        hud?.hide(animated: true)
+    }
 
 }
+
+
+public extension UIViewController {
+    @discardableResult
+    func showText(_ title: String?, afterDelay delay: TimeInterval = 2.5, position: UIView.ToastPosition = .center) -> MBProgressHUD {
+       return view.showText(title, afterDelay: delay, position: position)
+    }
+    
+    @discardableResult
+    func showLoading(_ title: String? = nil) -> MBProgressHUD {
+        return view.showLoading(title)
+    }
+    
+    func hiddeLoading() {
+        view.hud?.hide(animated: true)
+    }
+}
+
 
 
 /* 自定义央视

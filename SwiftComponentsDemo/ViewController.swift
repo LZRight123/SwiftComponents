@@ -10,14 +10,16 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
-
-
+import MJRefresh
+import URLNavigator
+import SwifterSwift
 
 private let margin: CGFloat = 16
 class ViewController: UIViewController {
+    var sections = 3
     let disposeBag = DisposeBag()
     let topView = TopView()
-    private lazy var collectionView = AutoLayoutCollectionView(scrollDirection: .vertical).then {
+    private lazy var collectionView = UICollectionView(scrollDirection: .vertical).then {
 //        if let layout = $0.collectionViewLayout as? UICollectionViewFlowLayout {
 ////            layout.itemSize = UICollectionViewFlowLayout.automaticSize
 //            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -34,11 +36,31 @@ class ViewController: UIViewController {
         $0.delegate = self
     }
 
+    let pageRequest = PageRequest()
     
     let showLoadingRelay = PublishRelay<Bool>()
     
+    private lazy var tableView = UITableView(style: .plain).then {
+        $0.dataSource = self
+        $0.delegate = self
+        $0.register(UITableViewCell.self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.add(tableView).snp.makeConstraints { $0.edges.equalToSuperview() }
+        
+        tableView.mj_header = MJRefreshNormalHeader()
+        tableView.mj_footer = MJRefreshBackNormalFooter()
+        
+//
+//        tableView.mj_header?.rx.refreshing
+//            .map{ _ in 1 }
+//            .bind(to: pageRequest.rx.reset).disposed(by: disposeBag)
+//
+//        tableView.mj_footer?.rx.refreshing.map { _ in 1 }.bind(to: pageRequest.rx.increase).disposed(by: disposeBag)
+        
 
         let btn1 = UIButton(color: .random)
         
@@ -57,10 +79,30 @@ class ViewController: UIViewController {
             $0.leading.equalToSuperview().offset(50)
         }
         
+        let s = "https://dev.oms.luguanjia.com/mini?id=251&amp;officeName=第一社区卫生室&amp;name=陈瑾立&amp;userRoyaltyCode=offline&amp;defaultDelivery=null".replacingOccurrences(of: "&amp;", with: "&")
+        let com = URLComponents(string: s)
         
+        
+        btn1.rx.tap.subscribe { _ in
+            navigator.push("https://dev.oms.luguanjia.com/mini?id=201|officeName=金银湖街卫生院|name=陈也|userRoyaltyCode=doctor|defaultDelivery=1 家医码", context: ["1": "2"])
+        }.disposed(by: disposeBag)
+        
+        btn2.rx.tap.subscribe { _ in
+            navigator.present("https://dev.oms.luguanjia.com/mini?id=201&officeName=金银湖街卫生院&name=陈也&userRoyaltyCode=doctor&defaultDelivery=1 家医码", context: "字符串？？？？")
+        }.disposed(by: disposeBag)
+        
+        btn3.rx.tap.subscribe { _ in
+            
+        }.disposed(by: disposeBag)
      
-        btn1.rx.tap.map{ _ in "click rx btn1" }.bind(to: UIViewController.topViewController()!.rx.toast).disposed(by: disposeBag)
+//        btn1.rx.tap.map{ _ in "click rx btn1" }.bind(to: UIViewController.topViewController()!.rx.toast).disposed(by: disposeBag)
         
+        btn1.rx.tap.map{ _ in true }.bind(to: tableView.mj_header!.rx.endRefreshing).disposed(by: disposeBag)
+        btn1.rx.tap.map{ _ in true }.bind(to: tableView.mj_footer!.rx.endRefreshing).disposed(by: disposeBag)
+
+        btn1.rx.tap.subscribe { _ in
+            print(self.pageRequest.pageNumber)
+        }.disposed(by: disposeBag)
 //        btn2.rx.tap.subscribe { [unowned self] _ in
 //            self.view.showLoading()
 //        }.disposed(by: disposeBag)
@@ -69,15 +111,15 @@ class ViewController: UIViewController {
         
         btn2.rx.tap.delay(.seconds(2), scheduler: MainScheduler.instance).map { _ in false }.bind(to: showLoadingRelay).disposed(by: disposeBag)
         
-        showLoadingRelay.bind(to: rx.isShowLoading).disposed(by: disposeBag)
+//        showLoadingRelay.bind(to: rx.isShowLoading).disposed(by: disposeBag)
         
         btn3.rx.tap.map  { _ in "click rx btn at bottom \n bottom" }.bind(to: rx.toastAtBottom).disposed(by: disposeBag)
         
 //        title = "积分活动"
 //        navigationController?.navigationBar.setBackgroundImage(UIImage.init(color:  .random, size: CGSize.init(width: 10, height: 10)), for: .default)
 //
-//        initiaUI()
-//        self.collectionView.reloadData()
+        initiaUI()
+        self.collectionView.reloadData()
         // Do any additional setup after loading the view.
     }
     
@@ -118,6 +160,111 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
 
 }
+
+
+
+
+
+extension ViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int { sections }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withClass: UICollectionViewCell.self, for: indexPath)
+//        cell.backgroundColor = .random
+//        return cell
+        
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withClass: ScoreActivitiyItemCCell.self, for: indexPath)
+            return cell
+        case 2: break
+        default : break
+        }
+        let cell = collectionView.dequeueReusableCell(withClass: ProductDetailScoreCell.self, for: indexPath)
+        cell.backgroundColor = .random
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader  {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: TitleHeaderView.self, for: indexPath)
+            header.contentView.frame = .init(x: margin, y: 0, width: ScreenWidth - 2 * margin, height: 45)
+            header.contentView.backgroundColor = .white
+            switch indexPath.section {
+            case 0:
+                header.style = .one
+                header.titleLabel.text = "积分攻略"
+                header.subtitleLabel.text = "赚积分必备小攻略~"
+                header.contentView.mask(corners: [.topLeft, .topRight], radius: 8)
+            case 1:
+                header.style = .two
+                header.titleLabel.text = nil
+                header.subtitleLabel.text = "还有更多赚积分的途径哦~"
+                header.contentView.mask(corners: [.topLeft, .topRight], radius: 0)
+            case 2:
+                header.titleLabel.text = nil
+                header.subtitleLabel.text = nil
+                header.contentView.backgroundColor = .clear
+                return header
+            default: break
+            }
+            return header
+        }
+        // footer
+        let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: FooterView.self, for: indexPath)
+        footer.contentView.backgroundColor = .white
+        footer.bottomRadius = 0
+        switch indexPath.section {
+        case 0: break
+        case 1: footer.bottomRadius = 10
+        case 2:
+            footer.contentView.backgroundColor = .clear
+        default: break
+        }
+        
+        return footer
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.sections = Int.random(in: 10...20)
+        
+        collectionView.reloadData()
+    }
+    
+
+}
+
+ 
+
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        sections
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withClass: UITableViewCell.self)
+        cell.textLabel?.text = "\(indexPath.section) - \(indexPath.row)"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        sections = Int.random(in: 5...10)
+        
+        tableView.reloadData()
+    }
+}
+
+
+
 
 
 
@@ -221,69 +368,3 @@ extension ViewController {
 
 
 
-
-
-
-
-extension ViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int { 3 }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = collectionView.dequeueReusableCell(withClass: ScoreActivitiyItemCCell.self, for: indexPath)
-            return cell
-        case 2: break
-        default : break
-        }
-        let cell = collectionView.dequeueReusableCell(withClass: ProductDetailScoreCell.self, for: indexPath)
-        cell.backgroundColor = .random
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader  {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: TitleHeaderView.self, for: indexPath)
-            header.contentView.frame = .init(x: margin, y: 0, width: ScreenWidth - 2 * margin, height: 45)
-            header.contentView.backgroundColor = .white
-            switch indexPath.section {
-            case 0:
-                header.style = .one
-                header.titleLabel.text = "积分攻略"
-                header.subtitleLabel.text = "赚积分必备小攻略~"
-                header.contentView.mask(corners: [.topLeft, .topRight], radius: 8)
-            case 1:
-                header.style = .two
-                header.titleLabel.text = nil
-                header.subtitleLabel.text = "还有更多赚积分的途径哦~"
-                header.contentView.mask(corners: [.topLeft, .topRight], radius: 0)
-            case 2:
-                header.titleLabel.text = nil
-                header.subtitleLabel.text = nil
-                header.contentView.backgroundColor = .clear
-                return header
-            default: break
-            }
-            return header
-        }
-        // footer
-        let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: FooterView.self, for: indexPath)
-        footer.contentView.backgroundColor = .white
-        footer.bottomRadius = 0
-        switch indexPath.section {
-        case 0: break
-        case 1: footer.bottomRadius = 10
-        case 2:
-            footer.contentView.backgroundColor = .clear
-        default: break
-        }
-        
-        return footer
-    }
-}
-
- 

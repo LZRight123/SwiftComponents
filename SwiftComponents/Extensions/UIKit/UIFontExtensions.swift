@@ -55,7 +55,8 @@ public extension UIFont {
     static let font35 = UIFont.normalFont.withSize(35).autoScaled()
     static let font45 = UIFont.normalFont.withSize(45).autoScaled()
 
-    
+    static let font50 = UIFont.normalFont.withSize(45).autoScaled()
+
     private func autoScaled() -> UIFont {
 //        if #available(iOS 11.0, *) {
 //            return UIFontMetrics.default.scaledFont(for: self)

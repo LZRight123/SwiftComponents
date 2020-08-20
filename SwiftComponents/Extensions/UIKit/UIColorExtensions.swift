@@ -118,6 +118,7 @@ public extension UIColor
     static let hex666666 = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
     static let hex999999 = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     static let hexBEBEBE = #colorLiteral(red: 0.7450980392, green: 0.7450980392, blue: 0.7450980392, alpha: 1)
+    static let hexBFBFBF = #colorLiteral(red: 0.7490196078, green: 0.7490196078, blue: 0.7490196078, alpha: 1)
     //MARK:- ????
     static let hexEEEEEE = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
     static let hexCCCCCC = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)

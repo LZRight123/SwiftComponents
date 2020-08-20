@@ -26,6 +26,21 @@ import Foundation
 // sendMessage 在原方法调用前
 // methodInvoked 在原方法调用后
 
+//private var dispoaseBagKey: Void?    搞成uiviewcontroller的分类比较好
+//public extension NSObject {
+//    var dispoaseBag: DisposeBag {
+//        get {
+//            let dispoaseBag: DisposeBag
+//            if let value = objc_getAssociatedObject(self, &dispoaseBagKey) as? DisposeBag {
+//                dispoaseBag = value
+//            } else {
+//                dispoaseBag = DisposeBag()
+//                objc_setAssociatedObject(self, &dispoaseBagKey, dispoaseBag, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+//            }
+//            return dispoaseBag
+//        }
+//    }
+//}
 
 public extension SectionModel {
     subscript(_ index: Int) -> ItemType {

@@ -25,6 +25,13 @@ public extension NSMutableAttributedString {
         attri.addAttributes(subAttri, range: full.rangeOf(sub))
         return attri
     }
+    
+    func font(with font: Color) -> NSAttributedString {
+        let copy = NSMutableAttributedString(attributedString: self)
+        let range = (string as NSString).range(of: string)
+        copy.addAttributes([.font: font], range: range)
+        return copy
+    }
 }
 
 #endif

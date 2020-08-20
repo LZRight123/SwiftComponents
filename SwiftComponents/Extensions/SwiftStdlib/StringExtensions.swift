@@ -10,6 +10,12 @@ import Foundation
 import SwifterSwift
 
 public extension String {
+    func font(with font: UIFont) -> NSAttributedString {
+        return NSMutableAttributedString(string: self, attributes: [.font: font])
+    }
+}
+
+public extension String {
     func format(_ f: String) -> String {
         return String(format: "%\(f)", self)
     }
@@ -36,6 +42,12 @@ public extension String {
         let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: font.lineHeight)
         let preferredRect = (self as NSString).boundingRect(with: size, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(preferredRect.width)
+    }
+    
+    func bounding(with font: UIFont, size: CGSize) -> CGSize {
+//        let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: font.lineHeight)
+        let preferredRect = (self as NSString).boundingRect(with: size, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil)
+        return preferredRect.size
     }
     
     func buildInsert(before: String, after: String, attributes: [NSAttributedString.Key : Any]) -> NSMutableAttributedString {

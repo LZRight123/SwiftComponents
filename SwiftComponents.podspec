@@ -70,6 +70,12 @@ Pod::Spec.new do |s|
     ss.dependency "MBProgressHUD"
   end
   
+  s.subspec 'router' do |ss|
+      ss.source_files = 'SwiftComponents/router/*.swift'
+      
+      ss.dependency "URLNavigator"
+  end
+  
   # RX套件
   s.subspec 'rxcomponents' do |ss|
     ss.source_files = 'SwiftComponents/RxComponents/**/*.swift'
@@ -82,7 +88,10 @@ Pod::Spec.new do |s|
     ss.dependency "RxViewController"
     ss.dependency "MJRefresh"
     ss.dependency "MBProgressHUD"
-
+#    pod 'RxKeyboard'
+#RxKingfisher
+#RxBiBinding 双向绑定
+#https://github.com/RxSwiftCommunity?q=&type=&language=swift    组件
   end
 
 

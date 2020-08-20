@@ -10,7 +10,7 @@
 import Foundation
 
 //MARK: - 创建文件夹
-extension FileManager {
+public extension FileManager {
     func createFolder(folderName: String, for directory: SearchPathDirectory = .cachesDirectory) -> URL {
         let folderParentURL = FileManager.default.urls(for: directory, in: .userDomainMask)[0]
         let folderURL = folderParentURL.appendingPathComponent(folderName)

@@ -28,4 +28,6 @@ target 'SwiftComponentsDemo' do
   
 #  pod 'EZSwiftExtensions'
   pod 'SwifterSwift'
+  
+  pod 'URLNavigator'
 end

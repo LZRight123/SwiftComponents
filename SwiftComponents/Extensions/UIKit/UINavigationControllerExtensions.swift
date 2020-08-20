@@ -53,6 +53,10 @@ public extension UINavigationController {
     @objc func popFromStack(_ vc: UIViewController) {
         viewControllers = viewControllers.filter { $0 != vc }
     }
+    
+    func popFromStack<T: UIViewController>(vcType: T.Type) {
+        viewControllers = viewControllers.filter { !($0 is T) }
+    }
         
 }
 
