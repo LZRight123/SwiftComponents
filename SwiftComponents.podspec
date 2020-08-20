@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.frameworks='Foundation','UIKit'
   
-  # 默认导入的
-  # s.default_subspec = "Core"
-
+  # 设置 podspec 的默认 subspec
+  s.default_subspecs = 'Extensions', 'service', 'tools', 'router', 'rxcomponents'
+  
   # 本地框架源文件的位置（包含所有文件）
   # s.source_files  = "SwiftComponents/**/*.swift"
   # 一级目录（pod库中根目录所含文件）
