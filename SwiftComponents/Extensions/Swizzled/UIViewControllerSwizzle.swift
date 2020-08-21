@@ -35,15 +35,15 @@ extension UIViewController {
     }
     
     /// 绑定VM
-    @objc public func cc_bindViewModel() {}
+    @objc open func cc_bindViewModel() {}
     /// UI设置
-    @objc public func cc_setupUI() {}
+    @objc open func cc_setupUI() {}
     /// UI控件处理事件
-    @objc public func cc_setupEvent() {}
+    @objc open func cc_setupEvent() {}
     /// UI控件布局
-    @objc public func cc_setupLayout() {}
+    @objc open func cc_setupLayout() {}
     /// UI导航栏处理
-    @objc public func cc_setupNavigationBar() {}
+    @objc open func cc_setupNavigationBar() {}
     
     @objc internal func cc_viewDidLoad() {
         self.cc_viewDidLoad()

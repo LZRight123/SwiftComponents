@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-struct Function {
+open class Function {
     /// 方法交换
-    static func swizzled() {
+    open class func swizzled() {
         UIViewController.doBadSwizzleStuff()
         UINavigationController.doBadSwizzleStuff()
         UIView.doBadSwizzleStuff()
@@ -55,7 +55,7 @@ public func swizzle<T: NSObject>(_ cls: T.Type, sels: [(Selector, Selector)]) {
 
 // MARK: - UIView
 
-extension UIView {
+public extension UIView {
     private static var hasSwizzled = false
     
     @objc public class func doBadSwizzleStuff() {
@@ -70,16 +70,19 @@ extension UIView {
                  #selector(self.cc_layoutSubviews)),
                 
                 (#selector(self.init(frame:)),
-                 #selector(self.cc_init(frame:)))
+                 #selector(self.cc_init(frame:))),
+                
+                (#selector(self.init(coder:)),
+                 #selector(self.cc_init(coder:)))
             ]
         )
     }
     
-    @objc public func cc_bindViewModel() {}
+    @objc open func cc_bindViewModel() {}
     
-    @objc public func cc_setupUI() {}
-    @objc public func cc_setupEvent() {}
-    @objc public func cc_setupLayout() {}
+    @objc open func cc_setupUI() {}
+    @objc open func cc_setupEvent() {}
+    @objc open func cc_setupLayout() {}
     
     @objc internal func cc_traitCollectionDidChange(_ previousTraitCollection: UITraitCollection) {
         self.cc_traitCollectionDidChange(previousTraitCollection)
@@ -97,6 +100,19 @@ extension UIView {
     
     @objc internal func cc_init(frame: CGRect) -> UIView {
         let view = self.cc_init(frame: frame)
+        /// UITableViewCell UICollectionViewCell 有自己单独的初始化方法，不在此处做方法交换
+        guard !(self is UITableViewCell || self is UICollectionViewCell) else {
+            return view
+        }
+        cc_setupUI()
+        cc_setupEvent()
+        
+        cc_bindViewModel()
+        return view
+    }
+    
+    @objc internal func cc_init(coder: NSCoder) -> UIView {
+        let view = self.cc_init(coder: coder)
         /// UITableViewCell UICollectionViewCell 有自己单独的初始化方法，不在此处做方法交换
         guard !(self is UITableViewCell || self is UICollectionViewCell) else {
             return view
@@ -147,7 +163,9 @@ extension UITableViewCell {
             (#selector(self.init(style:reuseIdentifier:)),
              #selector(self.cc_init(style:reuseIdentifier:))),
             (#selector(self.setSelected(_:animated:)),
-             #selector(self.cc_setSelected(_:animated:)))
+             #selector(self.cc_setSelected(_:animated:))),
+            (#selector(self.awakeFromNib),
+             #selector(self.cc_awakeFromNib))
             ]
         )
     }
@@ -165,6 +183,14 @@ extension UITableViewCell {
         cc_bindViewModel()
         
         return cell
+    }
+    
+    @objc internal func cc_awakeFromNib() {
+        let view = self.cc_awakeFromNib()
+        cc_setupUI()
+        cc_setupEvent()
+        
+        cc_bindViewModel()
     }
     
     @objc internal func cc_setSelected(_ selected: Bool, animated: Bool) {
@@ -187,7 +213,9 @@ extension UICollectionViewCell {
         swizzle(self, sels:
             [
                 (#selector(self.init(frame:)),
-                 #selector(self.cc_collectionCell_init(frame:)))
+                 #selector(self.cc_collectionCell_init(frame:))),
+                (#selector(self.awakeFromNib),
+                 #selector(self.cc_awakeFromNib))
             ]
         )
     }
@@ -200,6 +228,14 @@ extension UICollectionViewCell {
         cc_bindViewModel()
         
         return cell
+    }
+    
+    @objc internal func cc_awakeFromNib() {
+        let view = self.cc_awakeFromNib()
+        cc_setupUI()
+        cc_setupEvent()
+        
+        cc_bindViewModel()
     }
     
 }
