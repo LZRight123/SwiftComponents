@@ -11,7 +11,17 @@ import Foundation
 //MARK: - 时间计算
 public struct SecondCalculate {
     public let second: TimeInterval
-    public let formatter = "--:mm:ss"
+    /*
+     "--:mm:ss"
+     "hh:mm:ss"
+     "mm:ss"
+     */
+    public let formatter: String
+    
+    public init(second: TimeInterval = 0, formatter: String = "--:mm:ss") {
+        self.second = second
+        self.formatter = formatter
+    }
     
     public var hour: Int {
         guard second > 0 else {
