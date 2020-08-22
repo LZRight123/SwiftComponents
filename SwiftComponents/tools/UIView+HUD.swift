@@ -27,7 +27,7 @@ public extension UIView {
     
     //显示等待消息
     @discardableResult
-    func showText(_ title: String?, afterDelay delay: TimeInterval = 2.5, position: ToastPosition = .center) -> MBProgressHUD {
+    func showText(_ title: String?, afterDelay delay: TimeInterval = 1.5, position: ToastPosition = .center) -> MBProgressHUD {
         hud?.removeFromSuperview()
         hud = MBProgressHUD.showAdded(to: self, animated: true)
         hud?.mode = .text
@@ -76,7 +76,7 @@ public extension UIView {
 
 public extension UIViewController {
     @discardableResult
-    func showText(_ title: String?, afterDelay delay: TimeInterval = 2.5, position: UIView.ToastPosition = .center) -> MBProgressHUD {
+    func showText(_ title: String?, afterDelay delay: TimeInterval = 1.5, position: UIView.ToastPosition = .center) -> MBProgressHUD {
        return view.showText(title, afterDelay: delay, position: position)
     }
     
