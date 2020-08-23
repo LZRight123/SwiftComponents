@@ -90,6 +90,7 @@
 		DFBF15B324C7BFEF00EF02A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15B224C7BFEF00EF02A6 /* README.md */; };
 		DFD573D024E27AB000FF45D3 /* LineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD573CF24E27AB000FF45D3 /* LineCell.swift */; };
 		DFD73D6324DCEFD60073B5B7 /* RXComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */; };
+		DFE23E0C24F0BDD8005F0D2D /* SecondCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE23E0B24F0BDD8005F0D2D /* SecondCalculate.swift */; };
 		DFEFFE3124D3AC4500E20BE9 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFFE3024D3AC4500E20BE9 /* BackgroundTimer.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,7 @@
 		DFBF15B224C7BFEF00EF02A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DFD573CF24E27AB000FF45D3 /* LineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCell.swift; sourceTree = "<group>"; };
 		DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXComponent.swift; sourceTree = "<group>"; };
+		DFE23E0B24F0BDD8005F0D2D /* SecondCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCalculate.swift; sourceTree = "<group>"; };
 		DFEFFE3024D3AC4500E20BE9 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FC9771D17CCE8F8C97DC255C /* Pods-SwiftComponentsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComponentsDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftComponentsDemo/Pods-SwiftComponentsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +247,7 @@
 				DF19C65924D2F700000ABBE8 /* ShowAnimate.swift */,
 				DFEFFE3024D3AC4500E20BE9 /* BackgroundTimer.swift */,
 				DF57FFE324DD4150008C3FD1 /* UIView+HUD.swift */,
+				DFE23E0B24F0BDD8005F0D2D /* SecondCalculate.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				DF19C6DE24D2F700000ABBE8 /* StringExtensions.swift in Sources */,
 				DF19C6CE24D2F700000ABBE8 /* UIColorExtensions.swift in Sources */,
 				DF19C6C024D2F700000ABBE8 /* UIViewControllerExtensions.swift in Sources */,
+				DFE23E0C24F0BDD8005F0D2D /* SecondCalculate.swift in Sources */,
 				DF19C6AE24D2F700000ABBE8 /* GlobalParameter.swift in Sources */,
 				DF19C6B224D2F700000ABBE8 /* CGFloatExtensions.swift in Sources */,
 				DF19C6E424D2F700000ABBE8 /* OptionalExtensions.swift in Sources */,

@@ -23,3 +23,12 @@
 
 
 ##### 小梁自用:本地使用 dev_lz分支
+
+1. [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)]
+2. [BEMCheckBox](https://github.com/Boris-Em/BEMCheckBox)
+
+
+### User
+pod update SwiftComponents --no-repo-update
+pod 'SwiftComponents', :path => '../SwiftComponents'
+pod 'SwiftComponents/router', :git => 'https://github.com/LZRight123/SwiftComponents.git'
