@@ -73,6 +73,8 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'router' do |ss|
+    ss.platform     = :ios, "9.0"
+
 #    ss.static_framework = true
     ss.source_files = 'SwiftComponents/router/*.swift'
     
