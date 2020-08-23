@@ -29,6 +29,6 @@
 
 
 ### User
-pod update SwiftComponents --no-repo-update
-pod 'SwiftComponents', :path => '../SwiftComponents'
-pod 'SwiftComponents/router', :git => 'https://github.com/LZRight123/SwiftComponents.git'
+1. pod update SwiftComponents --no-repo-update
+2. pod 'SwiftComponents', :path => '../SwiftComponents'
+3. pod 'SwiftComponents/router', :git => 'https://github.com/LZRight123/SwiftComponents.git'
