@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.frameworks='Foundation','UIKit'
   
   # 设置 podspec 的默认 subspec
-  s.default_subspecs = 'Extensions', 'service', 'tools', 'router', 'rxcomponents'
+  s.default_subspecs = 'Extensions', 'service_rx', 'tools', 'router', 'rxcomponents'
   
   # 本地框架源文件的位置（包含所有文件）
   # s.source_files  = "SwiftComponents/**/*.swift"
@@ -59,7 +59,13 @@ Pod::Spec.new do |s|
     ss.dependency "Moya"#, "~> 13.0.0"
     ss.dependency "KakaJSON"
     ss.dependency "SwiftyJSON"
+    ss.dependency 'YYCache'
+  end
 
+  s.subspec 'service_rx' do |ss|
+    ss.source_files = 'SwiftComponents/service_rx/**/*.swift'
+    ss.dependency 'SwiftComponents/service'
+    ss.dependency "RxSwift", "~> 5.0"
   end
 
   # 工具类

@@ -25,12 +25,23 @@
     "Foundation",
     "UIKit"
   ],
-  "static_framework": true,
+  "default_subspecs": [
+    "Extensions",
+    "service_rx",
+    "tools",
+    "router",
+    "rxcomponents"
+  ],
   "requires_arc": true,
   "subspecs": [
     {
       "name": "Extensions",
-      "source_files": "SwiftComponents/Extensions/**/*.swift"
+      "source_files": "SwiftComponents/Extensions/**/*.swift",
+      "dependencies": {
+        "SwifterSwift": [
+
+        ]
+      }
     },
     {
       "name": "service",
@@ -44,6 +55,21 @@
         ],
         "SwiftyJSON": [
 
+        ],
+        "YYCache": [
+
+        ]
+      }
+    },
+    {
+      "name": "service_rx",
+      "source_files": "SwiftComponents/service_rx/**/*.swift",
+      "dependencies": {
+        "SwiftComponents/service": [
+
+        ],
+        "RxSwift": [
+          "~> 5.0"
         ]
       }
     },
@@ -55,6 +81,51 @@
 
         ],
         "Kingfisher": [
+
+        ],
+        "MBProgressHUD": [
+
+        ]
+      }
+    },
+    {
+      "name": "router",
+      "platforms": {
+        "ios": "9.0"
+      },
+      "source_files": "SwiftComponents/router/*.swift",
+      "dependencies": {
+        "URLNavigator": [
+
+        ]
+      }
+    },
+    {
+      "name": "rxcomponents",
+      "source_files": "SwiftComponents/RxComponents/**/*.swift",
+      "dependencies": {
+        "RxSwift": [
+
+        ],
+        "RxCocoa": [
+
+        ],
+        "RxWebKit": [
+
+        ],
+        "RxDataSources": [
+
+        ],
+        "RxOptional": [
+
+        ],
+        "RxViewController": [
+
+        ],
+        "MJRefresh": [
+
+        ],
+        "MBProgressHUD": [
 
         ]
       }

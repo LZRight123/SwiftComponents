@@ -32,7 +32,8 @@ public protocol NetworkingType {
 
 open class Networking<Target: TargetType>: MoyaProvider<Target> {
 
-    public init(configuration: URLSessionConfiguration = .default, plugins: [PluginType] = [ResponsePlugin(), networkActivityPlugin]) {
+    public init(configuration: URLSessionConfiguration = URLSessionConfiguration.af.default,
+                plugins: [PluginType] = [ResponsePlugin(), networkActivityPlugin]) {
         configuration.timeoutIntervalForRequest = 15
         
         let newPlugins = plugins + [NetworkHeaderPlugin(), CustomNetworkLoggerPlugin()]

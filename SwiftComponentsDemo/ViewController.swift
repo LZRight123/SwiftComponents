@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         $0.register(ItemsCCell.self)
     }
     
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,17 @@ class ViewController: UIViewController {
             $0.left.right.bottom.equalToSuperview()
             $0.top.equalToSuperview().offset(StatusBarH + NavBarH)
         }
+        /*
+        let networking = Networking<TestApi>()
+        networking.rx.cacheRequest(.test1).mapJSON()
+        .subscribe(onNext: { (dic) in
+//            log.info("rx_获得请求结果！！！")
+//            log.info(dic)
+//            log.info("rx_获得请求结果结束！！！")
+        }, onError: { (error) in
+//            log.error(error.mapError())
+        }).disposed(by: disposeBag)
+         */
     }
     
 }

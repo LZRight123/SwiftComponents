@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EBF081B24F4992900A5C538 /* TestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF081A24F4992900A5C538 /* TestApi.swift */; };
 		767BAE4E758BE4B75DBB95D5 /* Pods_SwiftComponentsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1EB4A7BBC4444795EB5EE5F /* Pods_SwiftComponentsDemo.framework */; };
 		DF19C69C24D2F700000ABBE8 /* mc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64224D2F700000ABBE8 /* mc.swift */; };
 		DF19C69D24D2F700000ABBE8 /* AppPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C64324D2F700000ABBE8 /* AppPermissionService.swift */; };
@@ -95,6 +96,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EBF081A24F4992900A5C538 /* TestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestApi.swift; sourceTree = "<group>"; };
 		7CFFACC0CC98302253712525 /* Pods-SwiftComponentsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComponentsDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftComponentsDemo/Pods-SwiftComponentsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D1EB4A7BBC4444795EB5EE5F /* Pods_SwiftComponentsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftComponentsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF19C64224D2F700000ABBE8 /* mc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mc.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				DF44838C24CAEEE40091FEA1 /* scoreActivitiy */,
 				DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */,
 				DFBF15A224C7BF2F00EF02A6 /* ViewController.swift */,
+				5EBF081A24F4992900A5C538 /* TestApi.swift */,
 				DFBF15A424C7BF2F00EF02A6 /* Main.storyboard */,
 				DFBF15A724C7BF3000EF02A6 /* Assets.xcassets */,
 				DFBF15A924C7BF3000EF02A6 /* LaunchScreen.storyboard */,
@@ -572,6 +575,7 @@
 				DF19C6A224D2F700000ABBE8 /* Log.swift in Sources */,
 				DF19C6B324D2F700000ABBE8 /* CGSizeExtensions.swift in Sources */,
 				DF91024424DE4D0F004485DB /* ExtensionsComponent.swift in Sources */,
+				5EBF081B24F4992900A5C538 /* TestApi.swift in Sources */,
 				DF19C6C524D2F700000ABBE8 /* UIWindowExtensions.swift in Sources */,
 				DF19C6A424D2F700000ABBE8 /* Notification.Name+Extension.swift in Sources */,
 				DF19C69E24D2F700000ABBE8 /* LZPresentTransitioningAnimate.swift in Sources */,
