@@ -12,6 +12,7 @@ target 'SwiftComponentsDemo' do
   pod 'KakaJSON'
   pod 'Kingfisher'
   pod 'Moya'
+  pod 'Moya/RxSwift'
   pod 'SnapKit'
 #  pod 'SwiftComponents'
   pod 'SwiftyJSON'

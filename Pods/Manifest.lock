@@ -11,6 +11,9 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -66,6 +69,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - Moya
+  - Moya/RxSwift
   - RxCocoa
   - RxDataSources
   - RxOptional
@@ -118,6 +122,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
 
-PODFILE CHECKSUM: 75116af41a801ae26b1017df7097362d098be0b6
+PODFILE CHECKSUM: e1c1512d931fdb2d1afc131e27bc3d64c4090025
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
