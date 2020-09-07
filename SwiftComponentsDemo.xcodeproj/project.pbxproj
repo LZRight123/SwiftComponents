@@ -71,6 +71,8 @@
 		DF19C6EA24D2F700000ABBE8 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C69924D2F700000ABBE8 /* NetworkLoggerPlugin.swift */; };
 		DF19C6EB24D2F700000ABBE8 /* ResponsePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C69A24D2F700000ABBE8 /* ResponsePlugin.swift */; };
 		DF19C6EC24D2F700000ABBE8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C69B24D2F700000ABBE8 /* Networking.swift */; };
+		DF2747E8250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2747E7250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift */; };
+		DF2747EA250603A500ABF578 /* Property+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2747E9250603A500ABF578 /* Property+RX.swift */; };
 		DF44838F24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF44838D24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.xib */; };
 		DF44839024CAEEE40091FEA1 /* ScoreActivitiyItemCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44838E24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.swift */; };
 		DF57FFE024DD392B008C3FD1 /* MJRefresh+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */; };
@@ -165,6 +167,8 @@
 		DF19C69924D2F700000ABBE8 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		DF19C69A24D2F700000ABBE8 /* ResponsePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsePlugin.swift; sourceTree = "<group>"; };
 		DF19C69B24D2F700000ABBE8 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		DF2747E7250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZRightToLeftTransitioningAnimate.swift; sourceTree = "<group>"; };
+		DF2747E9250603A500ABF578 /* Property+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Property+RX.swift"; sourceTree = "<group>"; };
 		DF44838D24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreActivitiyItemCCell.xib; sourceTree = "<group>"; };
 		DF44838E24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreActivitiyItemCCell.swift; sourceTree = "<group>"; };
 		DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+RX.swift"; sourceTree = "<group>"; };
@@ -265,10 +269,11 @@
 		DF19C64424D2F700000ABBE8 /* TransitioningAnimate */ = {
 			isa = PBXGroup;
 			children = (
-				DF19C64524D2F700000ABBE8 /* LZPresentTransitioningAnimate.swift */,
-				DF19C64624D2F700000ABBE8 /* LZPresentationControlller.swift */,
-				DF19C64724D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift */,
 				DF19C64824D2F700000ABBE8 /* LZTransitioningAnimate.swift */,
+				DF19C64624D2F700000ABBE8 /* LZPresentationControlller.swift */,
+				DF19C64524D2F700000ABBE8 /* LZPresentTransitioningAnimate.swift */,
+				DF19C64724D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift */,
+				DF2747E7250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift */,
 			);
 			path = TransitioningAnimate;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */,
+				DF2747E9250603A500ABF578 /* Property+RX.swift */,
 				DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */,
 				DF95D25424E0C866007B4D1C /* HUD+RX.swift */,
 				DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */,
@@ -609,6 +615,7 @@
 				DF19C6B924D2F700000ABBE8 /* UITextFieldExtensions.swift in Sources */,
 				DF19C6EC24D2F700000ABBE8 /* Networking.swift in Sources */,
 				DF19C6BB24D2F700000ABBE8 /* UIStackViewExtensions.swift in Sources */,
+				DF2747EA250603A500ABF578 /* Property+RX.swift in Sources */,
 				DF19C6C324D2F700000ABBE8 /* UIViewExtensions.swift in Sources */,
 				DF19C6D124D2F700000ABBE8 /* FileManagerExtensions.swift in Sources */,
 				DF19C6C224D2F700000ABBE8 /* UINavigationControllerExtensions.swift in Sources */,
@@ -622,6 +629,7 @@
 				DF19C69F24D2F700000ABBE8 /* LZPresentationControlller.swift in Sources */,
 				DFD573D024E27AB000FF45D3 /* LineCell.swift in Sources */,
 				DFBF15A324C7BF2F00EF02A6 /* ViewController.swift in Sources */,
+				DF2747E8250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift in Sources */,
 				DF6F09A1250240B500E62C3B /* CGI+RX.swift in Sources */,
 				DF19C6A024D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift in Sources */,
 				DF19C6E724D2F700000ABBE8 /* MoyaResult+Extension.swift in Sources */,

@@ -21,8 +21,36 @@ enum Apis: DSXTargetType {
     var parameters: [String : Any]? { nil }
 }
 
+enum AAAA: DSXTargetType {
+    case aaaa
+    var path: String { "" }
+    var parameters: [String : Any]? { nil }
+}
+
 struct TestModel: Convertible {
     
+}
+
+class TVC: UIViewController {
+    func tttt() {
+        CGI.request(Apis.test) {  _ in }
+        CGI.request(AAAA.aaaa) {  _ in }
+        
+        CGI.rx.request(Apis.test, modelType: TestModel.self)
+        CGI.rx.request(AAAA.aaaa, modelType: TestModel.self)
+
+    }
+}
+
+
+struct FromLink {
+    var froms = [String]()
+    
+    func from<T: UIViewController>(_ type: T.Type) -> Self {
+        var froms = self.froms
+        froms.append(type.identifier)
+        return .init(froms: froms)
+    }
 }
 
 private let margin: CGFloat = 19
@@ -125,8 +153,31 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: ItemsCCell.self, for: indexPath)
         cell.bind()
+        cell.btn.rx.tap.subscribe { _ in
+            let nextVC = RightLeftVC()
+            nextVC.setupTransitioningAnimate(.rightToLeft)
+            self.presentVC(nextVC)
+        }.disposed(by: disposeBag)
         return cell
     }
     
 
+}
+
+
+
+class RightLeftVC: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .clear
+        let mask = UIView(color: .random)
+        view.add(mask).snp.makeConstraints {
+            $0.top.bottom.right.equalToSuperview()
+            $0.width.equalTo(200)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissVC()
+    }
 }
