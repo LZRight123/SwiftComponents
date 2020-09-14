@@ -15,6 +15,19 @@ import URLNavigator
 import SwifterSwift
 import KakaJSON
 
+import Kingfisher
+
+extension String: Resource {
+    public var cacheKey: String { return self }
+    public var downloadURL: URL {
+        guard let str = addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return URL(string: "https://test.com")!
+        }
+        let component = URLComponents(string: str)
+        return component?.url ?? URL(string: "https://test.com")!
+    }
+}
+
 enum Apis: DSXTargetType {
     case test
     var path: String { "" }
@@ -69,6 +82,8 @@ class ViewController: UIViewController {
     }
     
     
+    let imageView = UIImageView(color: .random)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,10 +94,17 @@ class ViewController: UIViewController {
         
 //        CGI.rx.request(<#T##targetType: TargetType##TargetType#>, modelType: <#T##Convertible.Protocol#>)
         
-        view.add(collectionView).snp.makeConstraints {
-            $0.left.right.bottom.equalToSuperview()
-            $0.top.equalToSuperview().offset(StatusBarH + NavBarH)
+//        view.add(collectionView).snp.makeConstraints {
+//            $0.left.right.bottom.equalToSuperview()
+//            $0.top.equalToSuperview().offset(StatusBarH + NavBarH)
+//        }
+        
+        
+        view.add(imageView).snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(ScreenWidth)
         }
+        
     }
     
 }
@@ -153,11 +175,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: ItemsCCell.self, for: indexPath)
         cell.bind()
-        cell.btn.rx.tap.subscribe { _ in
-            let nextVC = RightLeftVC()
-            nextVC.setupTransitioningAnimate(.rightToLeft)
-            self.presentVC(nextVC)
-        }.disposed(by: disposeBag)
+//        cell.btn.rx.tap.subscribe { _ in
+//            let nextVC = RightLeftVC()
+//            nextVC.setupTransitioningAnimate(.rightToLeft)
+//            self.presentVC(nextVC)
+//        }.disposed(by: self.disposeBag)
         return cell
     }
     

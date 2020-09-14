@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - Initializers
 public extension UITableView {
-    convenience init(style: UITableView.Style = .plain, backgroundColor: UIColor = .backgorundColor, separatorStyle: UITableViewCell.SeparatorStyle = .none) {
+    convenience init(style: UITableView.Style = .plain, backgroundColor: UIColor? = UITableView.appearance().backgroundColor, separatorStyle: UITableViewCell.SeparatorStyle = .none) {
         self.init(frame: .zero, style: style)
         self.backgroundColor = backgroundColor
         self.estimatedRowHeight = 99.9
