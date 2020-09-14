@@ -30,4 +30,5 @@ target 'SwiftComponentsDemo' do
   pod 'SwifterSwift'
   
   pod 'URLNavigator'
+  pod 'YYCache'
 end

@@ -2,11 +2,11 @@ PODS:
   - Alamofire (5.2.2)
   - Differentiator (4.0.1)
   - KakaJSON (1.1.2)
-  - Kingfisher (5.15.0):
-    - Kingfisher/Core (= 5.15.0)
-  - Kingfisher/Core (5.15.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.5.0)
+  - MJRefresh (3.4.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -31,37 +31,6 @@ PODS:
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
   - SnapKit (5.0.1)
-  - SwiftComponents (1.0.0):
-    - SwiftComponents/Extensions (= 1.0.0)
-    - SwiftComponents/router (= 1.0.0)
-    - SwiftComponents/rxcomponents (= 1.0.0)
-    - SwiftComponents/service_rx (= 1.0.0)
-    - SwiftComponents/tools (= 1.0.0)
-  - SwiftComponents/Extensions (1.0.0):
-    - SwifterSwift
-  - SwiftComponents/router (1.0.0):
-    - URLNavigator
-  - SwiftComponents/rxcomponents (1.0.0):
-    - MBProgressHUD
-    - MJRefresh
-    - RxCocoa
-    - RxDataSources
-    - RxOptional
-    - RxSwift
-    - RxViewController
-    - RxWebKit
-  - SwiftComponents/service (1.0.0):
-    - KakaJSON
-    - Moya
-    - SwiftyJSON
-    - YYCache
-  - SwiftComponents/service_rx (1.0.0):
-    - RxSwift (~> 5.0)
-    - SwiftComponents/service
-  - SwiftComponents/tools (1.0.0):
-    - Kingfisher
-    - MBProgressHUD
-    - SnapKit
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
     - SwifterSwift/CoreAnimation (= 5.2.0)
@@ -92,10 +61,26 @@ PODS:
   - YYCache (1.0.4)
 
 DEPENDENCIES:
-  - SwiftComponents (from `./`)
+  - Alamofire
+  - KakaJSON
+  - Kingfisher
+  - MBProgressHUD
+  - MJRefresh
+  - Moya
+  - RxCocoa
+  - RxDataSources
+  - RxOptional
+  - RxSwift
+  - RxViewController
+  - RxWebKit
+  - SnapKit
+  - SwifterSwift
+  - SwiftyJSON
+  - URLNavigator
+  - YYCache
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - Differentiator
     - KakaJSON
@@ -116,17 +101,13 @@ SPEC REPOS:
     - URLNavigator
     - YYCache
 
-EXTERNAL SOURCES:
-  SwiftComponents:
-    :path: "./"
-
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
-  Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
@@ -136,12 +117,11 @@ SPEC CHECKSUMS:
   RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   RxWebKit: a3085e7cd8b57182b452692686675702474014dd
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftComponents: 50910090253424a6ed4736d99abb2796462cba5e
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: b408d3e83d85d7b74f45f84c5a362273c12ec201
+PODFILE CHECKSUM: 9854362fcb913e443d3ae0876b3bdc5161db0058
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

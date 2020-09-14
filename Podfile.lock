@@ -58,6 +58,7 @@ PODS:
   - SwifterSwift/UIKit (5.2.0)
   - SwiftyJSON (5.0.0)
   - URLNavigator (2.3.0)
+  - YYCache (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - SwifterSwift
   - SwiftyJSON
   - URLNavigator
+  - YYCache
 
 SPEC REPOS:
   trunk:
@@ -97,6 +99,7 @@ SPEC REPOS:
     - SwifterSwift
     - SwiftyJSON
     - URLNavigator
+    - YYCache
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -117,7 +120,8 @@ SPEC CHECKSUMS:
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 75116af41a801ae26b1017df7097362d098be0b6
+PODFILE CHECKSUM: 9854362fcb913e443d3ae0876b3bdc5161db0058
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

@@ -206,7 +206,7 @@ public class KingfisherManager {
         downloadTaskUpdated: DownloadTaskUpdatedBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask?
     {
-        let retrievingContext = RetrievingContext(options: options, originalSource: source)
+        var retrievingContext = RetrievingContext(options: options, originalSource: source)
         var retryContext: RetryContext?
 
         func startNewRetrieveTask(

@@ -588,15 +588,6 @@ open class ImageCache {
     }
 
     // MARK: Cleaning
-    /// Clears the memory & disk storage of this cache. This is an async operation.
-    ///
-    /// - Parameter handler: A closure which is invoked when the cache clearing operation finishes.
-    ///                      This `handler` will be called from the main queue.
-    public func clearCache(completion handler: (() -> Void)? = nil) {
-        clearMemoryCache()
-        clearDiskCache(completion: handler)
-    }
-    
     /// Clears the memory storage of this cache.
     @objc public func clearMemoryCache() {
         try? memoryStorage.removeAll()
@@ -606,7 +597,7 @@ open class ImageCache {
     ///
     /// - Parameter handler: A closure which is invoked when the cache clearing operation finishes.
     ///                      This `handler` will be called from the main queue.
-    open func clearDiskCache(completion handler: (() -> Void)? = nil) {
+    open func clearDiskCache(completion handler: (()->())? = nil) {
         ioQueue.async {
             do {
                 try self.diskStorage.removeAll()
@@ -616,14 +607,8 @@ open class ImageCache {
             }
         }
     }
-    
-    /// Clears the expired images from memory & disk storage. This is an async operation.
-    open func cleanExpiredCache(completion handler: (() -> Void)? = nil) {
-        cleanExpiredMemoryCache()
-        cleanExpiredDiskCache(completion: handler)
-    }
 
-    /// Clears the expired images from disk storage.
+    /// Clears the expired images from disk storage. This is an async operation.
     open func cleanExpiredMemoryCache() {
         memoryStorage.removeExpired()
     }
