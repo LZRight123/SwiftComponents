@@ -12,27 +12,27 @@ import RxSwift
 //MARK: - RX DisposeBag
 
 private var disposeBagKey: Void?
-//extension UIViewController {
-//    var disposeBag: DisposeBag {
-//        get {
-//            let badge: DisposeBag
-//            if let value = objc_getAssociatedObject(self, &disposeBagKey) as? DisposeBag {
-//                badge = value
-//            } else {
-//                badge = DisposeBag()
-//                objc_setAssociatedObject(self, &disposeBagKey, badge, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-//            }
-//            return badge
-//        }
-//        set {
-//             objc_setAssociatedObject(self, &disposeBagKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-//        }
-//    }
-//}
-//
-//
-//
-//extension UIView {
+public extension UIViewController {
+    var disposeBag: DisposeBag {
+        get {
+            let badge: DisposeBag
+            if let value = objc_getAssociatedObject(self, &disposeBagKey) as? DisposeBag {
+                badge = value
+            } else {
+                badge = DisposeBag()
+                objc_setAssociatedObject(self, &disposeBagKey, badge, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+            return badge
+        }
+        set {
+             objc_setAssociatedObject(self, &disposeBagKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+}
+
+
+
+//public extension UIView {
 //    var disposeBag: DisposeBag {
 //        get {
 //            let badge: DisposeBag
