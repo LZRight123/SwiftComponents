@@ -72,15 +72,23 @@
 		DF19C6EA24D2F700000ABBE8 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C69924D2F700000ABBE8 /* NetworkLoggerPlugin.swift */; };
 		DF19C6EB24D2F700000ABBE8 /* ResponsePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C69A24D2F700000ABBE8 /* ResponsePlugin.swift */; };
 		DF19C6EC24D2F700000ABBE8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C69B24D2F700000ABBE8 /* Networking.swift */; };
+		DF2747E8250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2747E7250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift */; };
+		DF2747EA250603A500ABF578 /* Property+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2747E9250603A500ABF578 /* Property+RX.swift */; };
 		DF44838F24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF44838D24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.xib */; };
 		DF44839024CAEEE40091FEA1 /* ScoreActivitiyItemCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44838E24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.swift */; };
 		DF57FFE024DD392B008C3FD1 /* MJRefresh+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */; };
 		DF57FFE424DD4150008C3FD1 /* UIView+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57FFE324DD4150008C3FD1 /* UIView+HUD.swift */; };
+		DF6F0999250232C900E62C3B /* Response+KakaJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F0998250232C900E62C3B /* Response+KakaJson.swift */; };
+		DF6F099B2502346600E62C3B /* MoyaProviderType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F099A2502346600E62C3B /* MoyaProviderType+Extension.swift */; };
+		DF6F099D25023AAB00E62C3B /* ObservableType+KakaJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F099C25023AAB00E62C3B /* ObservableType+KakaJson.swift */; };
+		DF6F099F25023AD600E62C3B /* Single+KakaJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F099E25023AD600E62C3B /* Single+KakaJson.swift */; };
+		DF6F09A1250240B500E62C3B /* CGI+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F09A0250240B500E62C3B /* CGI+RX.swift */; };
 		DF91024424DE4D0F004485DB /* ExtensionsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91024324DE4D0F004485DB /* ExtensionsComponent.swift */; };
 		DF91024624DE4E02004485DB /* SwiftComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DF91024524DE4E02004485DB /* SwiftComponents.podspec */; };
 		DF95D25524E0C866007B4D1C /* HUD+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25424E0C866007B4D1C /* HUD+RX.swift */; };
 		DF95D25724E0DF0C007B4D1C /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25624E0DF0C007B4D1C /* ListModel.swift */; };
 		DF95D25924E0E2E4007B4D1C /* PageRequest+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */; };
+		DF9969FB25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9969FA25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift */; };
 		DFB1B39024CFB7970058E317 /* ProductDetailScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */; };
 		DFB29C4324E6605D00A4D939 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB29C4224E6605D00A4D939 /* Router.swift */; };
 		DFBF159F24C7BF2F00EF02A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */; };
@@ -162,15 +170,23 @@
 		DF19C69924D2F700000ABBE8 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		DF19C69A24D2F700000ABBE8 /* ResponsePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsePlugin.swift; sourceTree = "<group>"; };
 		DF19C69B24D2F700000ABBE8 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		DF2747E7250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZRightToLeftTransitioningAnimate.swift; sourceTree = "<group>"; };
+		DF2747E9250603A500ABF578 /* Property+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Property+RX.swift"; sourceTree = "<group>"; };
 		DF44838D24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreActivitiyItemCCell.xib; sourceTree = "<group>"; };
 		DF44838E24CAEEE40091FEA1 /* ScoreActivitiyItemCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreActivitiyItemCCell.swift; sourceTree = "<group>"; };
 		DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+RX.swift"; sourceTree = "<group>"; };
 		DF57FFE324DD4150008C3FD1 /* UIView+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+HUD.swift"; sourceTree = "<group>"; };
+		DF6F0998250232C900E62C3B /* Response+KakaJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+KakaJson.swift"; sourceTree = "<group>"; };
+		DF6F099A2502346600E62C3B /* MoyaProviderType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProviderType+Extension.swift"; sourceTree = "<group>"; };
+		DF6F099C25023AAB00E62C3B /* ObservableType+KakaJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+KakaJson.swift"; sourceTree = "<group>"; };
+		DF6F099E25023AD600E62C3B /* Single+KakaJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+KakaJson.swift"; sourceTree = "<group>"; };
+		DF6F09A0250240B500E62C3B /* CGI+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGI+RX.swift"; sourceTree = "<group>"; };
 		DF91024324DE4D0F004485DB /* ExtensionsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsComponent.swift; sourceTree = "<group>"; };
 		DF91024524DE4E02004485DB /* SwiftComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftComponents.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DF95D25424E0C866007B4D1C /* HUD+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HUD+RX.swift"; sourceTree = "<group>"; };
 		DF95D25624E0DF0C007B4D1C /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageRequest+RX.swift"; sourceTree = "<group>"; };
+		DF9969FA25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeftAlignedCollectionViewLayout.swift; path = /Users/liangze/Github/SwiftComponents/SwiftComponents/tools/LeftAlignedCollectionViewLayout.swift; sourceTree = "<absolute>"; };
 		DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailScoreCell.swift; sourceTree = "<group>"; };
 		DFB29C4224E6605D00A4D939 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DFBF159B24C7BF2F00EF02A6 /* SwiftComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +248,7 @@
 		DF19C64124D2F700000ABBE8 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				DF9969FA25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift */,
 				DF19C66524D2F700000ABBE8 /* BadgeView.swift */,
 				DF95D25624E0DF0C007B4D1C /* ListModel.swift */,
 				DF19C64224D2F700000ABBE8 /* mc.swift */,
@@ -257,10 +274,11 @@
 		DF19C64424D2F700000ABBE8 /* TransitioningAnimate */ = {
 			isa = PBXGroup;
 			children = (
-				DF19C64524D2F700000ABBE8 /* LZPresentTransitioningAnimate.swift */,
-				DF19C64624D2F700000ABBE8 /* LZPresentationControlller.swift */,
-				DF19C64724D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift */,
 				DF19C64824D2F700000ABBE8 /* LZTransitioningAnimate.swift */,
+				DF19C64624D2F700000ABBE8 /* LZPresentationControlller.swift */,
+				DF19C64524D2F700000ABBE8 /* LZPresentTransitioningAnimate.swift */,
+				DF19C64724D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift */,
+				DF2747E7250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift */,
 			);
 			path = TransitioningAnimate;
 			sourceTree = "<group>";
@@ -358,6 +376,8 @@
 			children = (
 				DF19C69424D2F700000ABBE8 /* TargetType+Extension.swift */,
 				DF19C69524D2F700000ABBE8 /* MoyaResult+Extension.swift */,
+				DF6F0998250232C900E62C3B /* Response+KakaJson.swift */,
+				DF6F099A2502346600E62C3B /* MoyaProviderType+Extension.swift */,
 				DF19C69624D2F700000ABBE8 /* Plugins */,
 				DF19C69B24D2F700000ABBE8 /* Networking.swift */,
 			);
@@ -433,9 +453,13 @@
 			isa = PBXGroup;
 			children = (
 				DFD73D6224DCEFD60073B5B7 /* RXComponent.swift */,
+				DF2747E9250603A500ABF578 /* Property+RX.swift */,
 				DF57FFDF24DD392B008C3FD1 /* MJRefresh+RX.swift */,
 				DF95D25424E0C866007B4D1C /* HUD+RX.swift */,
 				DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */,
+				DF6F099C25023AAB00E62C3B /* ObservableType+KakaJson.swift */,
+				DF6F099E25023AD600E62C3B /* Single+KakaJson.swift */,
+				DF6F09A0250240B500E62C3B /* CGI+RX.swift */,
 			);
 			path = RxComponents;
 			sourceTree = "<group>";
@@ -568,10 +592,12 @@
 				DF44839024CAEEE40091FEA1 /* ScoreActivitiyItemCCell.swift in Sources */,
 				DF19C6A824D2F700000ABBE8 /* TitleSubtitleLabel.swift in Sources */,
 				DF19C6B624D2F700000ABBE8 /* UIScrollViewExtensions.swift in Sources */,
+				DF6F099B2502346600E62C3B /* MoyaProviderType+Extension.swift in Sources */,
 				DF19C6D224D2F700000ABBE8 /* URLExtensions.swift in Sources */,
 				DF19C6C124D2F700000ABBE8 /* UIImageExtensions.swift in Sources */,
 				DF19C6A724D2F700000ABBE8 /* LZToolBar.swift in Sources */,
 				DFD73D6324DCEFD60073B5B7 /* RXComponent.swift in Sources */,
+				DF6F099F25023AD600E62C3B /* Single+KakaJson.swift in Sources */,
 				DF19C6A224D2F700000ABBE8 /* Log.swift in Sources */,
 				DF19C6B324D2F700000ABBE8 /* CGSizeExtensions.swift in Sources */,
 				DF91024424DE4D0F004485DB /* ExtensionsComponent.swift in Sources */,
@@ -579,6 +605,7 @@
 				DF19C6C524D2F700000ABBE8 /* UIWindowExtensions.swift in Sources */,
 				DF19C6A424D2F700000ABBE8 /* Notification.Name+Extension.swift in Sources */,
 				DF19C69E24D2F700000ABBE8 /* LZPresentTransitioningAnimate.swift in Sources */,
+				DF6F099D25023AAB00E62C3B /* ObservableType+KakaJson.swift in Sources */,
 				DF19C6C824D2F700000ABBE8 /* UIApplicationExtensions.swift in Sources */,
 				DF19C69C24D2F700000ABBE8 /* mc.swift in Sources */,
 				DF19C6AA24D2F700000ABBE8 /* InfoCell.swift in Sources */,
@@ -595,6 +622,7 @@
 				DF19C6B924D2F700000ABBE8 /* UITextFieldExtensions.swift in Sources */,
 				DF19C6EC24D2F700000ABBE8 /* Networking.swift in Sources */,
 				DF19C6BB24D2F700000ABBE8 /* UIStackViewExtensions.swift in Sources */,
+				DF2747EA250603A500ABF578 /* Property+RX.swift in Sources */,
 				DF19C6C324D2F700000ABBE8 /* UIViewExtensions.swift in Sources */,
 				DF19C6D124D2F700000ABBE8 /* FileManagerExtensions.swift in Sources */,
 				DF19C6C224D2F700000ABBE8 /* UINavigationControllerExtensions.swift in Sources */,
@@ -608,14 +636,18 @@
 				DF19C69F24D2F700000ABBE8 /* LZPresentationControlller.swift in Sources */,
 				DFD573D024E27AB000FF45D3 /* LineCell.swift in Sources */,
 				DFBF15A324C7BF2F00EF02A6 /* ViewController.swift in Sources */,
+				DF2747E8250601DE00ABF578 /* LZRightToLeftTransitioningAnimate.swift in Sources */,
+				DF6F09A1250240B500E62C3B /* CGI+RX.swift in Sources */,
 				DF19C6A024D2F700000ABBE8 /* LZPopupTransitioningAnimate.swift in Sources */,
 				DF19C6E724D2F700000ABBE8 /* MoyaResult+Extension.swift in Sources */,
 				DF19C6DE24D2F700000ABBE8 /* StringExtensions.swift in Sources */,
 				DF19C6CE24D2F700000ABBE8 /* UIColorExtensions.swift in Sources */,
+				DF6F0999250232C900E62C3B /* Response+KakaJson.swift in Sources */,
 				DF19C6C024D2F700000ABBE8 /* UIViewControllerExtensions.swift in Sources */,
 				DFE23E0C24F0BDD8005F0D2D /* SecondCalculate.swift in Sources */,
 				DF19C6AE24D2F700000ABBE8 /* GlobalParameter.swift in Sources */,
 				DF19C6B224D2F700000ABBE8 /* CGFloatExtensions.swift in Sources */,
+				DF9969FB25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift in Sources */,
 				DF19C6E424D2F700000ABBE8 /* OptionalExtensions.swift in Sources */,
 				DF19C6B024D2F700000ABBE8 /* KingfisherExtensions.swift in Sources */,
 				DF19C6C924D2F700000ABBE8 /* UIDeviceExtensions.swift in Sources */,

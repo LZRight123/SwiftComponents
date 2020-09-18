@@ -23,6 +23,7 @@ open class LZTransitioningAnimate: NSObject {
     public static let present = LZPresentTransitioningAnimate()
     // @objc static let presentNoBackground = TransitioningAnimateNoBackgroundPresent()
     public static let pop = LZPopupTransitioningAnimate()
+    public static let rightToLeft = LZRightToLeftTransitioningAnimate()
 }
 
 //MARK: UIViewControllerTransitioningDelegate

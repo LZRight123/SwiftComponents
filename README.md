@@ -26,6 +26,7 @@
 
 1. [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)]
 2. [BEMCheckBox](https://github.com/Boris-Em/BEMCheckBox)
+3. [IHKeyboardAvoiding](https://github.com/IdleHandsApps/IHKeyboardAvoiding)
 
 
 ### User

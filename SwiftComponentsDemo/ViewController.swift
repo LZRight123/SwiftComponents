@@ -13,11 +13,62 @@ import RxCocoa
 import MJRefresh
 import URLNavigator
 import SwifterSwift
+import KakaJSON
+
+import Kingfisher
+extension String: Resource {
+    public var cacheKey: String { return self }
+    public var downloadURL: URL {
+        guard let str = addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return URL(string: "https://test.com")!
+        }
+        let component = URLComponents(string: str)
+        return component?.url ?? URL(string: "https://test.com")!
+    }
+}
+
+enum Apis: DSXTargetType {
+    case test
+    var path: String { "" }
+    var parameters: [String : Any]? { nil }
+}
+
+enum AAAA: DSXTargetType {
+    case aaaa
+    var path: String { "" }
+    var parameters: [String : Any]? { nil }
+}
+
+struct TestModel: Convertible {
+    
+}
+
+class TVC: UIViewController {
+    func tttt() {
+        CGI.request(Apis.test) {  _ in }
+        CGI.request(AAAA.aaaa) {  _ in }
+        
+        CGI.rx.request(Apis.test, modelType: TestModel.self)
+        CGI.rx.request(AAAA.aaaa, modelType: TestModel.self)
+
+    }
+}
+
+
+struct FromLink {
+    var froms = [String]()
+    
+    func from<T: UIViewController>(_ type: T.Type) -> Self {
+        var froms = self.froms
+        froms.append(type.identifier)
+        return .init(froms: froms)
+    }
+}
 
 private let margin: CGFloat = 19
 private let verticalPadding: CGFloat = 12
 class ViewController: UIViewController {
-    lazy var collectionView = UICollectionView(scrollDirection: .vertical, lineSpacing: 12, sectionInset: .init(horizontal: 13, vertical: 10)).then {
+    lazy var collectionView = UICollectionView(scrollDirection: .vertical, layout: LeftAlignedCollectionViewLayout(), interitemSpacing: 10, lineSpacing: 10, sectionInset: UIEdgeInsets.init(horizontal: 20, vertical: 20)).then {
         $0.backgroundView = UIView()
         let imgView = UIImageView(image: UIImage(named: "bg-ywq"))
         $0.backgroundView?.add(imgView).snp.makeConstraints { make in
@@ -27,12 +78,22 @@ class ViewController: UIViewController {
         $0.dataSource = self
         $0.delegate = self
         $0.register(ItemsCCell.self)
+        $0.register(TagCCell.self)
     }
     
     let disposeBag = DisposeBag()
     
+    let imageView = UIImageView(color: .random)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
+        CGI.requestObject(Apis.test, modeType: TestModel.self) { (_, r) in
+            let x = r
+        }
+        
+//        CGI.rx.request(<#T##targetType: TargetType##TargetType#>, modelType: <#T##Convertible.Protocol#>)
         
         view.add(collectionView).snp.makeConstraints {
             $0.left.right.bottom.equalToSuperview()
@@ -55,6 +116,21 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    class TagCCell: LZCollectionViewCell {
+        let titleLabel = UILabel(font: .font15, textColor: .white, text: .init(randomOfLength: .random(in: 3...15)))
+        override func setupUI() {
+            contentView.backgroundColor = .random
+            contentView.cornerRadius = 15
+            
+            contentView.add(titleLabel).snp.makeConstraints {
+                $0.center.top.equalToSuperview()
+                $0.left.equalToSuperview().offset(15)
+                $0.height.equalTo(30)
+            }
+        }
+    }
+    
     class ItemView: LZControl {
         let titleLabel = UILabel(font: .font15, textColor: .hex222222, text: "拜访动态")
         let arrowImage = UIImageView(image: UIImage(color: .random, size: .init(width: 7, height: 12)))
@@ -113,14 +189,37 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withClass: ItemsCCell.self, for: indexPath)
-        cell.bind()
+        let cell = collectionView.dequeueReusableCell(withClass: TagCCell.self, for: indexPath)
+//        cell.bind()
+//        cell.btn.rx.tap.subscribe { _ in
+//            let nextVC = RightLeftVC()
+//            nextVC.setupTransitioningAnimate(.rightToLeft)
+//            self.presentVC(nextVC)
+//        }.disposed(by: self.disposeBag)
         return cell
     }
     
 
+}
+
+
+
+class RightLeftVC: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .clear
+        let mask = UIView(color: .random)
+        view.add(mask).snp.makeConstraints {
+            $0.top.bottom.right.equalToSuperview()
+            $0.width.equalTo(200)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissVC()
+    }
 }

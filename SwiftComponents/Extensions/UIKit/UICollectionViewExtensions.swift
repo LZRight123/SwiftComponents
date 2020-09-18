@@ -12,7 +12,7 @@ import SwifterSwift
 
 // MARK: - Initializers
 public extension UICollectionView {
-    convenience init(scrollDirection: UICollectionView.ScrollDirection, userInteractionEnabled: Bool = true, backgroundColor: UIColor = .backgorundColor, layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout() ,interitemSpacing: CGFloat = 0.0, lineSpacing: CGFloat = 0.0, sectionInset: UIEdgeInsets = .zero) {
+    convenience init(scrollDirection: UICollectionView.ScrollDirection, userInteractionEnabled: Bool = true, backgroundColor: UIColor? = UICollectionView.appearance().backgroundColor, layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout() ,interitemSpacing: CGFloat = 0.0, lineSpacing: CGFloat = 0.0, sectionInset: UIEdgeInsets = .zero) {
         layout.minimumInteritemSpacing = interitemSpacing
         layout.minimumLineSpacing = lineSpacing
         layout.scrollDirection = scrollDirection

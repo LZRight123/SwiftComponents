@@ -25,10 +25,10 @@ public let networkActivityPlugin = NetworkActivityPlugin{ (changeType: NetworkAc
 }
 
 
-public protocol NetworkingType {
-    associatedtype T: TargetType
-    var provider: Networking<T> { get }
-}
+//public protocol NetworkingType {
+//    associatedtype T: TargetType
+//    var provider: Networking<T> { get }
+//}
 
 open class Networking<Target: TargetType>: MoyaProvider<Target> {
 
@@ -73,42 +73,33 @@ open class Networking<Target: TargetType>: MoyaProvider<Target> {
             }
         }
     }
- 
-    @discardableResult
-    open func requestObject<T: Convertible>(_ target: Target, modeType: T.Type, atKeyPath keyPath: String? = nil, completion: @escaping (MoyaResult, T?) -> Void ) -> Cancellable {
-        return request(target) { (r) in
-            completion(r, r.mapObject(T.self, atKeyPath: keyPath))
-        }
-    }
-    
-    public func requestArray<T: Convertible>(_ target: Target, modeType: T.Type, atKeyPath keyPath: String? = nil, completion: @escaping (MoyaResult, [T]?) -> Void ) -> Cancellable {
-        return request(target) { (r) in
-            completion(r, r.mapArray(T.self, atKeyPath: keyPath))
-        }
-    }
 }
 
-
-
+/*
+ use: CGI.defaultProvider.request
+ */
 public struct CGI {
     public static var defaultProvider = Networking<MultiTarget>()
-    public  static func request(_ target: TargetType, completion: @escaping Completion) -> Cancellable {
+    
+    static func request(_ target: TargetType, completion: @escaping Completion) -> Cancellable {
         return defaultProvider.request(.init(target), completion: completion)
     }
-    /// 暂不公开
-    @discardableResult
-    static func request<T>(_ target: TargetType, dataType: T.Type, completion: @escaping (MoyaResult, NetResponse<T>) -> Void ) -> Cancellable {
-        return defaultProvider.request(.init(target), dataType: dataType, completion: completion)
-    }
+    // 暂不公开
+    //    @discardableResult
+    //    static func request<T>(_ target: TargetType, dataType: T.Type, completion: @escaping (MoyaResult, NetResponse<T>) -> Void ) -> Cancellable {
+    //        return Providers.defaultProvider.request(.init(target), dataType: dataType, completion: completion)
+    //    }
     
     @discardableResult
-    public static func requestObject<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String? = "data", completion: @escaping (MoyaResult, T?) -> Void ) -> Cancellable {
+    static func requestObject<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String? = "data", completion: @escaping (MoyaResult, T?) -> Void ) -> Cancellable {
         return defaultProvider.requestObject(.init(target), modeType: modeType, completion: completion)
     }
     
     @discardableResult
-    public static func requestArray<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String?  = "data", completion: @escaping (MoyaResult, [T]?) -> Void ) -> Cancellable {
+    static func requestArray<T: Convertible>(_ target: TargetType, modeType: T.Type, atKeyPath keyPath: String?  = "data", completion: @escaping (MoyaResult, [T]?) -> Void ) -> Cancellable {
         return defaultProvider.requestArray(.init(target), modeType: modeType, completion: completion)
     }
-    
 }
+
+
+

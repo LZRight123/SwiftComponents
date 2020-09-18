@@ -22,7 +22,8 @@ public extension String {
     
     var numberFormat: String {
         let format = NumberFormatter()
-        format.positiveFormat = "0.##;"
+//        format.positiveFormat = "0.##;"
+        format.positiveFormat = "0.00;"
         format.roundingMode = .down
         return format.string(for: Decimal(string: self)) ?? ""
     }

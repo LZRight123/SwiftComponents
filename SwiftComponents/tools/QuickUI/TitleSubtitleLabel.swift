@@ -83,6 +83,20 @@ open class TitleSubtitleLabel: LZControl {
         }
     }
     
+    open override var tintColor: UIColor! {
+        didSet {
+            titleLabel.textColor = tintColor
+            subtitleLabel.textColor = tintColor
+        }
+    }
+    
+    open var font: UIFont! {
+        didSet {
+            titleLabel.font = font
+            subtitleLabel.font = font
+        }
+    }
+        
 //    private let maskBtn = UIButton()
     
 //    open override var isUserInteractionEnabled: Bool {
