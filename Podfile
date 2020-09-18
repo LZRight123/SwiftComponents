@@ -31,4 +31,5 @@ target 'SwiftComponentsDemo' do
   pod 'SwifterSwift'
   
   pod 'URLNavigator'
+#  pod 'LeftAlignedCollectionViewLayout'
 end

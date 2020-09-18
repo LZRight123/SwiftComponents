@@ -16,7 +16,6 @@ import SwifterSwift
 import KakaJSON
 
 import Kingfisher
-
 extension String: Resource {
     public var cacheKey: String { return self }
     public var downloadURL: URL {
@@ -69,7 +68,7 @@ struct FromLink {
 private let margin: CGFloat = 19
 private let verticalPadding: CGFloat = 12
 class ViewController: UIViewController {
-    lazy var collectionView = UICollectionView(scrollDirection: .vertical, lineSpacing: 12, sectionInset: .init(horizontal: 13, vertical: 10)).then {
+    lazy var collectionView = UICollectionView(scrollDirection: .vertical, layout: LeftAlignedCollectionViewLayout(), interitemSpacing: 10, lineSpacing: 10, sectionInset: UIEdgeInsets.init(horizontal: 20, vertical: 20)).then {
         $0.backgroundView = UIView()
         let imgView = UIImageView(image: UIImage(named: "bg-ywq"))
         $0.backgroundView?.add(imgView).snp.makeConstraints { make in
@@ -79,6 +78,7 @@ class ViewController: UIViewController {
         $0.dataSource = self
         $0.delegate = self
         $0.register(ItemsCCell.self)
+        $0.register(TagCCell.self)
     }
     
     
@@ -94,16 +94,16 @@ class ViewController: UIViewController {
         
 //        CGI.rx.request(<#T##targetType: TargetType##TargetType#>, modelType: <#T##Convertible.Protocol#>)
         
-//        view.add(collectionView).snp.makeConstraints {
-//            $0.left.right.bottom.equalToSuperview()
-//            $0.top.equalToSuperview().offset(StatusBarH + NavBarH)
-//        }
-        
-        
-        view.add(imageView).snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.width.height.equalTo(ScreenWidth)
+        view.add(collectionView).snp.makeConstraints {
+            $0.left.right.bottom.equalToSuperview()
+            $0.top.equalToSuperview().offset(StatusBarH + NavBarH)
         }
+        
+        
+//        view.add(imageView).snp.makeConstraints {
+//            $0.center.equalToSuperview()
+//            $0.width.height.equalTo(ScreenWidth)
+//        }
         
     }
     
@@ -111,6 +111,21 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    class TagCCell: LZCollectionViewCell {
+        let titleLabel = UILabel(font: .font15, textColor: .white, text: .init(randomOfLength: .random(in: 3...15)))
+        override func setupUI() {
+            contentView.backgroundColor = .random
+            contentView.cornerRadius = 15
+            
+            contentView.add(titleLabel).snp.makeConstraints {
+                $0.center.top.equalToSuperview()
+                $0.left.equalToSuperview().offset(15)
+                $0.height.equalTo(30)
+            }
+        }
+    }
+    
     class ItemView: LZControl {
         let titleLabel = UILabel(font: .font15, textColor: .hex222222, text: "拜访动态")
         let arrowImage = UIImageView(image: UIImage(color: .random, size: .init(width: 7, height: 12)))
@@ -169,12 +184,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withClass: ItemsCCell.self, for: indexPath)
-        cell.bind()
+        let cell = collectionView.dequeueReusableCell(withClass: TagCCell.self, for: indexPath)
+//        cell.bind()
 //        cell.btn.rx.tap.subscribe { _ in
 //            let nextVC = RightLeftVC()
 //            nextVC.setupTransitioningAnimate(.rightToLeft)

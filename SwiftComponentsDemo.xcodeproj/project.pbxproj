@@ -87,6 +87,7 @@
 		DF95D25524E0C866007B4D1C /* HUD+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25424E0C866007B4D1C /* HUD+RX.swift */; };
 		DF95D25724E0DF0C007B4D1C /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25624E0DF0C007B4D1C /* ListModel.swift */; };
 		DF95D25924E0E2E4007B4D1C /* PageRequest+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */; };
+		DF9969FB25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9969FA25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift */; };
 		DFB1B39024CFB7970058E317 /* ProductDetailScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */; };
 		DFB29C4324E6605D00A4D939 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB29C4224E6605D00A4D939 /* Router.swift */; };
 		DFBF159F24C7BF2F00EF02A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */; };
@@ -183,6 +184,7 @@
 		DF95D25424E0C866007B4D1C /* HUD+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HUD+RX.swift"; sourceTree = "<group>"; };
 		DF95D25624E0DF0C007B4D1C /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		DF95D25824E0E2E4007B4D1C /* PageRequest+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageRequest+RX.swift"; sourceTree = "<group>"; };
+		DF9969FA25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeftAlignedCollectionViewLayout.swift; path = /Users/liangze/Github/SwiftComponents/SwiftComponents/tools/LeftAlignedCollectionViewLayout.swift; sourceTree = "<absolute>"; };
 		DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailScoreCell.swift; sourceTree = "<group>"; };
 		DFB29C4224E6605D00A4D939 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DFBF159B24C7BF2F00EF02A6 /* SwiftComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +246,7 @@
 		DF19C64124D2F700000ABBE8 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				DF9969FA25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift */,
 				DF19C66524D2F700000ABBE8 /* BadgeView.swift */,
 				DF95D25624E0DF0C007B4D1C /* ListModel.swift */,
 				DF19C64224D2F700000ABBE8 /* mc.swift */,
@@ -640,6 +643,7 @@
 				DFE23E0C24F0BDD8005F0D2D /* SecondCalculate.swift in Sources */,
 				DF19C6AE24D2F700000ABBE8 /* GlobalParameter.swift in Sources */,
 				DF19C6B224D2F700000ABBE8 /* CGFloatExtensions.swift in Sources */,
+				DF9969FB25148B7E00CE52A3 /* LeftAlignedCollectionViewLayout.swift in Sources */,
 				DF19C6E424D2F700000ABBE8 /* OptionalExtensions.swift in Sources */,
 				DF19C6B024D2F700000ABBE8 /* KingfisherExtensions.swift in Sources */,
 				DF19C6C924D2F700000ABBE8 /* UIDeviceExtensions.swift in Sources */,
