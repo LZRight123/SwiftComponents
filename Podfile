@@ -32,4 +32,5 @@ target 'SwiftComponentsDemo' do
   
   pod 'URLNavigator'
   pod 'YYCache'
+  pod 'Moya/RxSwift'
 end

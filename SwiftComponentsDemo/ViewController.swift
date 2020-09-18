@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         $0.register(TagCCell.self)
     }
     
-    let disposeBag = DisposeBag()
+//    let disposeBag = DisposeBag()
     
     let imageView = UIImageView(color: .random)
     

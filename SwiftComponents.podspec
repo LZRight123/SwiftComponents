@@ -53,15 +53,19 @@ Pod::Spec.new do |s|
 
   # 网络请求 数据解析
   s.subspec 'service' do |ss|
-#    ss.static_framework = true
     ss.source_files = 'SwiftComponents/service/**/*.swift'
 
     ss.dependency "Moya"#, "~> 13.0.0"
     ss.dependency "KakaJSON"
     ss.dependency "SwiftyJSON"
-    ss.dependency 'YYCache'
   end
 
+  s.subspec 'Cache' do |ss|
+    ss.source_files = 'SwiftComponents/Cache/**/*.swift'
+
+    ss.dependency 'YYCache'
+  end
+  
   s.subspec 'service_rx' do |ss|
     ss.source_files = 'SwiftComponents/service_rx/**/*.swift'
     ss.dependency 'SwiftComponents/service'
@@ -70,7 +74,6 @@ Pod::Spec.new do |s|
 
   # 工具类
   s.subspec 'tools' do |ss|
-#    ss.static_framework = true
     ss.source_files = 'SwiftComponents/tools/**/*.swift'
 
     ss.dependency "SnapKit"
@@ -81,9 +84,7 @@ Pod::Spec.new do |s|
   s.subspec 'router' do |ss|
     ss.platform     = :ios, "9.0"
 
-#    ss.static_framework = true
     ss.source_files = 'SwiftComponents/router/*.swift'
-    
     ss.dependency "URLNavigator"
   end
   
