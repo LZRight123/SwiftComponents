@@ -12,7 +12,7 @@ import Moya
 
 public extension Response {
 
-    public func mapStringValue() throws -> String {
+    func mapStringValue() throws -> String {
         do {
             let json = JSON(try mapJSON())
             return json.stringValue
@@ -21,7 +21,7 @@ public extension Response {
         }
     }
 
-    public func mapBoolValue() throws -> Bool {
+    func mapBoolValue() throws -> Bool {
         do {
             let json = JSON(try mapJSON())
             return json.boolValue
@@ -30,7 +30,7 @@ public extension Response {
         }
     }
 
-    public func mapArrayValue() throws -> [String] {
+    func mapArrayValue() throws -> [String] {
         do {
             let json = JSON(try mapJSON())
             return json.arrayValue.map({ $0.stringValue })
@@ -39,7 +39,7 @@ public extension Response {
         }
     }
 
-    public func mapStringValue(atKeyPath keyPath: String) throws -> String {
+    func mapStringValue(atKeyPath keyPath: String) throws -> String {
         do {
             let json = JSON(try mapJSON())
             return json[keyPath].stringValue
@@ -48,7 +48,7 @@ public extension Response {
         }
     }
 
-    public func mapBoolValue(atKeyPath keyPath: String) throws -> Bool {
+    func mapBoolValue(atKeyPath keyPath: String) throws -> Bool {
         do {
             let json = JSON(try mapJSON())
             return json[keyPath].boolValue
@@ -57,7 +57,7 @@ public extension Response {
         }
     }
 
-    public func mapArrayValue(atKeyPath keyPath: String) throws -> [String] {
+    func mapArrayValue(atKeyPath keyPath: String) throws -> [String] {
         do {
             let json = JSON(try mapJSON())
             return json[keyPath].arrayValue.map({ $0.stringValue })
@@ -70,7 +70,7 @@ public extension Response {
 
 public extension Response {
 
-    public func mapString() throws -> String? {
+    func mapString() throws -> String? {
         do {
             let json = JSON(try mapJSON())
             return json.stringValue
@@ -79,7 +79,7 @@ public extension Response {
         }
     }
 
-    public func mapBool() throws -> Bool? {
+    func mapBool() throws -> Bool? {
         do {
             let json = JSON(try mapJSON())
             return json.bool
@@ -88,7 +88,7 @@ public extension Response {
         }
     }
 
-    public func mapArray() throws -> [String?] {
+    func mapArray() throws -> [String?] {
         do {
             let json = JSON(try mapJSON())
             return json.arrayValue.map({ $0.string })
@@ -97,7 +97,7 @@ public extension Response {
         }
     }
 
-    public func mapString(atKeyPath keyPath: String) throws -> String? {
+    func mapString(atKeyPath keyPath: String) throws -> String? {
         do {
             let json = JSON(try mapJSON())
             return json[keyPath].string
@@ -106,7 +106,7 @@ public extension Response {
         }
     }
 
-    public func mapBool(atKeyPath keyPath: String) throws -> Bool? {
+    func mapBool(atKeyPath keyPath: String) throws -> Bool? {
         do {
             let json = JSON(try mapJSON())
             return json[keyPath].bool
@@ -115,7 +115,7 @@ public extension Response {
         }
     }
 
-    public func mapArray(atKeyPath keyPath: String) throws -> [String?] {
+    func mapArray(atKeyPath keyPath: String) throws -> [String?] {
         do {
             let json = JSON(try mapJSON())
             return json[keyPath].arrayValue.map({ $0.string })
