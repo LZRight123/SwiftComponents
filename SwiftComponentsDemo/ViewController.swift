@@ -114,9 +114,7 @@ class ViewController: UIViewController {
     
 }
 
-
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+extension ViewController {
     class TagCCell: LZCollectionViewCell {
         let titleLabel = UILabel(font: .font15, textColor: .white, text: .init(randomOfLength: .random(in: 3...15)))
         override func setupUI() {
@@ -130,6 +128,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
             }
         }
     }
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     
     class ItemView: LZControl {
         let titleLabel = UILabel(font: .font15, textColor: .hex222222, text: "拜访动态")

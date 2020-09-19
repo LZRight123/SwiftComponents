@@ -25,7 +25,7 @@
 import UIKit
 
 
-extension UICollectionViewLayoutAttributes {
+public extension UICollectionViewLayoutAttributes {
     
     func setLeftAlignedFrame(withEdgeInsets edgeInsets: UIEdgeInsets) {
         var frame: CGRect = self.frame
@@ -36,10 +36,10 @@ extension UICollectionViewLayoutAttributes {
 
 
 
-class LeftAlignedCollectionViewLayout: UICollectionViewFlowLayout {
+open class LeftAlignedCollectionViewLayout: UICollectionViewFlowLayout {
     
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    open override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         let defaultAttributes = super.layoutAttributesForElements(in: rect)
         var newAttributes: [UICollectionViewLayoutAttributes]? = defaultAttributes
@@ -52,7 +52,7 @@ class LeftAlignedCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    open override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
         let currentAttributes: UICollectionViewLayoutAttributes? = super.layoutAttributesForItem(at: indexPath)
         let layoutWidth = collectionView!.frame.width - sectionInset.left - sectionInset.right
