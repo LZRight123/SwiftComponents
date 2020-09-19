@@ -79,6 +79,7 @@ class ViewController: UIViewController {
         $0.delegate = self
         $0.register(ItemsCCell.self)
         $0.register(TagCCell.self)
+        $0.register(supplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withClass: HedaerVi.self)
     }
     
 //    let disposeBag = DisposeBag()
@@ -188,6 +189,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         
     }
     
+    class HedaerVi: LZCollectionReusableView {
+        override func setupUI() {
+            backgroundColor = .random
+        }
+    }
+    
     
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -204,6 +211,17 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
 //        }.disposed(by: self.disposeBag)
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let heade = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withClass: HedaerVi.self, for: indexPath)
+        return heade
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        .init(width: ScreenWidth, height: 100)
+    }
+    
     
 
 }
