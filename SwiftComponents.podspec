@@ -99,6 +99,7 @@ Pod::Spec.new do |s|
     ss.dependency "RxDataSources"
     ss.dependency "RxOptional"
     ss.dependency "RxViewController"
+    ss.dependency "RxGesture"
     ss.dependency "Moya/RxSwift"
     ss.dependency "MJRefresh"
     ss.dependency "MBProgressHUD"
