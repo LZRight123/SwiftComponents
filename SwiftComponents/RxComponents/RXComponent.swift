@@ -14,7 +14,7 @@ import Foundation
 @_exported import RxViewController
 @_exported import RxOptional
 @_exported import RxDataSources
-
+@_exported import RxGesture
  
 //以下都可以考虑使用
 //pod 'Moya/RxSwift'

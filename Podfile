@@ -33,4 +33,7 @@ target 'SwiftComponentsDemo' do
   pod 'URLNavigator'
   pod 'YYCache'
   pod 'Moya/RxSwift'
+  pod 'RxGesture'
+  
+  pod 'WechatOpenSDK'
 end

@@ -68,7 +68,7 @@ struct FromLink {
 private let margin: CGFloat = 19
 private let verticalPadding: CGFloat = 12
 class ViewController: UIViewController {
-    lazy var collectionView = UICollectionView(scrollDirection: .vertical, layout: LeftAlignedCollectionViewLayout(), interitemSpacing: 10, lineSpacing: 10, sectionInset: UIEdgeInsets.init(horizontal: 20, vertical: 20)).then {
+    lazy var collectionView = UICollectionView(scrollDirection: .vertical, layout: UICollectionViewLeftAlignedLayout(), interitemSpacing: 10, lineSpacing: 10, sectionInset: UIEdgeInsets.init(horizontal: 20, vertical: 20)).then {
         $0.backgroundView = UIView()
         let imgView = UIImageView(image: UIImage(named: "bg-ywq"))
         $0.backgroundView?.add(imgView).snp.makeConstraints { make in
@@ -222,6 +222,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         .init(width: ScreenWidth, height: 100)
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pushVC(ScrollChildTableVC.fromSb("Main"))
+    }
     
 
 }

@@ -21,6 +21,9 @@ PODS:
     - Differentiator (~> 4.0)
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
   - RxOptional (4.1.0):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
@@ -61,6 +64,7 @@ PODS:
   - SwifterSwift/UIKit (5.2.0)
   - SwiftyJSON (5.0.0)
   - URLNavigator (2.3.0)
+  - WechatOpenSDK (1.8.7.1)
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -73,6 +77,7 @@ DEPENDENCIES:
   - Moya/RxSwift
   - RxCocoa
   - RxDataSources
+  - RxGesture
   - RxOptional
   - RxSwift
   - RxViewController
@@ -81,6 +86,7 @@ DEPENDENCIES:
   - SwifterSwift
   - SwiftyJSON
   - URLNavigator
+  - WechatOpenSDK
   - YYCache
 
 SPEC REPOS:
@@ -94,6 +100,7 @@ SPEC REPOS:
     - Moya
     - RxCocoa
     - RxDataSources
+    - RxGesture
     - RxOptional
     - RxRelay
     - RxSwift
@@ -103,6 +110,7 @@ SPEC REPOS:
     - SwifterSwift
     - SwiftyJSON
     - URLNavigator
+    - WechatOpenSDK
     - YYCache
 
 SPEC CHECKSUMS:
@@ -115,6 +123,7 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
@@ -124,8 +133,9 @@ SPEC CHECKSUMS:
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
+  WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 4086e3831efb306133b175e4ae77ca71e8d7d61d
+PODFILE CHECKSUM: 314d3c31d9f3d635fff81554c1a8f434b875065c
 
 COCOAPODS: 1.9.3

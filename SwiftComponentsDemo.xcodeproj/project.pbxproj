@@ -112,6 +112,7 @@
 		DFBF15A824C7BF3000EF02A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15A724C7BF3000EF02A6 /* Assets.xcassets */; };
 		DFBF15AB24C7BF3000EF02A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15A924C7BF3000EF02A6 /* LaunchScreen.storyboard */; };
 		DFBF15B324C7BFEF00EF02A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFBF15B224C7BFEF00EF02A6 /* README.md */; };
+		DFEE0F5225187FC30034509F /* ScrollChildTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE0F5125187FC30034509F /* ScrollChildTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,6 +224,7 @@
 		DFBF15AA24C7BF3000EF02A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFBF15AC24C7BF3000EF02A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBF15B224C7BFEF00EF02A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DFEE0F5125187FC30034509F /* ScrollChildTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollChildTableVC.swift; sourceTree = "<group>"; };
 		FC9771D17CCE8F8C97DC255C /* Pods-SwiftComponentsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComponentsDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftComponentsDemo/Pods-SwiftComponentsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -520,6 +522,7 @@
 				DF44838C24CAEEE40091FEA1 /* scoreActivitiy */,
 				DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */,
 				DFBF15A224C7BF2F00EF02A6 /* ViewController.swift */,
+				DFEE0F5125187FC30034509F /* ScrollChildTableVC.swift */,
 				5EBF081A24F4992900A5C538 /* TestApi.swift */,
 				DFBF15A424C7BF2F00EF02A6 /* Main.storyboard */,
 				DFBF15A724C7BF3000EF02A6 /* Assets.xcassets */,
@@ -654,6 +657,7 @@
 				DFB1B39024CFB7970058E317 /* ProductDetailScoreCell.swift in Sources */,
 				DF996A7B2514915000CE52A3 /* QuickUI.swift in Sources */,
 				DF996A862514915000CE52A3 /* ShowAnimate.swift in Sources */,
+				DFEE0F5225187FC30034509F /* ScrollChildTableVC.swift in Sources */,
 				DF996A9F2514915000CE52A3 /* UIViewControllerExtensions.swift in Sources */,
 				DF996A6A2514915000CE52A3 /* mc.swift in Sources */,
 				DF996A932514915000CE52A3 /* CGFloatExtensions.swift in Sources */,
