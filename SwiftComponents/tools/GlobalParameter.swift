@@ -13,7 +13,7 @@ public let ScreenWidth  = UIScreen.main.bounds.width
 public let ScreenHeight = UIScreen.main.bounds.height
 public let StatusBarH   = UIApplication.shared.statusBarFrame.height
 public let NavBarH: CGFloat = 44
-public let ISIphoneX  = (StatusBarH == 44)
+public let ISIphoneX  = (StatusBarH >= 44)
 public let SafeBottomArea: CGFloat = (ISIphoneX ? 34 : 0)
 public let TabbarHeight: CGFloat = 49
 public let ScaleW = ScreenWidth/375.0

@@ -25,14 +25,16 @@ open class BackgroundTimer {
     private var state: State = .suspended
 
     public init(deadline: DispatchTime = .now(), repeating: DispatchTimeInterval = .never,
-         leeway: DispatchTimeInterval = .milliseconds(100), task: (()->())?) {
+                leeway: DispatchTimeInterval = .milliseconds(100), queue: DispatchQueue = .main, task: (()->())?) {
         self.task = task
         _timer = DispatchSource.makeTimerSource()
         _timer?.schedule(deadline: deadline,
                         repeating: repeating,
                         leeway: leeway)
         _timer?.setEventHandler(handler: {
-            task?()
+            queue.async {
+                task?()
+            }
         })
     }
 

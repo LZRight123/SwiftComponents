@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ShowAnimatePriority: ExpressibleByFloatLiteral {
+public struct ShowAnimatePriority: ExpressibleByFloatLiteral {
     public typealias FloatLiteralType = Float
     public let value: Float
     
@@ -38,7 +38,7 @@ struct ShowAnimatePriority: ExpressibleByFloatLiteral {
     }
 }
 
-protocol ShowAnimate {
+public protocol ShowAnimate {
     var sa_animationView: UIView { get }
     var showAnimatePriority: ShowAnimatePriority { get }
     
@@ -51,12 +51,12 @@ protocol ShowAnimate {
 
 
 
-protocol ShowAnimatePopUp: ShowAnimate {
+public protocol ShowAnimatePopUp: ShowAnimate {
 }
 
-protocol ShowAnimatePresent: ShowAnimate { }
+public protocol ShowAnimatePresent: ShowAnimate { }
 
-extension ShowAnimate where Self: UIViewController {
+public extension ShowAnimate where Self: UIViewController {
     var sa_isShowing: Bool {
         parent != nil && view.superview != nil
     }
@@ -76,17 +76,20 @@ extension ShowAnimate where Self: UIViewController {
     }
 }
 
-extension ShowAnimatePopUp {
+public extension ShowAnimatePopUp {
     var showAnimatePriority: ShowAnimatePriority { .medium }
 }
-extension ShowAnimatePresent {
+public extension ShowAnimatePresent {
     var showAnimatePriority: ShowAnimatePriority { .low }
 }
 
 //MARK: - popup 从中间放大
-extension ShowAnimatePopUp where Self: UIViewController {
+public extension ShowAnimatePopUp where Self: UIViewController {
     func showAt(vc: UIViewController?, animation: Bool = true) {
         vc?.add(self)
+        view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         sortedChildView()
 
         view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -114,9 +117,12 @@ extension ShowAnimatePopUp where Self: UIViewController {
 
 
 //MARK: - present 从下往上
-extension ShowAnimatePresent where Self: UIViewController {
+public extension ShowAnimatePresent where Self: UIViewController {
     func showAt(vc: UIViewController?, animation: Bool = true) {
         vc?.add(self)
+        view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         sortedChildView()
         
         view.backgroundColor = UIColor.black.withAlphaComponent(0.3)

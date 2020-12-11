@@ -23,6 +23,7 @@ public extension UIStackView {
     ///   - spacing: The distance in points between the adjacent edges of the stack view’s arranged views.(default: 0.0)
     ///   - alignment: The alignment of the arranged subviews perpendicular to the stack view’s axis. (default: .fill)
     ///   - distribution: The distribution of the arranged views along the stack view’s axis.(default: .fill)
+    /// let stack = UIStackView(arrangedSubviews: <#T##[UIView]#>, spacing: <#T##CGFloat#>, alignment: <#T##Alignment#>, distribution: <#T##Distribution#>, axis: <#T##NSLayoutConstraint.Axis#>)
     convenience init(
         arrangedSubviews: [UIView],
         spacing: CGFloat = 0.0,
@@ -30,7 +31,7 @@ public extension UIStackView {
         distribution: UIStackView.Distribution = .fill,
         axis: NSLayoutConstraint.Axis = .vertical
         ) {
-
+        
         self.init(arrangedSubviews: arrangedSubviews)
         self.axis = axis
         self.spacing = spacing

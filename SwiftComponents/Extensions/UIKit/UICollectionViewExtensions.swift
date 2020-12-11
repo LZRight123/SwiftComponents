@@ -12,11 +12,14 @@ import SwifterSwift
 
 // MARK: - Initializers
 public extension UICollectionView {
-    convenience init(scrollDirection: UICollectionView.ScrollDirection, userInteractionEnabled: Bool = true, backgroundColor: UIColor? = UICollectionView.appearance().backgroundColor, layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout() ,interitemSpacing: CGFloat = 0.0, lineSpacing: CGFloat = 0.0, sectionInset: UIEdgeInsets = .zero) {
+    /// let collectionView = UICollectionView(scrollDirection: <#T##ScrollDirection#>, userInteractionEnabled: <#T##Bool#>, backgroundColor: <#T##UIColor?#>, layout: <#T##UICollectionViewFlowLayout#>, interitemSpacing: <#T##CGFloat#>, lineSpacing: <#T##CGFloat#>, sectionInset: <#T##UIEdgeInsets#>)
+    convenience init(scrollDirection: UICollectionView.ScrollDirection, userInteractionEnabled: Bool = true, backgroundColor: UIColor? = UICollectionView.appearance().backgroundColor, layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout() ,interitemSpacing: CGFloat = 0.0, lineSpacing: CGFloat = 0.0, sectionInset: UIEdgeInsets = .zero, needEstimatedItemSize: Bool = true) {
         layout.minimumInteritemSpacing = interitemSpacing
         layout.minimumLineSpacing = lineSpacing
         layout.scrollDirection = scrollDirection
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        if needEstimatedItemSize {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
         layout.sectionInset = sectionInset
         self.init(frame: .zero, collectionViewLayout: layout)
         scrollsToTop = false

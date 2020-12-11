@@ -19,7 +19,7 @@ public extension UITableView {
         estimatedSectionFooterHeight = 0
         showsVerticalScrollIndicator = false
         self.separatorStyle = separatorStyle
-        separatorColor = .line1
+        separatorColor = .hexEEEEEE
         keyboardDismissMode = .onDrag
     }
 }

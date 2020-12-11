@@ -13,8 +13,8 @@ import UIKit
 
 public extension UIApplication {
         
-    var currentWindow: UIWindow {
-        return delegate!.window!!
+    var currentWindow: UIWindow? {
+        delegate?.window ?? nil
     }
     
     func call(_ phone: String) {

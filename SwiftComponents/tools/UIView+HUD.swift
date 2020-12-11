@@ -9,6 +9,20 @@
 import Foundation
 @_exported import MBProgressHUD
 
+extension MBProgressHUD {
+    func showAt(_ view: UIView?, animated: Bool = true) -> MBProgressHUD {
+        var spView = view
+        if view == nil {
+            spView = UIViewController.topViewController()?.view
+        }
+        if spView == nil {
+            return MBProgressHUD()
+        }
+        
+        return MBProgressHUD.showAdded(to: spView!, animated: animated)
+    }
+}
+
 private var hudKey: Void?
 public extension UIView {
     enum ToastPosition {

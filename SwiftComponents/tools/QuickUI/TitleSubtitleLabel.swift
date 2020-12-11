@@ -18,8 +18,8 @@ public struct ItemModel {
     }
 }
 
-public let placehodlerExchange = "dsx_placeholder_text"
-public let placehodlerText = placehodlerExchange + "暂无"
+//public let placehodlerExchange = "dsx_placeholder_text"
+//public let placehodlerText = placehodlerExchange + "暂无"
 @IBDesignable
 open class TitleSubtitleLabel: LZControl {
     public let titleLabel = UILabel(font: .font16, textColor: .hex999999).then{
@@ -34,7 +34,7 @@ open class TitleSubtitleLabel: LZControl {
     
     public var backgorundView = UIView()
     
-    private(set) lazy var stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel], spacing: 0, alignment: .top, distribution: .fill, axis: .horizontal)
+    public lazy var stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel], spacing: 0, alignment: .top, distribution: .fill, axis: .horizontal)
     
     private var _arrowView: UIView?
     public var arrowMargin: CGFloat = 0
@@ -69,17 +69,14 @@ open class TitleSubtitleLabel: LZControl {
         }
     }
     
-    @objc @IBInspectable public var title: String = "" {
+    @objc @IBInspectable public var title: String = " " {
         didSet {
             titleLabel.text = title.isEmpty ? " ": title
         }
     }
-    @objc @IBInspectable public var subTitle: String = "" {
+    @objc @IBInspectable public var subTitle: String = " " {
         didSet {
             subtitleLabel.text = subTitle.isEmpty ? " ": subTitle
-            if subTitle.contains(placehodlerExchange) {
-                subtitleLabel.text = subTitle.components(separatedBy: placehodlerExchange).last
-            }
         }
     }
     
@@ -96,14 +93,11 @@ open class TitleSubtitleLabel: LZControl {
             subtitleLabel.font = font
         }
     }
-        
-//    private let maskBtn = UIButton()
     
-//    open override var isUserInteractionEnabled: Bool {
-//        didSet {
-//            maskBtn.isUserInteractionEnabled = isUserInteractionEnabled
-//        }
-//    }
+    @IBInspectable open var titleFont: UIFont = .font11 { didSet { titleLabel.font = titleFont } }
+    @IBInspectable open var subtitleFont: UIFont = .font11 { didSet { subtitleLabel.font = subtitleFont } }
+    @IBInspectable open var titleColor: UIColor? { didSet { titleLabel.textColor = titleColor } }
+    @IBInspectable open var subtitleColor: UIColor? { didSet { subtitleLabel.textColor = subtitleColor } }
         
     open override func setupUI() {
         isUserInteractionEnabled = false
@@ -116,17 +110,11 @@ open class TitleSubtitleLabel: LZControl {
         add(stack).snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        
-//        add(maskBtn).snp.makeConstraints { $0.edges.equalToSuperview()  }
-        
+                
         subtitleLabel.snp.makeConstraints {
             $0.height.greaterThanOrEqualTo(titleLabel)
         }
     }
-    
-//    open override func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
-//        maskBtn.addTarget(target, action: action, for: controlEvents)
-//    }
     
     public typealias Handle = (UIView, UIStackView) -> Void
     open func setupArrowView(_ arrowView: UIView?, hanlder: Handle?) {
@@ -145,6 +133,50 @@ open class TitleSubtitleLabel: LZControl {
             }
         }
         _arrowView = arrowView
+    }
+}
+
+
+
+
+//MARK: - 上下结构的
+@IBDesignable
+open class TBTitleSubtitleLabel: LZControl {
+    public let titleLabel = UILabel(font: .font11, textColor: .hex666666, text: "标题")
+    public let subtitleLabel = UILabel(font: .font9, textColor: .hex999999, text: "请输入", numberOfLines: 0)
+    public lazy var stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel], spacing: spacing, alignment: .leading, distribution: .fill, axis: .vertical).then {
+        $0.isUserInteractionEnabled = false
+    }
+    
+    open override var tintColor: UIColor! {
+        didSet {
+            titleLabel.textColor = tintColor
+            subtitleLabel.textColor = tintColor
+        }
+    }
+    
+    @IBInspectable
+    open var font: UIFont = .font11 {
+        didSet {
+            titleLabel.font = font
+            subtitleLabel.font = font
+        }
+    }
+    
+    @IBInspectable open var titleFont: UIFont = .font11 { didSet { titleLabel.font = titleFont } }
+    @IBInspectable open var subtitleFont: UIFont = .font11 { didSet { subtitleLabel.font = subtitleFont } }
+    @IBInspectable open var titleColor: UIColor? { didSet { titleLabel.textColor = titleColor } }
+    @IBInspectable open var subtitleColor: UIColor? { didSet { subtitleLabel.textColor = subtitleColor } }
+    @IBInspectable open var title: String? { didSet { titleLabel.text = title } }
+    @IBInspectable open var subtitle: String? { didSet { subtitleLabel.text = subtitle } }
+    
+    @IBInspectable open var spacing: CGFloat = 3 {
+        didSet { stack.spacing = spacing }
+    }
+    
+    
+    open override func setupUI() {
+        add(stack).snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 }
 

@@ -9,19 +9,19 @@
 import UIKit
 
 @IBDesignable
-public class LZToolBar: UIView {
+open class LZToolBar: LZControl {
     private var effectView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         view.isHidden = true
         return view
     }()
-    let backgroundImageView = UIImageView()
+    public let backgroundImageView = UIImageView()
     
-    let safeAreaView = UIImageView()
-    var didTouchToolbar: (() -> Void)?
+    public let safeAreaView = UIImageView()
+    public var didTouchToolbar: (() -> Void)?
     
     
-    var gradientLayer = CAGradientLayer(colors: [UIColor.black.withAlphaComponent(0.3), UIColor.black.withAlphaComponent(0.7)], locations: [0, 1], startPoint: .init(x: 0.5, y: 0), endPoint: .init(x: 0.5, y: 1), type: .axial)
+    public var gradientLayer = CAGradientLayer(colors: [UIColor.black.withAlphaComponent(0.3), UIColor.black.withAlphaComponent(0.7)], locations: [0, 1], startPoint: .init(x: 0.5, y: 0), endPoint: .init(x: 0.5, y: 1), type: .axial)
     
     public override var backgroundColor: UIColor?  {
         didSet{
@@ -29,38 +29,26 @@ public class LZToolBar: UIView {
         }
     }
     
-    @IBInspectable var translucent = false {
+    @IBInspectable public var translucent = false {
         didSet{
             effectView.isHidden = !translucent
         }
     }
     
-    @IBInspectable var backgroundImage: UIImage? {
+    @IBInspectable public var backgroundImage: UIImage? {
         didSet{
             backgroundImageView.image = backgroundImage
         }
     }
     
-    @IBInspectable var effectSyle = UIBlurEffect.Style.extraLight {
+    @IBInspectable public var effectSyle = UIBlurEffect.Style.extraLight {
         didSet{
             effectView.effect = nil
             effectView.effect = UIBlurEffect(style: effectSyle)
         }
     }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    
-   
-    func commonInit() {
+  
+    open override func setupUI() {
         gradientLayer.isHidden = true
         layer.insertSublayer(gradientLayer, at: 0)
         insertSubview(safeAreaView, at: 0)
@@ -83,8 +71,7 @@ public class LZToolBar: UIView {
         }
     }
 
-        
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         gradientLayer.frame = .init(x: 0, y: 0, width: bounds.width, height: bounds.height + SafeBottomArea)
@@ -92,14 +79,14 @@ public class LZToolBar: UIView {
 }
 
 //MARK: - 交互
-extension LZToolBar {
-    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+public extension LZToolBar {
+     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         var touchBound = bounds
         touchBound.size.height = bounds.height + 34.0
         return touchBound.contains(point)
     }
     
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let block = self.didTouchToolbar {
             block()
         }

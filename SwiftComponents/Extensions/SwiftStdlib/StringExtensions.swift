@@ -13,6 +13,12 @@ public extension String {
     func font(with font: UIFont) -> NSAttributedString {
         return NSMutableAttributedString(string: self, attributes: [.font: font])
     }
+    
+    func isContainChinese() -> Bool {
+        let regex = ".*[\u{4E00}-\u{9FA5}]{1,}.*"
+        let test:NSPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        return test.evaluate(with: self)
+    }
 }
 
 public extension String {

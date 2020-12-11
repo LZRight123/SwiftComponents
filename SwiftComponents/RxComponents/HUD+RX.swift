@@ -29,6 +29,13 @@ public extension Reactive where Base: UIView {
         }
     }
     
+    var showText: Binder<String?> {
+        return .init(base) { (view, text) in
+            view.showText(text)
+        }
+    }
+    
+    
     var toastAtBottom: Binder<String?> {
         return .init(base) { (view, text) in
             view.showText(text, position: .bottom)
@@ -52,6 +59,12 @@ public extension Reactive where Base: UIViewController {
     }
     
     var toast: Binder<String?> {
+        return .init(base) { (vc, text) in
+            vc.view.showText(text)
+        }
+    }
+    
+    var showText: Binder<String?> {
         return .init(base) { (vc, text) in
             vc.view.showText(text)
         }

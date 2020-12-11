@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - Initializers
 public extension UIButton {
+    ///use: let btn = UIButton(font: .font13, title: "", titleColor: .hex181818, image: nil)
     convenience init(font: UIFont = .font13, title: String = "", titleColor: UIColor = .black, image: UIImage? = nil) {
         self.init()
         titleLabel?.font = font

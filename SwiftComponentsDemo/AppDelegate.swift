@@ -29,6 +29,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NavigatorDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         register()
         
+        
+        let h5 = "https://sup.test.yyjzt.com/h5/information/index.html#/announcementDetails?applySource=2&state=0&supInformationId=132"
+        
+        let s = "gongyingshang://activity/webview?title=公告资讯明细&TYPE=7&url=" + h5.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed)!
+        
+        let s2 = "gongyingshang://activity/webview?title=公告资讯明细&TYPE=7&url=\(h5)".addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed)!
+        
+    
+        
+        
+        /// 原始字符串 先解码 再编码
+        let r01 = s.removingPercentEncoding?.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed)
+        let r02 = s2.removingPercentEncoding?.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed)
+            
+        print("")
+//        let regex = "[\\u4e00-\\u9fa5]"
+//
+//        let s = try? NSRegularExpression(pattern: regex, options: .caseInsensitive).stringByReplacingMatches(in: st, options: .reportCompletion, range: .init(location: 0, length: st.count), withTemplate: "")
+//
+//        let t = "123".components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+//
+//        let nonDigits = CharacterSet.decimalDigits.inverted
+//            let numStr = st.trimmingCharacters(in: nonDigits)
+//            let range = (st as NSString).range(of: numStr)
+//        let sub  = st.nsString.substring(to: range.length)
+
+        
+        
+        
         window = UIWindow()
         window?.backgroundColor = .white
         
