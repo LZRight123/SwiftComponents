@@ -215,6 +215,7 @@
 		DF996AC9251491BF00CE52A3 /* MoyaRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaRequest.swift; sourceTree = "<group>"; };
 		DF996ACA251491BF00CE52A3 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		DF996ACB251491BF00CE52A3 /* TargetType+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TargetType+Cache.swift"; sourceTree = "<group>"; };
+		DF9E53D125835BD500FAF17F /* SwiftComponentsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftComponentsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		DFB1B38F24CFB7970058E317 /* ProductDetailScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailScoreCell.swift; sourceTree = "<group>"; };
 		DFBF159B24C7BF2F00EF02A6 /* SwiftComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBF159E24C7BF2F00EF02A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -528,6 +529,7 @@
 				DFBF15A724C7BF3000EF02A6 /* Assets.xcassets */,
 				DFBF15A924C7BF3000EF02A6 /* LaunchScreen.storyboard */,
 				DFBF15AC24C7BF3000EF02A6 /* Info.plist */,
+				DF9E53D125835BD500FAF17F /* SwiftComponentsDemo-Bridging-Header.h */,
 			);
 			path = SwiftComponentsDemo;
 			sourceTree = "<group>";
@@ -566,6 +568,7 @@
 				TargetAttributes = {
 					DFBF159A24C7BF2F00EF02A6 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -893,6 +896,7 @@
 			baseConfigurationReference = 7CFFACC0CC98302253712525 /* Pods-SwiftComponentsDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RC55F2EK57;
 				INFOPLIST_FILE = SwiftComponentsDemo/Info.plist;
@@ -903,6 +907,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fbbc.SwiftComponentsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftComponentsDemo/SwiftComponentsDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -913,6 +919,7 @@
 			baseConfigurationReference = FC9771D17CCE8F8C97DC255C /* Pods-SwiftComponentsDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RC55F2EK57;
 				INFOPLIST_FILE = SwiftComponentsDemo/Info.plist;
@@ -923,6 +930,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fbbc.SwiftComponentsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftComponentsDemo/SwiftComponentsDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

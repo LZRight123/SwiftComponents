@@ -8,7 +8,7 @@
 
 import UIKit
 import URLNavigator
-
+import SwiftyJSON
 //https://dev.oms.luguanjia.com/mini?id=221|officeName=湖北鹿管家|name=钟秀玲|userRoyaltyCode=offline|defaultDelivery=null
 
 let navigator = Router()
@@ -25,10 +25,41 @@ struct TestClassModel {
 class AppDelegate: UIResponder, UIApplicationDelegate, NavigatorDelegate {
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        register()
+    func usingBmob() {
+        Bmob.register(withAppKey: "314fc2d8e21d0951a8275b83e014b0eb")
         
+        BmobCloud.callFunction(inBackground: "test", withParameters: ["ii": "99-3E7D85078"]) { (anys, e) in
+            if let dic = anys as? [String: Any] {
+                let json = JSON(dic)
+                print(json)
+                print("")
+                
+            }
+        }
+        
+        
+//        let obj = BmobObject(className: "test")
+//        obj?.setObject("wo", forKey: "key1")
+//        obj?.setObject("wo", forKey: "key2")
+//
+//        obj?.saveInBackground(resultBlock: { (issuccess, e) in
+//            print("")
+//        })
+//
+//        let query = BmobQuery(className: "test")
+//        query?.getObjectInBackground(withId: "ee32880d85", block: { (bo, e) in
+//            print("")
+//        })
+        
+    }
+    
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        usingBmob()
+//        register()
+        return true
+//        [Bmob registerWithAppKey:@"申请的Application ID"];
+       
         
         let h5 = "https://sup.test.yyjzt.com/h5/information/index.html#/announcementDetails?applySource=2&state=0&supInformationId=132"
         

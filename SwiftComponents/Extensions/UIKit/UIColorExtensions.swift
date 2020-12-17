@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIColor
 {
-    /// 主色 
+    /// 主色
     static let main = UIColor.hex01CE95
     static let hex25E5C7 = UIColor(hex: "25E5C7")
     static let hex32C8B1 = #colorLiteral(red: 0.1960784314, green: 0.7843137255, blue: 0.6941176471, alpha: 1)

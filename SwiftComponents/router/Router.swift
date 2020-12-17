@@ -14,6 +14,9 @@ public typealias URLPostHandlerFactory = (_ url: URLNavigator.URLConvertible, _ 
 public typealias URLPostHandler = () -> Any?
 
 open class Router: Navigator {
+    func test() {
+        
+    }
     
     private var postValueFactories = [URLPattern: URLPostHandlerFactory]()
     

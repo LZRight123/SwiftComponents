@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - BmobSDK (2.4.1)
   - Differentiator (4.0.1)
   - KakaJSON (1.1.2)
   - Kingfisher (5.14.1):
@@ -68,6 +69,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BmobSDK
   - KakaJSON
   - Kingfisher
   - MBProgressHUD
@@ -90,6 +92,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BmobSDK
     - Differentiator
     - KakaJSON
     - Kingfisher
@@ -112,6 +115,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  BmobSDK: 930525437e6602f7146108e11a9796604a1edbb9
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
@@ -132,6 +136,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 05a9457eaa2076b1a1411b62d19c3e2c643b100d
+PODFILE CHECKSUM: 5e34817f3aa0396500bc9c829d35dc3700088e42
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

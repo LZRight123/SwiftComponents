@@ -205,9 +205,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         let cell = collectionView.dequeueReusableCell(withClass: TagCCell.self, for: indexPath)
 //        cell.bind()
 //        cell.btn.rx.tap.subscribe { _ in
-//            let nextVC = RightLeftVC()
-//            nextVC.setupTransitioningAnimate(.rightToLeft)
-//            self.presentVC(nextVC)
+//            let vc = RightLeftVC()
+//            vc.setupTransitioningAnimate(.present)
+//            presentVC(nextVC)
 //        }.disposed(by: self.disposeBag)
         return cell
     }
