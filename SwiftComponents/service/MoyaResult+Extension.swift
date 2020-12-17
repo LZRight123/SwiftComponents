@@ -34,7 +34,6 @@ enum StatusCode: Int {
     case other
 }
 
-
 //MARK: - 响应
 struct NetResponse<Element>: Convertible {
     public var code: StatusCode = .noResponse

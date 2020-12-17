@@ -146,6 +146,22 @@ open class LZTableViewCell: UITableViewCell {
 }
 
 
+open class LZStackCell: LZTableViewCell {
+    public let stack = UIStackView(arrangedSubviews: [], spacing: 9, alignment: .fill, distribution: .fill, axis: .vertical)
+    
+    open override func setupUI() {
+        selectionStyle = .none
+                
+        contentView.add(stack).snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.left.equalToSuperview().offset(13)
+            $0.top.equalToSuperview().offset(14)
+        }
+    }
+
+}
+
+
 
 public extension UICollectionViewCell {
     /// This is a workaround method for self sizing collection view cells which stopped working for iOS 12
