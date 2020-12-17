@@ -11,12 +11,12 @@ import Moya
 
 typealias HttpMethod = Moya.Method
 
-protocol DSXTargetType: TargetType {
+protocol CustomTargetType: TargetType {
     var parameters: [String: Any]? { get }
     var parameterEncoding: ParameterEncoding { get }
 }
 
-extension DSXTargetType {
+extension CustomTargetType {
     var baseURL: URL { URL(string: "https://baidu.com")! }
 
     var method: HttpMethod {
