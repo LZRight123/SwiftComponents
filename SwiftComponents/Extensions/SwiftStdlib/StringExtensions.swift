@@ -19,6 +19,14 @@ public extension String {
         let test:NSPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
         return test.evaluate(with: self)
     }
+    
+    /// 超出几个字后打点
+    func dot(forLength length: Int) -> String {
+        guard count > length else {
+            return self
+        }
+        return String(prefix(length)) +  "..."
+    }
 }
 
 public extension String {
