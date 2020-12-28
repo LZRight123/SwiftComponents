@@ -74,7 +74,7 @@ Pod::Spec.new do |s|
 
   # 工具类
   s.subspec 'tools' do |ss|
-    ss.source_files = 'SwiftComponents/tools/**/*.swift'
+    ss.source_files = 'SwiftComponents/tools/**/*.{swift, h}'
 
     ss.dependency "SnapKit"
     ss.dependency "Kingfisher"

@@ -49,3 +49,10 @@ public extension SectionModel {
 }
 
 
+public extension BehaviorRelay {
+    func refresh() {
+        accept(value)
+    }
+    
+}
+
