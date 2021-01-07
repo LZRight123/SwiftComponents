@@ -81,6 +81,7 @@ Pod::Spec.new do |s|
     ss.dependency "MBProgressHUD"
     ss.dependency "KakaJSON"
     ss.dependency "SwiftyJSON"
+    ss.dependency "RxSwift"
     ss.dependency "SwiftComponents/Extensions"
   end
   
