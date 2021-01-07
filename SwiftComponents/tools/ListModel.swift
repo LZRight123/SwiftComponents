@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import KakaJSON
 
-public class PageRequest: ReactiveCompatible, Convertible {
+public class PageRequest: Convertible {
     public var pageNumber = 1
     public var pageSize = 10
     

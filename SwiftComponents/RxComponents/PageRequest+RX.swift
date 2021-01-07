@@ -8,7 +8,7 @@
 
 import RxSwift
 import RxCocoa
-
+extension PageRequest: ReactiveCompatible { }
 public extension Reactive where Base == PageRequest {
     /// 重置到开始 下拉刷新 等
     var reset: Binder<Any> {
