@@ -32,7 +32,7 @@ private func lzprint(_ items: Any..., separator: String = " ", terminator: Strin
 
 public func lzprint(_ items: Any..., separator: String = " ", terminator: String = "\n", level: LogLevel = .default) {
     #if DEBUG
-    if LogLevelMangager.default.rawValue >= level.rawValue {
+    if LogLevelMangager.default.rawValue <= level.rawValue {
         print(items, separator: separator, terminator: terminator)
     }
     #endif
