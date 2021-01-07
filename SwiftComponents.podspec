@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
     ss.dependency "SnapKit"
     ss.dependency "Kingfisher"
     ss.dependency "MBProgressHUD"
-    ss.dependency "Extensions"
+    ss.dependency "SwiftComponents/Extensions"
   end
   
   s.subspec 'router' do |ss|
