@@ -9,7 +9,7 @@
 import UIKit
 
 open class LZPresentationControlller: UIPresentationController {
-    private lazy var dimmingView: UIView = {
+    public private(set) lazy var dimmingView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4)
         return view

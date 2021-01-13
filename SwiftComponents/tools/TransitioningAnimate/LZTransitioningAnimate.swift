@@ -24,12 +24,16 @@ open class LZTransitioningAnimate: NSObject {
     // @objc static let presentNoBackground = TransitioningAnimateNoBackgroundPresent()
     public static let pop = LZPopupTransitioningAnimate()
     public static let rightToLeft = LZRightToLeftTransitioningAnimate()
+    public var dimingViewBackgroundColor: UIColor? = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4)
+
 }
 
 //MARK: UIViewControllerTransitioningDelegate
 extension LZTransitioningAnimate: UIViewControllerTransitioningDelegate {
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return LZPresentationControlller(presentedViewController: presented, presenting: presenting)
+        let pv = LZPresentationControlller(presentedViewController: presented, presenting: presenting)
+        pv.dimmingView.backgroundColor = dimingViewBackgroundColor
+        return pv
     }
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
