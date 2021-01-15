@@ -9,13 +9,32 @@ import Foundation
 import SwiftyJSON
 import KakaJSON
 
+extension AppstoreVersionUpdate {
+    //MARK: - 示例
+    private func using () {
+        AppstoreVersionUpdate(appid: "1155871132").checkUpdate { r in
+            if let r = r {
+                print("")
+            } else {
+                print("")
+            }
+            
+            let alert = UIAlertController(title: "确定", message: "update", preferredStyle: .alert)
+            alert.addAction(.init(title: "ok", style: .default, handler: { _ in
+                r?.openAppstore()
+            }))
+//            alert.show()
+        }
+    }
+}
+
 public struct AppstoreVersionUpdate {
     
     public let itunesUpdateUrl: String
     public let itunesJumpUrl: String
-    public init(itunesUpdateUrl: String, itunesJumpUrl: String) {
-        self.itunesUpdateUrl = itunesUpdateUrl
-        self.itunesJumpUrl = itunesJumpUrl
+    public init(appid: String) {
+        itunesUpdateUrl = "https://itunes.apple.com/cn/lookup?id=\(appid)"
+        itunesJumpUrl = "https://itunes.apple.com/cn/app/\(appid)?mt=8"
     }
     
     public func checkUpdate(completion: @escaping (AppstoreVersionUpdate.Result?) -> Void) {
@@ -32,6 +51,7 @@ public struct AppstoreVersionUpdate {
             completion(m)
         }.resume()
     }
+    
     
     
     public struct Result: Convertible {
@@ -68,8 +88,30 @@ public struct AppstoreVersionUpdate {
             let r = version > currentVersion
             return r
         }
+        
+        public var itunesJumpUrl: String {
+            "https://itunes.apple.com/cn/app/\(trackId)?mt=8"
+        }
+        
+        public func openAppstore() {
+            guard trackId.count > 0 else {
+                return
+            }
+            UIApplication.shared.open(URL(string: itunesJumpUrl)!, options: [:], completionHandler: nil)
+        }
+        
+        public func exitApp() {
+            UIApplication.shared.sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, from: self, for: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
+                exit(1)
+            }
+        }
     }
+    
+    
 }
+
+
 
 
 
