@@ -27,32 +27,32 @@ extension String: Resource {
     }
 }
 
-enum Apis: DSXTargetType {
-    case test
-    var path: String { "" }
-    var parameters: [String : Any]? { nil }
-}
-
-enum AAAA: DSXTargetType {
-    case aaaa
-    var path: String { "" }
-    var parameters: [String : Any]? { nil }
-}
+//enum Apis: DSXTargetType {
+//    case test
+//    var path: String { "" }
+//    var parameters: [String : Any]? { nil }
+//}
+//
+//enum AAAA: DSXTargetType {
+//    case aaaa
+//    var path: String { "" }
+//    var parameters: [String : Any]? { nil }
+//}
 
 struct TestModel: Convertible {
     
 }
 
-class TVC: UIViewController {
-    func tttt() {
-        CGI.request(Apis.test) {  _ in }
-        CGI.request(AAAA.aaaa) {  _ in }
-        
-        CGI.rx.request(Apis.test, modelType: TestModel.self)
-        CGI.rx.request(AAAA.aaaa, modelType: TestModel.self)
-
-    }
-}
+//class TVC: UIViewController {
+//    func tttt() {
+//        CGI.request(Apis.test) {  _ in }
+//        CGI.request(AAAA.aaaa) {  _ in }
+//
+//        CGI.rx.request(Apis.test, modelType: TestModel.self)
+//        CGI.rx.request(AAAA.aaaa, modelType: TestModel.self)
+//
+//    }
+//}
 
 
 struct FromLink {
@@ -90,9 +90,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
       
-        CGI.requestObject(Apis.test, modeType: TestModel.self) { (_, r) in
-            let x = r
-        }
+//        CGI.requestObject(Apis.test, modeType: TestModel.self) { (_, r) in
+//            let x = r
+//        }
         
 //        CGI.rx.request(<#T##targetType: TargetType##TargetType#>, modelType: <#T##Convertible.Protocol#>)
         
