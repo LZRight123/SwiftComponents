@@ -21,15 +21,16 @@
 - KakaJSON
 - SwiftyJSON
 
+## [组件化实践](https://liangmc.com/archives/ios%E7%BB%84%E4%BB%B6%E5%8C%96)
 
-##### 小梁自用:本地使用 dev_lz分支
 
+## 考虑集成中...
 1. [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)]
 2. [BEMCheckBox](https://github.com/Boris-Em/BEMCheckBox)
 3. [IHKeyboardAvoiding](https://github.com/IdleHandsApps/IHKeyboardAvoiding)
 
 
-### User
+### Use
 1. pod update SwiftComponents --no-repo-update
 2. pod 'SwiftComponents', :path => '../SwiftComponents'
 3. pod 'SwiftComponents/router', :git => 'https://github.com/LZRight123/SwiftComponents.git'
