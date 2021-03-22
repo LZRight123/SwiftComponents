@@ -12,6 +12,9 @@ import UIKit
 // MARK: - Methods
 public extension UILabel {
 
+    /*
+    let <#value#> = UILabel(font:  <#value#>, textColor: <#value#>, text: <#value#>, numberOfLines: <#value#>, textAlignment: <#value#>)
+    */
     convenience init(font: UIFont = .font14, textColor: UIColor = .hex222222, text: String? = "", numberOfLines: Int = 1, textAlignment: NSTextAlignment = .left) {
         self.init()
         self.font = font

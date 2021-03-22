@@ -19,7 +19,7 @@ import Cocoa
 
 
 //MARK: -
-public extension NSMutableAttributedString {
+public extension NSAttributedString {
     static func build(fullText full: String, subText sub: String, fullAttri: [NSAttributedString.Key : Any]? = nil, subAttri: [NSAttributedString.Key : Any]) -> NSMutableAttributedString {
         let attri = NSMutableAttributedString(string: full, attributes: fullAttri)
         attri.addAttributes(subAttri, range: full.rangeOf(sub))

@@ -28,5 +28,6 @@ public let cellEdgeInset = UIEdgeInsets(top: 0, left: 12, bottom: 12, right: 10)
 
 public typealias Block_T = () -> Void
 public typealias Block_T_String = (String?) -> Void
+public typealias Block_T_Bool = (Bool) -> Void
 public typealias Block_T_Any = (Any?) -> Void
 

@@ -278,3 +278,123 @@ open class GradientView: UIView {
     }
     
 }
+
+
+
+
+//MARK: - 封装StackView
+open class LZVStackView: UIStackView {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.axis = .vertical
+        self.spacing = 3
+        self.alignment = .center
+        self.distribution = .fill
+        setupUI()
+    }
+    
+    public required init(coder: NSCoder) {
+        super.init(coder: coder)
+        setupUI()
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupUI()
+    }
+    
+    open func setupUI() {
+        
+    }
+}
+
+open class LZHStackView: UIStackView {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.axis = .horizontal
+        self.spacing = 3
+        self.alignment = .center
+        self.distribution = .fill
+        setupUI()
+    }
+    
+    public required init(coder: NSCoder) {
+        super.init(coder: coder)
+        setupUI()
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupUI()
+    }
+    
+    open func setupUI() {
+        
+    }
+}
+
+open class LZItemStackView: LZVStackView {
+    public let imageView = UIImageView()
+    public let titleLabel = UILabel(font:  .font15, textColor: .hex666666, text: nil, textAlignment: .center)
+    
+    public convenience init(image: UIImage?, text: String?) {
+        self.init()
+        imageView.image = image
+        titleLabel.text = text
+        spacing = 14
+    }
+    
+    open override func setupUI() {
+        super.setupUI()
+        
+        addArrangedSubviews([imageView, titleLabel])
+    }
+}
+
+
+open class LZHItemStackView: LZHStackView {
+    public let imageView = UIImageView()
+    public let titleLabel = UILabel(font:  .font15, textColor: .hex666666, text: nil, textAlignment: .center)
+    
+    public convenience init(image: UIImage?, text: String?) {
+        self.init()
+        setup(image: image, text: text)
+        spacing = 14
+    }
+    
+    open override func setupUI() {
+        super.setupUI()
+        
+        addArrangedSubviews([titleLabel, imageView])
+    }
+    
+    public func setup(image: UIImage?, text: String?) {
+        imageView.image = image
+        titleLabel.text = text
+    }
+}
+
+
+
+
+
+
+
+open class LZStackVC: UIViewController {
+    public let stack = UIStackView(arrangedSubviews: [], spacing: 0, alignment: .fill, distribution: .fill, axis: .vertical)
+    
+    public let safeBtn = UIButton().then {
+        $0.backgroundColor = .white
+        $0.snp.makeConstraints {
+            $0.height.equalTo(SafeBottomArea)
+        }
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.add(stack).snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
+}

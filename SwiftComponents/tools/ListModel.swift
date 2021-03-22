@@ -37,7 +37,7 @@ public class PageRequest: Convertible {
 }
 
 
-public struct ListModel<ModelType>: Convertible {
+public struct ListModel<ModelType: Convertible>: Convertible {
     public init() {
     }
     
@@ -46,7 +46,9 @@ public struct ListModel<ModelType>: Convertible {
     public var totalSize = 0
     public var success = false
     public var message = ""
-    public var isCanGoNext = false
+    public var isCanGoNext: Bool {
+        list.count < totalSize
+    }
     
     public init(list: [ModelType]) {
         self.list = list
@@ -64,7 +66,7 @@ public struct ListModel<ModelType>: Convertible {
         totalSize = list.totalSize
         success = list.success
         message = list.message
-        isCanGoNext = list.isCanGoNext
+//        isCanGoNext = list.isCanGoNext
         add(list.list)
     }
     
@@ -72,6 +74,14 @@ public struct ListModel<ModelType>: Convertible {
         list = []
     }
 
+    public func kj_modelKey(from property: Property) -> ModelPropertyKey {
+        switch property.name {
+        case "list": return ["list", "rows"]
+        case "totalSize": return ["totalSize", "total"]
+        default: return property.name
+        }
+    }
+  
 //    public mutating func configJSON(_ dataJSON: JSON?) {
 //        totalSize = dataJSON?["totalSize"].int ?? 0
 //        success = dataJSON?["success"].bool ?? false

@@ -180,3 +180,76 @@ open class TBTitleSubtitleLabel: LZControl {
     }
 }
 
+
+//MARK: - 应该这样定义
+/*
+ @IBDesignable
+ class TitleSubtitleLabel: LZView {
+     let titleLabel = UILabel(font: .font16, textColor: .hex999999).then{
+         $0.setContentHuggingPriority(.required, for: .horizontal)
+         $0.setContentCompressionResistancePriority(.required, for: .horizontal)
+     }
+     
+      let subtitleLabel = UILabel(font: .font16, textColor: .hex333333, numberOfLines: 0).then {
+         $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
+         $0.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+     }
+     
+     
+     lazy var stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel], spacing: 0, alignment: .top, distribution: .fill, axis: .horizontal)
+     
+     
+     @objc @IBInspectable public var spaceing: CGFloat = 0 {
+         didSet {
+             stack.spacing = spaceing
+         }
+     }
+     
+     @objc @IBInspectable public var title: String = " " {
+         didSet {
+             titleLabel.text = title.isEmpty ? " ": title
+         }
+     }
+     @objc @IBInspectable public var subTitle: String = " " {
+         didSet {
+             subtitleLabel.text = subTitle.isEmpty ? " ": subTitle
+         }
+     }
+     
+     override var tintColor: UIColor! {
+         didSet {
+             titleLabel.textColor = tintColor
+             subtitleLabel.textColor = tintColor
+         }
+     }
+     
+     var font: UIFont! {
+         didSet {
+             titleLabel.font = font
+             subtitleLabel.font = font
+         }
+     }
+     
+     @IBInspectable open var titleFont: UIFont = .font11 { didSet { titleLabel.font = titleFont } }
+     @IBInspectable open var subtitleFont: UIFont = .font11 { didSet { subtitleLabel.font = subtitleFont } }
+     @IBInspectable open var titleColor: UIColor? { didSet { titleLabel.textColor = titleColor } }
+     @IBInspectable open var subtitleColor: UIColor? { didSet { subtitleLabel.textColor = subtitleColor } }
+         
+     override func setupUI() {
+         backgroundColor = .clear
+         
+         
+         add(stack).snp.makeConstraints {
+             $0.edges.equalToSuperview()
+         }
+                 
+         subtitleLabel.snp.makeConstraints {
+             $0.height.greaterThanOrEqualTo(titleLabel)
+         }
+         
+
+        
+     }
+
+ }
+ */

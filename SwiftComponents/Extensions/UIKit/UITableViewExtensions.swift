@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - Initializers
 public extension UITableView {
+    // let tableView = UITableView(style: <#value#>, backgroundColor: <#value#>, separatorStyle:<#value#>)
     convenience init(style: UITableView.Style = .plain, backgroundColor: UIColor? = UITableView.appearance().backgroundColor, separatorStyle: UITableViewCell.SeparatorStyle = .none) {
         self.init(frame: .zero, style: style)
         self.backgroundColor = backgroundColor

@@ -22,7 +22,7 @@ public extension Reactive where Base == CGI {
         }
     }
     
-    static func request(_ targetType: TargetType) -> Single<Response> {
+    static func requestResponse(_ targetType: TargetType) -> Single<Response> {
         return CGI.defaultProvider.rx.request(.init(targetType))
     }
     
