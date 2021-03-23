@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   # s.source_files  = "SwiftComponents/**/*.swift"
   # 一级目录（pod库中根目录所含文件）
   
-  # 每次都参与编译方便修改时 在子工程里写
+  # 每次都参与编译方便修改时 
 #  s.static_framework = true
   # 二级目录（根目录是s，使用s.subspec设置子目录，这里设置子目录为ss）
   s.subspec 'Extensions' do |ss|
@@ -58,12 +58,6 @@ Pod::Spec.new do |s|
     ss.dependency "Moya"#, "~> 13.0.0"
     ss.dependency "KakaJSON"
     ss.dependency "SwiftyJSON"
-  end
-
-  s.subspec 'Cache' do |ss|
-    ss.source_files = 'SwiftComponents/Cache/**/*.swift'
-
-    ss.dependency 'YYCache'
   end
   
   s.subspec 'service_rx' do |ss|
@@ -108,14 +102,6 @@ Pod::Spec.new do |s|
     ss.dependency "MJRefresh"
     ss.dependency "MBProgressHUD"
   end
-
-  # 鹿管家公用组件
-#  s.subspec 'LGJPublic' do |ss|
-#    ss.static_framework = true
-#    ss.source_files = 'SwiftComponents/LGJPublic/**/*.swift'
-#
-#  end
-
 
   # 框架要求ARC环境下使用
   s.requires_arc = true
