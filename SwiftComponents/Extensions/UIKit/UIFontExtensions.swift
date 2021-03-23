@@ -9,21 +9,27 @@
 import UIKit
 
 public extension UIFont {
-    //SFUIText-Light
-    //SFUIText
-    //SFUIText-Semibold
-    var light: UIFont {
-        var name = ""
-        if #available(iOS 9.0, *) {
-            name = ".SFUIText-Light"
-        } else {
-            name = "HelveticaNeue-Light"
-        }
-        let f = UIFont(name: name, size: self.pointSize)
-        return f!.autoScaled()
+    enum FontName: String, CaseIterable {
+        case Avenir_Regular = "AvenirNext-Regular"
+        case Avenir_Medium = "AvenirNext-Medium"
+        case Avenir_DemiBold = "AvenirNext-DemiBold"
+        case PF_Light = "PingFangSC-Light"
+        case PF_Regular = "PingFangSC-Regular"
+        case PF_Semibold = "PingFangSC-Semibold"
+        case PF_Medium = "PingFangSC-Medium"
+        case PF_Thin = "PingFangSC-Thin"
+        case HT_Light = "Helvetica-Light"
+        case HT = "Helvetica"
+        case DIN_Bold = "DINAlternate-Bold" //部分数字用
     }
     
-    
+    var PF_Light: UIFont { to(.PF_Light) }
+    var PF_Regular: UIFont { to(.PF_Regular) }
+    var PF_Semibold: UIFont { to(.PF_Semibold) }
+    var PF_Medium: UIFont { to(.PF_Medium) }
+    var PF_Thin: UIFont { to(.PF_Thin) }
+
+    private static let normalFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
     static let font7 = UIFont.normalFont.withSize(7).autoScaled()
     static let font8 = UIFont.normalFont.withSize(8).autoScaled()
     static let font9 = UIFont.normalFont.withSize(9).autoScaled()
@@ -64,5 +70,11 @@ public extension UIFont {
             return self
 //        }
     }
-    private static let normalFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
+    
+    fileprivate func to(_ fontName: FontName) -> UIFont {
+        guard let font = UIFont(name: fontName.rawValue, size: self.pointSize) else {
+            return self
+        }
+        return font
+    }
 }

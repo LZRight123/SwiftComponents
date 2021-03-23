@@ -25,6 +25,12 @@ public extension UIView {
         }
         return view
     }
+    
+    func setupContentPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        setContentHuggingPriority(priority, for: axis)
+        setContentCompressionResistancePriority(priority, for: axis)
+    }
+    
 }
 
 

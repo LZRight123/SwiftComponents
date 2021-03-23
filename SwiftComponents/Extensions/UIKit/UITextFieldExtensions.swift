@@ -10,7 +10,7 @@
 import UIKit
 
 // MARK: - Initializers
-extension UITextField {
+public extension UITextField {
     convenience init(font: UIFont, textColor: UIColor, placeholder: String? = nil, keyboardType: UIKeyboardType = .default, textAlignment: NSTextAlignment = .left, adjustsFontSizeToFitWidth: Bool = true) {
         self.init()
         self.font = font
