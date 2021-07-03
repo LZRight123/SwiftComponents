@@ -1,0 +1,147 @@
+{
+  "name": "SwiftComponents",
+  "version": "1.0.0",
+  "summary": "关于iOS的一些组件.",
+  "description": "Include \"分类，网络请求，工具方法\", Support the Objective - C language.",
+  "homepage": "https://github.com/LZRight123/SwiftComponents",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "梁泽": "350442340@qq.com"
+  },
+  "social_media_url": "https://github.com/LZRight123",
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "git": "https://github.com/LZRight123/SwiftComponents.git",
+    "tag": "1.0.0",
+    "submodules": true
+  },
+  "swift_versions": "5.0",
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "default_subspecs": [
+    "Extensions",
+    "service_rx",
+    "tools",
+    "router",
+    "rxcomponents"
+  ],
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Extensions",
+      "source_files": "SwiftComponents/Extensions/**/*.swift",
+      "dependencies": {
+        "SwifterSwift": [
+
+        ]
+      }
+    },
+    {
+      "name": "service",
+      "source_files": "SwiftComponents/service/**/*.swift",
+      "dependencies": {
+        "Moya": [
+
+        ],
+        "KakaJSON": [
+
+        ],
+        "SwiftyJSON": [
+
+        ]
+      }
+    },
+    {
+      "name": "service_rx",
+      "source_files": "SwiftComponents/service_rx/**/*.swift",
+      "dependencies": {
+        "SwiftComponents/service": [
+
+        ],
+        "RxSwift": [
+          "~> 5.0"
+        ]
+      }
+    },
+    {
+      "name": "tools",
+      "source_files": "SwiftComponents/tools/**/*.swift",
+      "dependencies": {
+        "SnapKit": [
+
+        ],
+        "Kingfisher": [
+
+        ],
+        "MBProgressHUD": [
+
+        ],
+        "KakaJSON": [
+
+        ],
+        "SwiftyJSON": [
+
+        ],
+        "SwiftComponents/Extensions": [
+
+        ]
+      }
+    },
+    {
+      "name": "router",
+      "platforms": {
+        "ios": "9.0"
+      },
+      "source_files": "SwiftComponents/router/*.swift",
+      "dependencies": {
+        "URLNavigator": [
+
+        ]
+      }
+    },
+    {
+      "name": "rxcomponents",
+      "source_files": "SwiftComponents/RxComponents/**/*.swift",
+      "dependencies": {
+        "RxSwift": [
+
+        ],
+        "RxCocoa": [
+
+        ],
+        "RxWebKit": [
+
+        ],
+        "RxDataSources": [
+
+        ],
+        "RxOptional": [
+
+        ],
+        "RxViewController": [
+
+        ],
+        "RxGesture": [
+
+        ],
+        "Moya/RxSwift": [
+
+        ],
+        "MJRefresh": [
+
+        ],
+        "MBProgressHUD": [
+
+        ]
+      }
+    }
+  ],
+  "swift_version": "5.0"
+}
