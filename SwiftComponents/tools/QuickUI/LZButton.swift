@@ -10,7 +10,9 @@ import UIKit
 
 open class LZButton: UIButton {
     public var responseSize = CGSize(width: 44, height: 44)
-    
+    /// 点击事件时间间隔 毫秒
+    public var milliseconds: Int = 350
+    private var isIngoreClick = false
     public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         var bounds = self.bounds
         //若原热区小于44x44，则放大热区，否则保持原大小不变
@@ -37,6 +39,21 @@ open class LZButton: UIButton {
     
     func setupUI() {
         
+
     }
+    
+    /// 重载
+    open override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
+        if isIngoreClick  {
+            return
+        } else {
+            isIngoreClick = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(milliseconds)) { [weak self] in
+                self?.isIngoreClick = false
+            }
+            super.sendAction(action, to: target, for: event)
+        }
+    }
+    
     
 }
