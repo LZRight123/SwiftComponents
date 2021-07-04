@@ -36,7 +36,7 @@ public extension UIColor
     static let hex02A9F1 = #colorLiteral(red: 0.007843137255, green: 0.662745098, blue: 0.9450980392, alpha: 1)
     static let hex09BB07 = #colorLiteral(red: 0.03529411765, green: 0.7333333333, blue: 0.02745098039, alpha: 1)
     static let hexFE880E = UIColor(hex: "FE880E")
-
+    
     static let hexFFF3DB = #colorLiteral(red: 1, green: 0.9529411765, blue: 0.8588235294, alpha: 1)
     static let hexE9F8F7 = #colorLiteral(red: 0.9137254902, green: 0.9725490196, blue: 0.968627451, alpha: 1)
     static let hex52C4BC = #colorLiteral(red: 0.3215686275, green: 0.768627451, blue: 0.737254902, alpha: 1)
