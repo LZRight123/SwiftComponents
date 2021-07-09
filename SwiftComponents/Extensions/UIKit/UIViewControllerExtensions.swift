@@ -108,8 +108,8 @@ public extension UIViewController {
     }
     
     static func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
-        if let nav = base as? UINavigationController {
-            return topViewController(nav.visibleViewController)
+        if let navView = base as? UINavigationController {
+            return topViewController(navView.visibleViewController)
         }
         if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
             return topViewController(selected)
