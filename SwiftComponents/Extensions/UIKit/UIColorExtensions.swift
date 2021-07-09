@@ -100,7 +100,7 @@ public extension UIColor
     static let hex181818 = UIColor(hex: "181818")
     static let hexFBE7E8 = UIColor(hex: "FBE7E8")
     static let hexF5F5F5 = UIColor(hex: "F5F5F5")
-    
+    static let hexA0A0A0 = UIColor(hex: "A0A0A0")
     
     //MARK:- 常用色
     static let hex3598DB = #colorLiteral(red: 0.2078431373, green: 0.5960784314, blue: 0.8588235294, alpha: 1)
