@@ -398,3 +398,16 @@ open class LZStackVC: UIViewController {
         }
     }
 }
+
+
+open class LZTextFiled: UITextField {
+    
+//    open override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
+//        if let leftView = leftView {
+//            return .init(origin: .zero, size: .init(width: leftView.frame.width, height: leftView.frame.height))
+//        } else {
+//            return .zero
+//        }
+//    }
+
+}

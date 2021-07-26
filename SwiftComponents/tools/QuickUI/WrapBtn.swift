@@ -44,6 +44,15 @@ open class WrapBtn: LZView {
         }
     }
     
+    public func setupBtn(title: String, titleColor: UIColor, bgColor: UIColor, image: UIImage? = nil ){
+        self.title = title
+        btn.setTitleColorForAllStates(titleColor)
+        btn.backgroundColor = bgColor
+        if let image = image {
+            btn.setImageForAllStates(image)
+        }
+    }
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
         

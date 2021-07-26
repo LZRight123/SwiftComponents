@@ -10,6 +10,13 @@ import Foundation
 import SwifterSwift
 
 public extension String {
+    func validateMobile() -> Bool {
+        let phoneRegex: String = "^((13[0-9])|(15[^4,\\D])|(18[0,0-9])|(17[0,0-9]))\\d{8}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+        return phoneTest.evaluate(with: self)
+    }
+
+    
     func font(with font: UIFont) -> NSAttributedString {
         return NSMutableAttributedString(string: self, attributes: [.font: font])
     }
