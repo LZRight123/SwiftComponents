@@ -56,5 +56,15 @@ public extension Int {
             task()
         }
     }
-  
+      
+    func bytesToString(format: String = "0.##") -> String {
+        switch self {
+        case ..<1024: return "\(self)" + "B"
+        case 1024..<(1024 * 1024): return (self.double/(1024)).formatCustom(format) + "kB"
+        case 1024*1024..<1024 * 1024 * 1024: return (self.double/(1024 * 1024)).formatCustom(format) + "MB"
+        default:
+            return (self.double/(1024*1024*1024)).formatCustom(format) + "GB"
+        }
+       
+    }
 }
